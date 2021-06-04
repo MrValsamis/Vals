@@ -1,16 +1,26 @@
 var Example = Example || {};
 
-Example.bridge = function() {
+Example.ballPool = function() {
+    try {
+        if (typeof MatterWrap !== 'undefined') {
+            // either use by name from plugin registry (Browser global)
+            Matter.use('matter-wrap');
+        } else {
+            // or require and use the plugin directly (Node.js, Webpack etc.)
+            Matter.use(require('matter-wrap'));
+        }
+    } catch (e) {
+        // could not require the plugin or install needed
+    }
+    
     var Engine = Matter.Engine,
         Render = Matter.Render,
         Runner = Matter.Runner,
-        Body = Matter.Body,
+        Composite = Matter.Composite,
         Composites = Matter.Composites,
         Common = Matter.Common,
-        Constraint = Matter.Constraint,
         MouseConstraint = Matter.MouseConstraint,
         Mouse = Matter.Mouse,
-        Composite = Matter.Composite,
         Bodies = Matter.Bodies;
 
     // create engine
@@ -35,57 +45,19 @@ Example.bridge = function() {
     Runner.run(runner, engine);
 
     // add bodies
-    var group = Body.nextGroup(true);
-
-    var bridge = Composites.stack(160, 290, 15, 1, 0, 0, function(x, y) {
-        return Bodies.rectangle(x - 20, y, 53, 20, { 
-            collisionFilter: { group: group },
-            chamfer: 5,
-            density: 0.005,
-            frictionAir: 0.05,
-            render: {
-                fillStyle: '#060a19'
-            }
-        });
-    });
-    
-    Composites.chain(bridge, 0.3, 0, -0.3, 0, { 
-        stiffness: 1,
-        length: 0,
-        render: {
-            visible: false
-        }
-    });
-    
-    var stack = Composites.stack(250, 50, 6, 3, 0, 0, function(x, y) {
-        return Bodies.rectangle(x, y, 50, 50, Common.random(20, 40));
-    });
-
     Composite.add(world, [
-        bridge,
+        Bodies.rectangle(400, 600, 1200, 50.5, { isStatic: true, render: { fillStyle: '#060a19' } })
+    ]);
+
+    var stack = Composites.stack(100, 0, 10, 8, 10, 10, function(x, y) {
+        return Bodies.circle(x, y, Common.random(15, 30), { restitution: 0.6, friction: 0.1 });
+    });
+    
+    Composite.add(world, [
         stack,
-        Bodies.rectangle(30, 490, 220, 380, { 
-            isStatic: true, 
-            chamfer: { radius: 20 }
-        }),
-        Bodies.rectangle(770, 490, 220, 380, { 
-            isStatic: true, 
-            chamfer: { radius: 20 }
-        }),
-        Constraint.create({ 
-            pointA: { x: 140, y: 300 }, 
-            bodyB: bridge.bodies[0], 
-            pointB: { x: -25, y: 0 },
-            length: 2,
-            stiffness: 0.9
-        }),
-        Constraint.create({ 
-            pointA: { x: 660, y: 300 }, 
-            bodyB: bridge.bodies[bridge.bodies.length - 1], 
-            pointB: { x: 25, y: 0 },
-            length: 2,
-            stiffness: 0.9
-        })
+        Bodies.polygon(200, 460, 3, 60),
+        Bodies.polygon(400, 460, 5, 60),
+        Bodies.rectangle(600, 460, 80, 80)
     ]);
 
     // add mouse control
@@ -93,7 +65,7 @@ Example.bridge = function() {
         mouseConstraint = MouseConstraint.create(engine, {
             mouse: mouse,
             constraint: {
-                stiffness: 0.1,
+                stiffness: 0.2,
                 render: {
                     visible: false
                 }
@@ -111,6 +83,16 @@ Example.bridge = function() {
         max: { x: 800, y: 600 }
     });
 
+    // wrapping using matter-wrap plugin
+    var allBodies = Composite.allBodies(world);
+
+    for (var i = 0; i < allBodies.length; i += 1) {
+        allBodies[i].plugin.wrap = {
+            min: { x: render.bounds.min.x - 100, y: render.bounds.min.y },
+            max: { x: render.bounds.max.x + 100, y: render.bounds.max.y }
+        };
+    }
+
     // context for MatterTools.Demo
     return {
         engine: engine,
@@ -124,9 +106,9 @@ Example.bridge = function() {
     };
 };
 
-Example.bridge.title = 'Bridge';
-Example.bridge.for = '>=0.14.2';
+Example.ballPool.title = 'Ball Pool';
+Example.ballPool.for = '>=0.14.2';
 
 if (typeof module !== 'undefined') {
-    module.exports = Example.bridge;
+    module.exports = Example.ballPool;
 }

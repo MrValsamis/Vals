@@ -1,3 +1,37 @@
+(() => {
+    const canvas = document.getElementById("double-pendulum");
+    const ctx = canvas.getContext("2d");
+    const WIDTH = 590;
+    let HEIGHT = 100;
+
+    function intro() {
+        ctx.lineJoin = "round"
+        ctx.lineCap = "round"
+        ctx.lineWidth = 1;
+        const cx = WIDTH / 2;
+        const cy = HEIGHT / 2;
+        let scale
+        if (WIDTH > HEIGHT) {
+            scale = HEIGHT / 10 + 7
+        } else {
+            scale = WIDTH / 10 + 7
+        }
+        ctx.strokeStyle = "#012";
+        ctx.beginPath()
+        ctx.arc(cx, cy, scale * 1.8, 0, Math.PI * 2);
+        ctx.moveTo(cx - scale * 0.8, cy - scale);
+        ctx.lineTo(cx + scale * 1.2, cy);
+        ctx.lineTo(cx - scale * 0.8, cy + scale);
+        ctx.lineTo(cx - scale * 0.8, cy - scale);
+        ctx.stroke();
+        ctx.lineJoin = "miter"
+        ctx.lineCap = "butt"
+        ctx.lineWidth = 1;
+    }
+    window.addEventListener("load", intro);
+    canvas.addEventListener("click", runSim);
+
+
 var Example = Example || {};
 
 Example.doublePendulum = function() {

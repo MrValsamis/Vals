@@ -32,9 +32,11 @@
     canvas.addEventListener("click", runSim);
 
 
-var Example = Example || {};
+    function runSim() {
+        canvas.removeEventListener("click", runSim);
+        HEIGHT = 320;
 
-Example.doublePendulum = function() {
+
     var Engine = Matter.Engine,
         Events = Matter.Events,
         Render = Matter.Render,

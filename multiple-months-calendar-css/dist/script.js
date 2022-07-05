@@ -1,7 +1,7 @@
 // generate events
 var eventDates = {}
 
-let day1 = formatDate(new Date(new Date().setDate(new Date().getDate() + 45 )))
+let day1 = formatDate(new Date(new Date().setDate(new Date().getDate() + 46 )))
 eventDates[day1] = [
   '</br>Today we did some of this and some of that.</br></br>Homework:</br></br>Read some of this and some of that',
 ]

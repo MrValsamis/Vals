@@ -24,7 +24,7 @@ body {
   text-align: center;
 }
 .cal-modal h3 {
-  font-size: 3px;
+  font-size: 37px;
   font-weight: 900;
   margin: 0 0 1rem;
 }
@@ -144,7 +144,7 @@ body {
   }
 }
 #calendar .calendar-events .event {
-  font-size: 29px;
+  font-size: 2px;
 }
 #calendar .calendar-events .event .date {
   color: #fff;

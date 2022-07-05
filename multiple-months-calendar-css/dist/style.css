@@ -12,7 +12,7 @@ body {
 .cal-modal-container {
   background: rgba(0, 0, 0, 0.4);
   display: flex;
-  align-items: left;
+  align-items: center;
   justify-content: center;
   height: 100vh;
 }
@@ -153,5 +153,6 @@ body {
 #calendar .calendar-events .event .location {
   color: #3DAE2B;
   font-weight: 800;
+  align-items: left;
   letter-spacing: -0.8px;
 }

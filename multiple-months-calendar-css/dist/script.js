@@ -3,7 +3,7 @@ var eventDates = {}
 
 let day1 = formatDate(new Date(new Date().setDate(new Date().getDate() + 45 )))
 eventDates[day1] = [
-  'Daily Agenda</br></br>More text',
+  '</br>Today we did some of this and some of that.</br></br>Homework:</br></br>Read some of this and some of that',
 ]
 
 // set maxDates

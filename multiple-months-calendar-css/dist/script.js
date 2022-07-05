@@ -1,7 +1,7 @@
 // generate events
 var eventDates = {}
 
-let day1 = formatDate(new Date(new Date().setDate(new Date().getDate() + 60 )))
+let day1 = formatDate(new Date(new Date().setDate(new Date().getDate() + 50 )))
 eventDates[day1] = [
   'Daily Agenda</br></br>More text',
 ]

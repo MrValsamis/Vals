@@ -1,9 +1,14 @@
 // generate events
 var eventDates = {}
 
-let day1 = formatDate(new Date(new Date().setDate(new Date().getDate() + 48)))
-eventDates[day1] = [
-  '</br>DAY 1</br>This is an example of a daily agenda.  Here I will type out what did did each day, link to notes or activities and list the homework.</br></br><u>Homework:</u></br>Read some of this and some of that',
+let day1a = formatDate(new Date(new Date().setDate(new Date().getDate() + 42)))
+eventDates[day1a] = [
+  '</br>DAY 1</br>In class:</br>First Day Warm Up (link)</br>Welcome to Physics!</br>Learn Names</br>Class overview: syllabus (link), materials, whiteboarding, grade weights</br>student info sheets</br>Modeling Discussion - Questions linked HERE(link)</br></br><u>Homework:</u></br>-Get and Bring all of your materials and have your binder organized</br>-Go to the class website - make sure you can get to the website and bookmark it!',
+]
+
+let day1b = formatDate(new Date(new Date().setDate(new Date().getDate() + 43)))
+eventDates[day1b] = [
+  '</br>DAY 1</br>In class:</br>First Day Warm Up (link)</br>Welcome to Physics!</br>Learn Names</br>Class overview: syllabus (link), materials, whiteboarding, grade weights</br>student info sheets</br>Modeling Discussion - Questions linked HERE(link)</br></br><u>Homework:</u></br>-Get and Bring all of your materials and have your binder organized</br>-Go to the class website - make sure you can get to the website and bookmark it!',
 ]
 
 // set maxDates

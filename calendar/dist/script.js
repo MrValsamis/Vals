@@ -71,7 +71,7 @@ function eventCaledarResize($el) {
   }
   if(width < 768 && flatpickr.config.showMonths !== 1) {
     flatpickr.set('showMonths', 1)
-    flatpickr.set('maxDate', maxDate[3])
+    flatpickr.set('maxDate', maxDate[1])
     $('.flatpickr-calendar').css('width', '')
   }
 }

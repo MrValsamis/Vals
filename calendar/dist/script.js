@@ -62,11 +62,11 @@ function eventCaledarResize($el) {
     flatpickr.clear()
   }
   if(width >= 992 && flatpickr.config.showMonths !== 3) {
-    flatpickr.set('showMonths', 1)
+    flatpickr.set('showMonths', 3)
     flatpickr.set('maxDate', maxDate[1])
   }
-  if(width < 992 && width >= 768 && flatpickr.config.showMonths !== 1) {
-    flatpickr.set('showMonths', 1)
+  if(width < 992 && width >= 768 && flatpickr.config.showMonths !== 2) {
+    flatpickr.set('showMonths', 2)
     flatpickr.set('maxDate', maxDate[1])
   }
   if(width < 768 && flatpickr.config.showMonths !== 1) {

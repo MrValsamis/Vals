@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+
+<meta charset="UTF-8">
+  <title>Calendar</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800,900" rel="stylesheet">
+<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css'><link rel="stylesheet" href="./style-2.css">
+	<title>Calendar</title>
+	<link rel="canonical" href="https://landgreen.github.io/physics/">
+	<link rel='shortcut icon' href='media/favicon.ico' type='image/x-icon' />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<header>
+		<h1>
+			<a href="../">Physics Calendar</a>
+		</h1>
+	</header>
+	<style>
+		:root {
+			--svg-color: #333;
+			--svg-bg-color: #fff;
+		}
+
+		.SVG-title {
+			/* border: #000 solid 1px; */
+			margin: auto;
+		}
+
+		.table-of-contents {
+			line-height: 1.6;
+			list-style: none;
+			display: grid;
+			grid-template: "a a a a a""b b b b b";
+			max-width: 1700px;
+			margin: auto;
+			grid-gap: 4px;
+			/* border: var(--svg-color) solid 4px; */
+			border-bottom: var(--svg-color) solid 4px;
+			border-left: var(--svg-color) solid 4px;
+			border-right: var(--svg-color) solid 4px;
+			background-color: var(--svg-color);
+		}
+
+		.table-of-contents a {
+			color: var(--svg-color);
+		}
+
+		.table-of-contents a:hover {
+			color: var(--link-color);
+			text-decoration: none;
+		}
+
+		.table-of-contents li {
+			background-color: var(--svg-bg-color);
+			padding: 0px 0px 20px 0px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.table-of-contents li p {
+			margin: auto;
+		}
+
+		@media screen and (max-width: 850px) {
+			.table-of-contents {
+				grid-template: "a a""b b""c c""d d""e e";
+				border-left: var(--svg-color) solid 0px;
+				border-right: var(--svg-color) solid 0px;
+			}
+		}
+
+		@media screen and (max-width: 365px) {
+			.table-of-contents {
+				font-size: 100%;
+				grid-template: "a""b""c""d""e""f""g""h""i""j""k";
+			}
+		}
+	</style>
+<div class="cal-modal-container">
+  <div class="cal-modal">
+    <h3>Daily Agenda</h3>
+    <div id="calendar">
+      <div class="placeholder"></div>
+      <div class="calendar-events">
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src='https://cdn.jsdelivr.net/npm/flatpickr'></script><script  src="./script.js"></script>
+
+	<footer>
+		<a href="../">Back</a>
+	</footer>
+</body>
+
+</html>
+
+
+

@@ -152,7 +152,7 @@ body {
 }
 #calendar .calendar-events .event .location {
   color: #3DAE2B;
-  font-weight: 800;
+  font-weight: 500;
   text-align: left;
   letter-spacing: -0.8px;
 }

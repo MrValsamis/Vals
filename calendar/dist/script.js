@@ -3,7 +3,7 @@ var eventDates = {}
 
 let day1 = formatDate(new Date(new Date().setDate(new Date().getDate() + 48)))
 eventDates[day1] = [
-  '</br>Today we did some of this and some of that.</br></br><u>Homework:</u></br>Read some of this and some of that',
+  '</br>DAY 1</br>This is an example of a daily agenda.  Here I will type out what did did each day, link to notes or activities and list the homework.</br></br><u>Homework:</u></br>Read some of this and some of that',
 ]
 
 // set maxDates

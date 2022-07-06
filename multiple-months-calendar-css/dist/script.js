@@ -1,9 +1,9 @@
 // generate events
 var eventDates = {}
 
-let day1 = formatDate(new Date(new Date().setDate(new Date().getDate() + 46 )))
+let day1 = formatDate(new Date(new Date().setDate(new Date().getDate() + 48)))
 eventDates[day1] = [
-  '</br>Today we did some of this and some of that.</br></br>Homework:</br></br>Read some of this and some of that',
+  '</br>Today we did some of this and some of that.</br></br><u>Homework:</u></br>Read some of this and some of that',
 ]
 
 // set maxDates
@@ -57,12 +57,12 @@ function eventCaledarResize($el) {
     flatpickr.clear()
   }
   if(width >= 992 && flatpickr.config.showMonths !== 3) {
-    flatpickr.set('showMonths', 3)
-    flatpickr.set('maxDate', maxDate[3])
+    flatpickr.set('showMonths', 1)
+    flatpickr.set('maxDate', maxDate[1])
   }
-  if(width < 992 && width >= 768 && flatpickr.config.showMonths !== 2) {
-    flatpickr.set('showMonths', 2)
-    flatpickr.set('maxDate', maxDate[2])
+  if(width < 992 && width >= 768 && flatpickr.config.showMonths !== 1) {
+    flatpickr.set('showMonths', 1)
+    flatpickr.set('maxDate', maxDate[1])
   }
   if(width < 768 && flatpickr.config.showMonths !== 1) {
     flatpickr.set('showMonths', 1)

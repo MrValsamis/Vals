@@ -144,7 +144,7 @@ body {
   }
 }
 #calendar .calendar-events .event {
-  font-size: 2px;
+  font-size: 15px;
 }
 #calendar .calendar-events .event .date {
   color: #fff;

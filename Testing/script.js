@@ -3,7 +3,7 @@ var eventDates = {}
 
 let day1a = formatDate(new Date(new Date().setDate(new Date().getDate() + 42)))
 eventDates[day1a] = [
-  '</br>DAY 1</br></br><u>In class:</u></br>First Day Warm Up (link)</br>Welcome to Physics!</br>Learn Names</br>Class overview: syllabus (link), materials, whiteboarding, grade weights</br>student info sheets</br>Modeling Discussion - Questions linked HERE(link)</br></br><u>Homework:</u></br>-Get and Bring all of your materials and have your binder organized</br>-Go to the class website - make sure you can get to the website and bookmark it!',
+  '</br>DAY 1</br></br><u>In class:</u></br>First Day Warm Up (link)</br>Welcome to Physics!</br>Learn Names</br>Class overview: syllabus (link), materials, whiteboarding, grade weights</br>student info sheets</br>Modeling Discussion - Questions linked HERE(link)</br><u>Homework:</u></br></br>-Get and Bring all of your materials and have your binder organized</br>-Go to the class website - make sure you can get to the website and bookmark it!',
 ]
 let day1b = formatDate(new Date(new Date().setDate(new Date().getDate() + 43)))
 eventDates[day1b] = [
@@ -11,7 +11,7 @@ eventDates[day1b] = [
 ]
 let day2a = formatDate(new Date(new Date().setDate(new Date().getDate() + 44)))
 eventDates[day2a] = [
-  '</br>DAY 2</br></br><u>In class:</u></br>Waves and Sound Day 1 WU (link)</br>Make Lab Groups</br>Sign up for Hewitt Textbook</br>Sign up for Webassign</br>Semester Pretest</br>Science Modeling Discussion - Questions (linked) here</br>Hanging slinkly exploration and Discussion.  The questions are here (link)</br>The PHET simulation is linked HERE(link)</br>If time permits... Wave notes and class discussion</br></br> <u>Homework:</u></br>-Read Hewitt: 19.1 (First paragraph only), 19.2-19.5',
+  '</br>DAY 2</br></br><u>In class:</u></br>Waves and Sound Day 1 WU (link)</br>Make Lab Groups</br>Sign up for Hewitt Textbook</br>Sign up for Webassign</br>Semester Pretest</br>Science Modeling Discussion - Questions (linked) here</br>Hanging slinkly exploration and Discussion.  The questions are here (link)</br>The PHET simulation is linked HERE(link)</br>If time permits... Wave notes and class discussion</br> </br><u>Homework:</u></br>-Read Hewitt: 19.1 (First paragraph only), 19.2-19.5',
 ]
 let day2b = formatDate(new Date(new Date().setDate(new Date().getDate() + 47)))
 eventDates[day2b] = [
@@ -19,11 +19,11 @@ eventDates[day2b] = [
 ]
 let day3a = formatDate(new Date(new Date().setDate(new Date().getDate() + 48)))
 eventDates[day3a] = [
-  '</br>DAY 3</br></br><u>In class:</u></br>Waves and Sound Day 2 WU (link)</br>Finish Modeling Discussion</br>Hanging Slinky Exploration and Discussion.  The questions are here (link)</br>The the simulation is linked (link) here</br>Waves Notes and Class Discussion</br>Begin Speed of Sound Lab if time permts</br></br> <u>Homework:</u></br>-Do AIP (The Activities in Physics binder) pages: 21-22',
+  '</br>DAY 3</br></br><u>In class:</u></br>Waves and Sound Day 2 WU (link)</br>Finish Modeling Discussion</br>Hanging Slinky Exploration and Discussion.  The questions are here (link)</br>The the simulation is linked (link) here</br>Waves Notes and Class Discussion</br>Begin Speed of Sound Lab if time permts</br></br><u>Homework:</u></br>-Do AIP (The Activities in Physics binder) pages: 21-22',
 ]
 let day3b = formatDate(new Date(new Date().setDate(new Date().getDate() + 49)))
 eventDates[day3b] = [
-  '</br>DAY 3</br></br><u>In class:</u></br>Waves and Sound Day 2 WU (link)</br>Finish Modeling Discussion</br>Hanging Slinky Exploration and Discussion.  The questions are here (link)</br>The the simulation is linked (link) here</br>Waves Notes and Class Discussion</br>Begin Speed of Sound Lab if time permts</br></br> <u>Homework:</u></br>-Do AIP (The Activities in Physics binder) pages: 21-22',
+  '</br>DAY 3</br></br><u>In class:</u></br>Waves and Sound Day 2 WU (link)</br>Finish Modeling Discussion</br>Hanging Slinky Exploration and Discussion.  The questions are here (link)</br>The the simulation is linked (link) here</br>Waves Notes and Class Discussion</br>Begin Speed of Sound Lab if time permts</br></br><u>Homework:</u></br>-Do AIP (The Activities in Physics binder) pages: 21-22',
 ]
 let day4a = formatDate(new Date(new Date().setDate(new Date().getDate() + 50)))
 eventDates[day4a] = [

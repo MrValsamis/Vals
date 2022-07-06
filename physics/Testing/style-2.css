@@ -303,7 +303,8 @@ canvas,
 
 /* Header setup_________________________________*/
 header {
-  background-color: var(--bg-color);
+    background-color: #1D252C;
+
   padding: 5px 0px;
   text-align: center;
   width: 100%;
@@ -341,7 +342,7 @@ footer {
   margin-top: 0em;
   padding: 0em;
   text-align: center;
-  background-color: #333;
+  background-color: #1D252C;
   font-size: 25px;
 }
 

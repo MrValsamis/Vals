@@ -340,7 +340,7 @@ header p {
 /* footer setup_________________________________*/
 footer {
   margin-top: 0em;
-  padding: 0em;
+  padding: 1em;
   text-align: center;
   background-color: #1D252C;
   font-size: 25px;

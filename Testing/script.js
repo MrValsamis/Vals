@@ -3,6 +3,7 @@ var eventDates = {}
 
 let dayx = formatDate(new Date(2022,7,1,0,0,0,0))
 eventDates[dayx] = [
+
   'This is Day x',
 ]
 

@@ -82,7 +82,7 @@
 
 <h2 class='underlined'>Physics - <a href="physics/index.html">course notes</a> |
        
-       
+      
 <style>
 button {
   background: transparent;
@@ -115,13 +115,13 @@ button:hover:before {
   padding: 0;
 }
 button:active {
-  background: #000;
+  background: #d3e6f1;
   color: #fff;
   transition: none;
 }
 </style> 
     
-<button id="btn1">daily agenda</button>
+<button onclick="myFunction()" id="btn1">daily agenda</button>
   <table id="table1" style="table-layout:fixed;width:140;display:none">
   <col width="70">
   <col width="70">
@@ -135,12 +135,22 @@ button:active {
   </tr>
 </table>
 
+<script>    
 
-<script>    document.getElementById("btn1").addEventListener("click", function(){
-  document.getElementById("table1").style.display = "block";
-});
-
+function myFunction() {
+  var x = document.getElementById("table1");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
 </script>
+
+
+
+
+
 
         </h2>
         <p>

@@ -369,6 +369,44 @@ footer a {
   border-radius: 1em;
 }
 
+
+
+  
+/*Table formatting*/
+  table {
+    display: inline;
+    border: none; 
+    vertical-align: 50%;
+}
+
+td{
+text-align: left;
+white-space:nowrap;
+}
+
+td{
+font-size: 0.5em;
+}
+
+td {
+  border: 1px gray;
+  width: 5px;
+}
+
+.MyClass{
+   height: 280px; 
+   width: 456px; 
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+<style>
+  td {overflow:hidden;}
+</style>
+
+
+
+
 @media screen and (min-width: 650px) {
   .col-group {
     overflow: hidden;
@@ -423,53 +461,7 @@ footer a {
   .show-on-mobile {
     display: block;
   }
-  
-/*Table formatting*/
-  table {
-    display: inline;
-    border: none; 
-    vertical-align: 50%;
-}
 
-td{
-text-align: left;
-white-space:nowrap;
-}
-
-td{
-font-size: 0.5em;
-}
-
-td {
-  border: 1px gray;
-  width: 5px;
-}
-
-.MyClass{
-   height: 280px; 
-   width: 456px; 
-   overflow: hidden;
-   white-space: nowrap;
-}
-
-<style>
-  td {overflow:hidden;}
-</style>
-
-
-
-
-
-
-.wrap {
-  display: flex;
-}
-.before {
-  flex-shrink: 0;
-}
-.details-text {
-  margin-left: var(--offset);
-}
 
 
 }

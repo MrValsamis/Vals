@@ -48,42 +48,81 @@
     <header>
         <h1 class="title">Valsamis Physics</h1>
     </header>
+    
+    
+    
 
 
-
-<script?
-document.querySelector(".details-text").style = `
-  --offset: -${document.querySelector(".before").offsetWidth}px;
-`
-</script>
-
-<div class="wrap">
-  <span class="before">Some-words-before </span>
-    <details>
-      <summary>Summary-text</summary>
-      <p class="details-text">Details-text Details-text Details-text Details-text Details-text Details-text Details-text Details-text Details-text Details-text Details-text Details-text Details-text Details-text
-      </p>
-   </details>
-</div>
-Some-more-words-after-all-the-stuff.
-
-
-
-
-
-
-
-
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
 <article>
-<h2 class='underlined'>Physics - <a href="physics/index.html">course notes</a>
-        </br>
+
+
+
+<h2 class='underlined'>Physics - <a href="physics/index.html">course notes</a> |
        
-        <a href="physics/index.html">course notes</a>       
-            <details>
-            <summary>Daily Agenda</summary>
-                <table border="1" width="140" style='table-layout:fixed'>
+       
+<style>
+button {
+  background: transparent;
+  font-family: Roboto;
+  font-weight:300;
+  color: #08c;
+  border: none;
+  padding: 0!important;
+  outline: none;
+  position: relative;
+  transition: 0.3s;
+  padding: 10px;
+  text-decoration: none;
+  cursor: pointer;
+}
+button:before {
+  content: '';
+  border-bottom: 2px solid #08c;
+  padding: 0 px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 0;
+  transition: 0.5s;
+}
+button:hover:before {
+  width: 100%;
+  padding: 0;
+}
+button:active {
+  background: #000;
+  color: #fff;
+  transition: none;
+}
+</style> 
+    
+<button id="btn1">daily agenda</button>
+  <table id="table1" style="table-layout:fixed;width:140;display:none">
   <col width="70">
   <col width="70">
   <tr>
@@ -95,7 +134,14 @@ Some-more-words-after-all-the-stuff.
     <td><a href="www.google.com">PCB Table</a></td>
   </tr>
 </table>
-        </details>
+
+
+<script>    document.getElementById("btn1").addEventListener("click", function(){
+  document.getElementById("table1").style.display = "block";
+});
+
+</script>
+
         </h2>
         <p>
             Physics is a lab science with a math focus.

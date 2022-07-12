@@ -246,6 +246,10 @@ canvas,
   margin: 8em 0em 8em 0em;
 }
 
+.example2 {
+  margin: 0em 0em 0em 0em;
+}
+
 .example-small {
   margin: 3em 0em 3em 0em;
 }
@@ -423,7 +427,7 @@ footer a {
 /*Table formatting*/
   table {
     display: inline;
-    border: none;
+    border: none; 
     vertical-align: 50%;
 }
 
@@ -451,5 +455,21 @@ td {
 <style>
   td {overflow:hidden;}
 </style>
+
+
+
+
+
+
+.wrap {
+  display: flex;
+}
+.before {
+  flex-shrink: 0;
+}
+.details-text {
+  margin-left: var(--offset);
+}
+
 
 }

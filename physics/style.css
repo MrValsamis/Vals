@@ -419,4 +419,38 @@ footer a {
   .show-on-mobile {
     display: block;
   }
+  
+/*Table formatting*/
+  table {
+    width:170px;
+    display: inline;
+    border: none;
+    vertical-align: 50%;
+}
+
+td{
+text-align: left;
+white-space:nowrap;
+}
+
+td{
+font-size: 0.2em;
+}
+
+td {
+  border: 1px gray;
+  width: 5px;
+}
+
+.MyClass{
+   height: 280px; 
+   width: 456px; 
+   overflow: hidden;
+   white-space: nowrap;
+}
+
+<style>
+  td {overflow:hidden;}
+</style>
+
 }

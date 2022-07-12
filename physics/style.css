@@ -422,7 +422,6 @@ footer a {
   
 /*Table formatting*/
   table {
-    width:170px;
     display: inline;
     border: none;
     vertical-align: 50%;
@@ -434,7 +433,7 @@ white-space:nowrap;
 }
 
 td{
-font-size: 0.2em;
+font-size: 0.5em;
 }
 
 td {

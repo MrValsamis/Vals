@@ -58,10 +58,6 @@
 
 
 <style>
-table {
-  border-collapse: collapse;
-}
-
 td {
   padding-top: 0;
   padding-bottom: 0;
@@ -72,7 +68,7 @@ div {
   padding-top: 10px;
   padding-bottom: 10px;
   overflow: hidden;
-  transition: 2s all;
+  transition: 1.5s all;
 }
 
 div.rollup {
@@ -80,52 +76,59 @@ div.rollup {
   padding-top: 0;
   padding-bottom: 0;
 }
-</style>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
-
-
-
-
-<style>
 table {
+    border-collapse: collapse;
     font-size: 2em;
     margin-bottom: 0;
     display: block;
-    font-size: 2em;
     margin-before: 0.83em;
     margin-after: 0.83em;
     margin-start: 0;
     margin-end: 0; }
 }
-tr:first-child{ border-bottom: 1px solid #555;}
+
+/*normal mode*/
+#desk-table {
+    display: block;
+}
+#phone-table {
+    display: none;
+}
+
+@media all and (min-width: 500px) { // min-width is the size of the web browser in desktop
+    #desk-table (
+        display: block;
+    }
+    #phone-table {
+        display: none;
+    }
+}
+  
+/*mobile mode*/
+@media only screen and (max-width: 500px) { // max-width is the size of the web broswer in mobile 
+    #desk-table {
+        display: none;
+    }
+    #phone-table {
+        display: block;
+    }
+}
+
 </style>
 
-
-
-
-<script>
-$(function() {
-	$('button').on('click', toggleColumn);
-});
-
-function toggleColumn() {
-	$('div').toggleClass('rollup');
-}
-</script>
 
 
 <h2 class='underlined'>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<table style="table-layout:fixed;width:300">
+<table id="desk-table" style="table-layout:fixed;width:300">
   <col width="100">
   <col width="100">
   <col width="100">
   <tr>
     <td>Physics - </td>
-    <td>course notes |</td>
+    <td>&nbspcourse notes |</td>
     <td><button>daily agenda</button></td>
   </tr>
   <tr style="display:none;font-size:24px;">
@@ -140,6 +143,28 @@ function toggleColumn() {
   </tr>
 </table>
 
+<table id="phone-table" style="table-layout:fixed;width:200">
+  <col width="100">
+  <col width="100">
+  <tr>
+    <td>Physics - </td>
+    <td>&nbspcourse notes </td>
+  </tr>
+  <tr font-size:24px;">
+    <td><div></div></td>
+    <td><div><button>daily agenda</button></div></td>
+  </tr>
+  <tr style="display:none;font-size:24px;">
+    <td><div></div></td>
+    <td><div>&nbsp&nbspAP Physics: Calendar | Table</div></td>
+  </tr>
+  <tr style="display:none;font-size:24px;">
+    <td><div></div></td>
+    <td><div>&nbsp&nbspPCB Physics: Calendar | Table</div></td>
+  </tr>
+</table>
+
+
 
 <script>
 $('table button').click(function() {
@@ -148,6 +173,8 @@ $('table button').click(function() {
 })
 </script>
 
+<!--
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
 <script>
 $(function() {
@@ -158,6 +185,7 @@ function toggleColumn() {
 	$('div').toggleClass('rollup');
 }
 </script>
+-->
 
 </h2>
         

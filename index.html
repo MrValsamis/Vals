@@ -88,16 +88,11 @@ table {
     margin-end: 0; }
 }
 
-/*normal mode*/
-#desk-table {
-    display: block;
-}
-#phone-table {
-    display: none;
-}
 
-@media all and (min-width: 500px) { // min-width is the size of the web browser in desktop
-    #desk-table (
+
+/*normal mode*/
+@media screen and (min-width: 500px) { // min-width is the size of the web broswer in desktop 
+    #desk-table {
         display: block;
     }
     #phone-table {
@@ -106,7 +101,7 @@ table {
 }
   
 /*mobile mode*/
-@media only screen and (max-width: 500px) { // max-width is the size of the web broswer in mobile 
+@media screen and (max-width: 500px) { // max-width is the size of the web broswer in mobile 
     #desk-table {
         display: none;
     }

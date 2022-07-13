@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="physics/style.css">
     
 
-<body>
+<body class="page1">
     <style>
         header {
             text-align: center;
@@ -50,6 +50,134 @@
     </header>   
   
 <article>
+
+
+
+
+
+
+
+<style>
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+div {
+  background-color: white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  overflow: hidden;
+  transition: 2s all;
+}
+
+div.rollup {
+  height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
+
+
+
+
+<style>
+table {
+    font-size: 2em;
+    margin-bottom: 0;
+    display: block;
+    font-size: 2em;
+    margin-before: 0.83em;
+    margin-after: 0.83em;
+    margin-start: 0;
+    margin-end: 0; }
+}
+tr:first-child{ border-bottom: 1px solid #555;}
+</style>
+
+
+
+
+<script>
+$(function() {
+	$('button').on('click', toggleColumn);
+});
+
+function toggleColumn() {
+	$('div').toggleClass('rollup');
+}
+</script>
+
+
+<h2 class='underlined'>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<table style="table-layout:fixed;width:300">
+  <col width="100">
+  <col width="100">
+  <col width="100">
+  <tr>
+    <td>Physics - </td>
+    <td>course notes |</td>
+    <td><button>daily agenda</button></td>
+  </tr>
+  <tr style="display:none;font-size:24px;">
+    <td><div></div></td>
+    <td><div></div></td>
+    <td><div>&nbsp&nbspAP Physics: Calendar | Table</div></td>
+  </tr>
+  <tr style="display:none;font-size:24px;">
+    <td><div></div></td>
+    <td><div></div></td>
+    <td><div>&nbsp&nbspPCB Physics: Calendar | Table</div></td>
+  </tr>
+</table>
+
+
+<script>
+$('table button').click(function() {
+  var n = $(this).closest("tr").nextUntil("tr:has(button)");
+  n.toggle()
+})
+</script>
+
+
+<script>
+$(function() {
+	$('button').on('click', toggleColumn);
+});
+
+function toggleColumn() {
+	$('div').toggleClass('rollup');
+}
+</script>
+
+</h2>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 <h2 class='underlined'>Physics - <a href="physics/index.html">course notes</a> |    
 <style>
@@ -89,7 +217,7 @@ button:active {
 </style> 
     
 <button onclick="myFunction()" id="btn1">daily agenda</button>
-  <table id="table1" style="table-layout:fixed;width:140;display:none">
+ <table id="table1" style="table-layout:fixed;width:140;display:none">
   <col width="70">
   <col width="70">
   <tr>
@@ -101,7 +229,6 @@ button:active {
     <td><a href="www.google.com">PCB Table</a></td>
   </tr>
 </table>
-
 <script>    
 
 function myFunction() {

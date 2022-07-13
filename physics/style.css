@@ -155,6 +155,10 @@ tr:hover {
   background-color: #f4f4f4;
 }
 
+.page1 tr:hover {
+  background-color: #fff;
+}
+
 th,
 td {
   text-align: center;

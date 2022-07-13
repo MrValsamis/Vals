@@ -100,6 +100,40 @@ table {
         display: block;
     }
 }
+
+
+button {
+  background: transparent;
+  font-family: Roboto;
+  font-weight:300;
+  color: #08c;
+  border: none;
+  padding: 0!important;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+}
+button:before {
+  content: '';
+  border-bottom: 2px solid #08c;
+  padding: 0 px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 0;
+  transition: 0.5s;
+}
+button:hover:before {
+  width: 100%;
+  padding: 0;
+}
+button:active {
+  background: #d3e6f1;
+  color: #fff;
+  transition: none;
+}
 </style>
 
 <h2 class='underlined'>
@@ -110,8 +144,8 @@ table {
   <col width="100">
   <col width="100">
   <tr>
-    <td>Physics - </td>
-    <td>&nbspcourse notes |</td>
+    <td>Physics &nbsp<span>&#8212;</span> </td>
+    <td>&nbsp<a href="physics/index.html">course notes</a>&nbsp&nbsp|</td>
     <td><button>daily agenda</button></td>
   </tr>
   <tr style="display:none;font-size:24px;">
@@ -130,20 +164,20 @@ table {
   <col width="100">
   <col width="100">
   <tr>
-    <td>Physics - </td>
-    <td>&nbspcourse notes </td>
+    <td>Physics &nbsp<span>&#8212;</span> </td>
+    <td>&nbsp<a href="physics/index.html"><button>course notes</button></a></td>
   </tr>
   <tr font-size:24px;">
     <td><div></div></td>
-    <td><div><button>daily agenda</button></div></td>
+    <td><div>&nbsp<button>daily agenda</button></div></td>
   </tr>
   <tr style="display:none;font-size:24px;">
     <td><div></div></td>
-    <td><div>&nbsp&nbspAP Physics: Calendar | Table</div></td>
+    <td><div>&nbsp&nbsp&nbsp&nbspAP Physics: Calendar | Table</div></td>
   </tr>
   <tr style="display:none;font-size:24px;">
     <td><div></div></td>
-    <td><div>&nbsp&nbspPCB Physics: Calendar | Table</div></td>
+    <td><div>&nbsp&nbsp&nbsp&nbspPCB Physics: Calendar | Table</div></td>
   </tr>
 </table>
 
@@ -185,47 +219,10 @@ function toggleColumn() {
         
         
         
-        
-        
-        
-        
-
+       
+<!-- old header
 <h2 class='underlined'>Physics - <a href="physics/index.html">course notes</a> |    
-<style>
-button {
-  background: transparent;
-  font-family: Roboto;
-  font-weight:300;
-  color: #08c;
-  border: none;
-  padding: 0!important;
-  outline: none;
-  position: relative;
-  cursor: pointer;
-}
-button:before {
-  content: '';
-  border-bottom: 2px solid #08c;
-  padding: 0 px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  width: 0;
-  transition: 0.5s;
-}
-button:hover:before {
-  width: 100%;
-  padding: 0;
-}
-button:active {
-  background: #d3e6f1;
-  color: #fff;
-  transition: none;
-}
 
-</style> 
     
 <button onclick="myFunction()" id="btn1">daily agenda</button>
  <table id="table1" style="table-layout:fixed;width:140;display:none">
@@ -252,6 +249,7 @@ function myFunction() {
 }
 </script>
         </h2>
+-->        
         <p>
             Physics is a lab science with a math focus.
             We use physical relationships to predict and shape our surroundings.

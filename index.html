@@ -139,7 +139,7 @@ button:active {
 <h2 class='underlined'>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<table id="desk-table" style="table-layout:fixed;width:300">
+<table id="desk-table" style="table-layout:fixed;width:300" font-size:0;>
   <col width="100">
   <col width="100">
   <col width="100">
@@ -160,24 +160,28 @@ button:active {
   </tr>
 </table>
 
-<table id="phone-table" style="table-layout:fixed;width:200">
-  <col width="100">
-  <col width="100">
+<table id="phone-table" style="table-layout:fixed;width:100;overflow:scroll">
+  <col width="50">
+  <col width="50">
   <tr>
-    <td>Physics &nbsp<span>&#8212;</span> </td>
-    <td>&nbsp<a href="physics/index.html"><button>course notes</button></a></td>
-  </tr>
-  <tr font-size:24px;">
+    <td>Physics</td>
     <td><div></div></td>
-    <td><div>&nbsp<button>daily agenda</button></div></td>
-  </tr>
-  <tr style="display:none;font-size:24px;">
     <td><div></div></td>
-    <td><div>&nbsp&nbsp&nbsp&nbspAP Physics: <a href="APcalendar/index.html">Calendar</a> | <a href="https://docs.google.com/document/d/1-jpFRj2trm7R4KbSY1Gf_-hP0NFTytfQNSyVYEvBqQM/edit">Table</a></div></td>
   </tr>
-  <tr style="display:none;font-size:24px;">
+  <tr style="font-size:0px;padding:0">
+    <td style="font-size:26px;padding:0;"><a href="physics/index.html"><button>course notes</button></a></td>
+    <td style="font-size:26px;padding:0;color:#08c;">&nbsp&nbsp|</td>
+    <td style="font-size:26px;padding:0;"><button>daily agenda</button></td>
+  </tr>
+  <tr style="display:none;font-size:20px;">
     <td><div></div></td>
-    <td><div>&nbsp&nbsp&nbsp&nbspPCB Physics: <a href="PCBcalendar/index.html">Calendar</a> | <a href="https://docs.google.com/document/d/1-Z58nMcpFKx-vHeqQTRg086TD4UdaHgOpYr4bBCqHFU/edit">Table</a></div></td>
+    <td><div></div></td>
+    <td><div>&nbspAP Physics: <a href="APcalendar/index.html">Calendar</a> | <a href="https://docs.google.com/document/d/1-jpFRj2trm7R4KbSY1Gf_-hP0NFTytfQNSyVYEvBqQM/edit">Table</a></div></td>
+  </tr>
+  <tr style="display:none;font-size:20px;">
+    <td><div></div></td>
+    <td><div></div></td>
+    <td><div>&nbspPCB Physics: <a href="PCBcalendar/index.html">Calendar</a> | <a href="https://docs.google.com/document/d/1-Z58nMcpFKx-vHeqQTRg086TD4UdaHgOpYr4bBCqHFU/edit">Table</a></div></td>
   </tr>
 </table>
 

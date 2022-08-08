@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="theme-color" content="#222" />
 	<meta name="description" content="Interactive notes for algebra based physics.">
-	<meta name="author" content="Ross Landgreen">
+	<meta name="author" content="Tony Valsamis">
 	<meta property="og:description" content="Interactive notes for algebra based physics.">
 	<meta property="og:title" content="Physics Notes">
 	<meta name="twitter:title" content="Physics Notes">
@@ -70,10 +70,10 @@
 		<p>We use the symbol <strong>x</strong> for position with meters for units. You might be used to using <strong>x</strong> in other ways, but in physics it is reserved for position.</p>
 		<p>To represent a displacement we subtract the initial position from the final position. We use the Δ symbol to show change.</p>
 		<div class='definition'>
-			<h1>$$ \Delta x = x_f-x_i$$</h1>
+			<h1>$$ \Delta x = x_f-x_0$$</h1>
 			<p>\(\Delta x\) = change in position, displacement [m, meters] <em>vector</em>
 			</p>
-			<p>\(x_i\) = initial position [m, meters] <em>vector</em>
+			<p>\(x_0\) = initial position [m, meters] <em>vector</em>
 			</p>
 			<p>\(x_f\) = final position [m, meters] <em>vector</em>
 			</p>
@@ -96,7 +96,7 @@
 				<summary>solution</summary>
 				$$ \text{final position} = 8848\,\mathrm{m} $$
 				$$\text{initial position} = 5150\,\mathrm{m}$$
-				<br> $$ \Delta x = x_{f}-x_{i}$$
+				<br> $$ \Delta x = x_{f}-x_{0}$$
 				$$ \Delta x = 8848\,\mathrm{m}-5150\,\mathrm{m}$$
 				$$ \Delta x = 3698\,\mathrm{m}$$
 			</details>
@@ -145,7 +145,7 @@
 							Displacement is final position minus initial position.
 							Heading backwards, going slower, or taking a different path doesn't change its value.
 						</p>
-						$$ \Delta x = x_f-x_i$$
+						$$ \Delta x = x_f-x_0$$
 						$$ \Delta x = 1.5 \, \mathrm{km}-0$$
 						$$ \Delta x = 1.5 \, \mathrm{km}$$
 						<br>
@@ -170,9 +170,9 @@
 		<h1 class='underlined' id="time">Time</h1>
 		<p> We keep track of time in the same way as position. We use t as the symbol with seconds as our main unit.</p>
 		<div class='definition'>
-			<h1>$$\Delta t = t_{f}-t_{i}$$</h1>
+			<h1>$$\Delta t = t_{f}-t_{0}$$</h1>
 			<p>\(\Delta t\) = change in time, time period [s, seconds]</p>
-			<p>\(t_i\) = initial time [s, seconds]</p>
+			<p>\(t_0\) = initial time [s, seconds]</p>
 			<p>\(t_f\) = final time [s, seconds]</p>
 		</div>
 		<svg id="motion-2" class="SVG-shadow" viewBox="0 0 580 100">
@@ -194,7 +194,7 @@
 			<details>
 				<summary>solution</summary>
 				<p>We can just focus on the minutes, since the hours didn't change.</p>
-				$$\Delta t = t_{f}-t_{i}$$
+				$$\Delta t = t_{f}-t_{0}$$
 				$$\Delta t = 49\,\mathrm{min}-30\, \mathrm{min}$$
 				$$\Delta t = 19\, \mathrm{min}$$
 			</details>
@@ -206,15 +206,15 @@
 				Each class is 1 hour long with 3 minutes between classes.
 				What time is it at the end of the second period?
 			</p>
-			You can probably solve this in your head, but try using Δt = tf - ti for practice.
+			You can probably solve this in your head, but try using Δt = tf - t0 for practice.
 			<details>
 				<summary>solution</summary>
 
 				$$\Delta t = 1\, \mathrm{hr} + 1 \, \mathrm{hr} + 3\, \mathrm{min}$$
 				$$\Delta t = 2\, \mathrm{hr} + 3\, \mathrm{min}$$
 				<br>
-				$$\Delta t = t_{f}-t_{i}$$
-				$$t_{f} = \Delta t + t_{i}$$
+				$$\Delta t = t_{f}-t_{0}$$
+				$$t_{f} = \Delta t + t_{0}$$
 				$$t_{f} = (2\, \mathrm{hr} + 3\, \mathrm{min}) + (7\, \mathrm{hr} + 30\, \mathrm{min})$$
 				$$t_{f} = 9\, \mathrm{hr} + 33\, \mathrm{min}$$
 			</details>
@@ -395,7 +395,7 @@
 		</p>
 		<div class='definition'>
 			<h1>$$a_{\mathrm{avg}} = \frac{\Delta v}{\Delta t}$$</h1>
-			<p>\(\Delta v\) = change in velocity [m/s] = \(v_f-v_i\)
+			<p>\(\Delta v\) = change in velocity [m/s] = \(v_f-v_0\)
 				<em>vector</em>
 			</p>
 			<p>\(\Delta t\) = time period, change in time [s, seconds]</p>
@@ -417,6 +417,7 @@
 				<path id="arc-4" d="" stroke="none" fill="rgba(255,255,255,1)" />
 			</g>
 		</svg>
+
 
 		<div class='example'>
 			<strong>Example:</strong> A basketball falls off a table and hits the floor in 0.45 s. The ball has a velocity of 4.43 m/s right before it hits the ground. What is the acceleration of the basketball as it falls?
@@ -458,7 +459,7 @@
 				<summary>solution</summary>
 				<div class="col-group">
 					<div>
-						$$\Delta v = v_{f}-v_{i}$$ $$\Delta v = 3 \,\mathrm{ \tfrac{m}{s}} -1\, \mathrm{ \tfrac{m}{s} }$$
+						$$\Delta v = v_{f}-v_{0}$$ $$\Delta v = 3 \,\mathrm{ \tfrac{m}{s}} -1\, \mathrm{ \tfrac{m}{s} }$$
 						$$\Delta v = 2\, \mathrm{\tfrac{m}{s}}$$
 					</div>
 					<div>

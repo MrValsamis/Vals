@@ -9,7 +9,7 @@ eventDates[dayx] = [
 
 let day1a = formatDate(new Date(2022,7,17))
 eventDates[day1a] = [
-  '</br>DAY 1</br><u>In class:</u></br>Welcome to Physics!</br><a href="Documents/Syllabus.pdf">Syllabus</a>, introduction, <a href="https://www.learnapphysics.com/">learnapphysics</a> and <a href="Documents/about_the_tests.pdf">course overview</a></br>Sign up for <a href="Documents/courseflyer.pdf">WileyPlus</a></br>Identity Folders</br></br><u>Homework:</u></br>-Read HRW, Chapter 2 (Motion Along a Straight Line)</br>-Complete Chapter 2 Homework on WileyPlus</br>-Begin working on Identity Folders!',
+  '</br>DAY 1</br><u>In class:</u></br>Welcome to Physics!</br><a href="Documents/Syllabus.pdf" target="_blank" rel="noopener noreferrer">Syllabus</a>, introduction, <a href="https://www.learnapphysics.com/" target="_blank" rel="noopener noreferrer">learnapphysics</a> and <a href="Documents/about_the_tests.pdf" target="_blank" rel="noopener noreferrer">course overview</a></br>Sign up for <a href="Documents/courseflyer.pdf" target="_blank" rel="noopener noreferrer">WileyPlus</a></br>Identity Folders</br></br><u>Homework:</u></br>-Read HRW, Chapter 2 (Motion Along a Straight Line)</br>-Complete Chapter 2 Homework on WileyPlus</br>-Begin working on Identity Folders!',
 ]
 
 // set maxDates

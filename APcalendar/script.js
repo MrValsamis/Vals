@@ -9,7 +9,7 @@ eventDates[dayx] = [
 
 let day1a = formatDate(new Date(2022,7,17))
 eventDates[day1a] = [
-  '</br>DAY 1</br></br><u>In class:</u></br>Welcome to Physics!</br><a href="Documents/Syllabus.pdf">Syllabus</a>, introduction, and course overview</br>Sign up for Wiley Plus</br>student folders</br></br><u>Homework:</u></br></br>-Read HRW, Chapter 2 (Motion Along a Straight Line)</br>-Complete Chapter 2 Homework on WileyPlus</br>-Go to the class website - make sure you can get to the website and bookmark it!</br>Begin working on Identity Folders!',
+  '</br>DAY 1</br></br><u>In class:</u></br>Welcome to Physics!</br><a href="Documents/Syllabus.pdf">Syllabus</a>, introduction, and course overview</br>Sign up for Wiley Plus</br>student folders</br></br><u>Homework:</u></br>-Read HRW, Chapter 2 (Motion Along a Straight Line)</br>-Complete Chapter 2 Homework on WileyPlus</br>-Go to the class website - make sure you can get to the website and bookmark it!</br>-Begin working on Identity Folders!',
 ]
 
 

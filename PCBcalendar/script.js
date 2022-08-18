@@ -1,11 +1,6 @@
 // generate events
 var eventDates = {}
 
-let dayx = formatDate(new Date(2022,7,1,0,0,0,0))
-eventDates[dayx] = [
-
-  'This is Day x',
-]
 
 let day1a = formatDate(new Date(2022,7,17))
 eventDates[day1a] = [
@@ -22,7 +17,6 @@ var maxDate = {
 
 var flatpickr = $('#calendar .placeholder').flatpickr({
   inline: true,
-  minDate: 'today',
   maxDate: maxDate[3]
 ,
   showMonths: 1,

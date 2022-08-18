@@ -12,6 +12,11 @@ eventDates[day1a] = [
   '</br>DAY 1</br><u>In class:</u></br>Welcome to Physics!</br><a href="Documents/Syllabus.pdf" target="_blank" rel="noopener noreferrer">Syllabus</a>, introduction, <a href="https://www.learnapphysics.com/" target="_blank" rel="noopener noreferrer">learnapphysics</a> and <a href="Documents/about_the_tests.pdf" target="_blank" rel="noopener noreferrer">course overview</a></br>Sign up for <a href="Documents/courseflyer.pdf" target="_blank" rel="noopener noreferrer">WileyPlus</a></br>Identity Folders</br></br><u>Homework:</u></br>-Read HRW, Chapter 2 (Motion Along a Straight Line)</br>-Complete Chapter 2 Homework on WileyPlus</br>-Begin working on Identity Folders!',
 ]
 
+let day1b = formatDate(new Date(2022,7,18))
+eventDates[day1a] = [
+  '</br>DAY 1</br><u>In class:</u></br>Identity Folder and <a href="Documents/identity_folder.pdf" target="_blank" rel="noopener noreferrer">handout</a></br>Sign up for Google Classroom (code: fi4smwc)</br>Review <a href="Documents/worksheet_01.pdf" target="_blank" rel="noopener noreferrer"> Mechanics Packet</a></br></br><u>Homework:</u></br>No new HW',
+]
+
 // set maxDates
 var maxDate = {
   1: new Date(new Date().setMonth(new Date().getMonth() + 11)),

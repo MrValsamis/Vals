@@ -17,6 +17,11 @@ eventDates[day1b] = [
   '</br>DAY 2</br><u>In class:</u></br>Identity Folder and <a href="Documents/identity_folder.pdf" target="_blank" rel="noopener noreferrer">handout</a></br>Sign up for Google Classroom (code: fi4smwc)</br>Review <a href="Documents/worksheet_01.pdf" target="_blank" rel="noopener noreferrer"> Mechanics Packet</a></br></br><u>Homework:</u></br>No new HW',
 ]
 
+let day1c = formatDate(new Date(2022,7,19))
+eventDates[day1c] = [
+  '</br>DAY 2</br><u>In class:</u></br>Identity Folder and <a href="Documents/identity_folder.pdf" target="_blank" rel="noopener noreferrer">handout</a></br>Sign up for Google Classroom (code: fi4smwc)</br>Review <a href="Documents/worksheet_01.pdf" target="_blank" rel="noopener noreferrer"> Mechanics Packet</a></br></br><u>Homework:</u></br>No new HW',
+]
+
 // set maxDates
 var maxDate = {
   1: new Date(new Date().setMonth(new Date().getMonth() + 11)),

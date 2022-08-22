@@ -13,6 +13,10 @@ eventDates[day1b] = [
   '</br>DAY 2</br><u>In class:</u></br>Identity Folder and <a href="Documents/identity_folder.pdf" target="_blank" rel="noopener noreferrer">handout</a></br>Sign up for Google Classroom (code: fi4smwc)</br>Review <a href="Documents/worksheet_01.pdf" target="_blank" rel="noopener noreferrer"> Mechanics Packet</a></br></br><u>Homework:</u></br>No new HW',
 ]
 
+let day1c = formatDate(new Date(2022,7,19))
+eventDates[day1c] = [
+  '</br>DAY 3</br><u>In class:</u></br>Sign up for other CollegeBoard courses (<a href="Documents/CBMEC2022.pdf" target="_blank" rel="noopener noreferrer">Mechanics</a> and <a href="Documents/CBEM2022.pdf" target="_blank" rel="noopener noreferrer">E&M</a>)</br>Complete<a href="Documents/worksheet_01.pdf" target="_blank" rel="noopener noreferrer"> Mechanics Review Packet</a></br>Begin discussion on<a href="Documents/a_calculus_primmer.pdf" target="_blank" rel="noopener noreferrer"> Derivatives</a></br></br><u>Homework:</u></br>Due Monday - </br>Complete the packet reading on derivatives</br></br>Due Tuesday - </br>Continue to work on WileyPlus homework (extended)</br>Read HRW, Chapter 3',
+]
 
 // set maxDates
 var maxDate = {

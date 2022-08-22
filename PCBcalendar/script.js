@@ -12,6 +12,11 @@ eventDates[day1b] = [
   '</br>DAY 1</br></br><u>In class:</u></br>First Day Warm Up</br>Welcome to Physics!</br>Learn Names</br>Class overview: <a href="Documents/syllabus_year_22.pdf"  target="_blank" rel="noopener noreferrer">syllabus</a>, materials, whiteboarding, grade weights</br>student info sheets</br><a href="Documents/Science_Model_Discussion_Questions_Day_1.pdf" target="_blank" rel="noopener noreferrer">Modeling Discussion </a></br></br><u>Homework:</u></br></br>-Get and Bring all of your materials and have your binder organized</br>-Go to the class website - make sure you can get to the website and bookmark it!',
 ]
 
+let day2a = formatDate(new Date(2022,7,19))
+eventDates[day2a] = [
+  '</br>DAY 2</br></br><u>In class:</u></br>Waves and Sound Day 1 WU</br>Make Lab Groups</br>Student Info Sheets</br>Sign up for Hewitt Textbook - Information linked HERE</br>Sign up for WebAssign - Information linked HERE</br>Science Modeling Discussion</br>Hanging Slinky Exploration and Discussion.  The questions are HERE.  The PHET simulation is linked HERE</br>If time permits... wave notes and class discussion.</br></br><u>Homework:</u>',
+]
+
 
 // set maxDates
 var maxDate = {

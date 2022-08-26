@@ -1,6 +1,7 @@
 // generate events
 var eventDates = {}
 
+// <a href=""  target="_blank" rel="noopener noreferrer"></a>
 
 let day1a = formatDate(new Date(2022,7,17))
 eventDates[day1a] = [
@@ -22,6 +23,22 @@ eventDates[day2b] = [
   '</br>DAY 2</br></br><u>In class:</u></br><a href="https://docs.google.com/document/d/1iefv7wdN0P37O6l1Q2U8dn6um5eYZzCg8M9CBUStGHE/edit"  target="_blank" rel="noopener noreferrer">Waves and Sound Day 1 WU</a></br>Make Lab Groups</br>Student Info Sheets</br>Sign up for Hewitt Textbook - Information linked <a href="Documents/textbook_registration.pdf"  target="_blank" rel="noopener noreferrer">HERE</a></br>Sign up for WebAssign - Information linked <a href="Documents/webassign_registration.pdf"  target="_blank" rel="noopener noreferrer">HERE</a></br><a href="Documents/Science_Model_Discussion_Questions_Day_1.pdf"  target="_blank" rel="noopener noreferrer">Science Modeling Discussion</a></br>Hanging Slinky Exploration and Discussion.  The questions are <a href="https://docs.google.com/document/d/1U0sQNeimCN0mkQwtNYOFg4YLLM6HN0RwZElM4ZabRck/edit"  target="_blank" rel="noopener noreferrer">HERE</a>.  The PHET simulation is linked <a href="https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_en.html"  target="_blank" rel="noopener noreferrer">HERE</a></br>If time permits... wave notes and class discussion.</br></br><u>Homework:</u></br>Read Hewitt:</br>Section 19.1 (First paragraph only)</br>Sections 19.2-19.5</br>TAKE NOTES!',
 ]
 
+// <a href=""  target="_blank" rel="noopener noreferrer"></a>
+
+let day3a = formatDate(new Date(2022,7,23))
+eventDates[day3a] = [
+  '</br>DAY 3</br></br><u>In class:</u></br><a href="https://docs.google.com/document/d/1xXAXHqiu5hJWhrt9MT5BDr7b43GxG0A20hAhWi8lol4/edit?usp=sharing"  target="_blank" rel="noopener noreferrer">Waves and Sound Day 2 WU</a></br>Hanging Slinky Exploration and Discussion.  The questions are <a href="https://docs.google.com/document/d/1U0sQNeimCN0mkQwtNYOFg4YLLM6HN0RwZElM4ZabRck/edit"  target="_blank" rel="noopener noreferrer">HERE</a>.  The PHET simulation is linked <a href="https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_en.html"  target="_blank" rel="noopener noreferrer">HERE</a></br>Wave Notes and Class Discussion</br>Introduction to Waves notes <a href="https://docs.google.com/presentation/d/1H_CtLTFaMLFhY0LYUTJHbLoM6TKHhN2G/edit?usp=sharing&ouid=109532004889344302086&rtpof=true&sd=true"  target="_blank" rel="noopener noreferrer">HERE</a></br>Interference notes <a href="https://docs.google.com/presentation/d/1pNb923oIpWu3l8juqcBdwGP0fV8DY1W4/edit?usp=sharing&ouid=109532004889344302086&rtpof=true&sd=true"  target="_blank" rel="noopener noreferrer">HERE</a></br>Begin Speed of Sound Lab if time permits</br></br><u>Homework:</u></br>Do AIP (The Activities in Physics Binder) pages 21-22.</br>An extra copy is linked <a href="https://drive.google.com/file/d/1rC0c1nB9DU8TkYQEVK3O6pKXct3fQiEQ/view?usp=sharing"  target="_blank" rel="noopener noreferrer">HERE</a> if you need it.',
+]
+
+let day3b = formatDate(new Date(2022,7,24))
+eventDates[day3b] = [
+  '</br>DAY 3</br></br><u>In class:</u></br><a href="https://docs.google.com/document/d/1xXAXHqiu5hJWhrt9MT5BDr7b43GxG0A20hAhWi8lol4/edit?usp=sharing"  target="_blank" rel="noopener noreferrer">Waves and Sound Day 2 WU</a></br>Hanging Slinky Exploration and Discussion.  The questions are <a href="https://docs.google.com/document/d/1U0sQNeimCN0mkQwtNYOFg4YLLM6HN0RwZElM4ZabRck/edit"  target="_blank" rel="noopener noreferrer">HERE</a>.  The PHET simulation is linked <a href="https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_en.html"  target="_blank" rel="noopener noreferrer">HERE</a></br>Wave Notes and Class Discussion</br>Introduction to Waves notes <a href="https://docs.google.com/presentation/d/1H_CtLTFaMLFhY0LYUTJHbLoM6TKHhN2G/edit?usp=sharing&ouid=109532004889344302086&rtpof=true&sd=true"  target="_blank" rel="noopener noreferrer">HERE</a></br>Interference notes <a href="https://docs.google.com/presentation/d/1pNb923oIpWu3l8juqcBdwGP0fV8DY1W4/edit?usp=sharing&ouid=109532004889344302086&rtpof=true&sd=true"  target="_blank" rel="noopener noreferrer">HERE</a></br>Begin Speed of Sound Lab if time permits</br></br><u>Homework:</u></br>Do AIP (The Activities in Physics Binder) pages 21-22.</br>An extra copy is linked <a href="https://drive.google.com/file/d/1rC0c1nB9DU8TkYQEVK3O6pKXct3fQiEQ/view?usp=sharing"  target="_blank" rel="noopener noreferrer">HERE</a> if you need it.',
+]
+
+let day4a = formatDate(new Date(2022,7,25))
+eventDates[day4a] = [
+  '</br>DAY 3</br></br><u>In class:</u></br></br><u>Homework:</u></br>',
+]
 
 // set maxDates
 var maxDate = {

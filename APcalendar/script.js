@@ -42,7 +42,12 @@ eventDates[day7] = [
 let day8 = formatDate(new Date(2022,7,26))	
 eventDates[day8] = [	
 '</br>DAY 8</br><u>In class:</u></br>Derivatives quiz</br>Finish problem set if time permits</br>Practice integration if time permits</br></br><u>Homework:</u></br>Due Monday (8/29)</br>WileyPlus Chapter 3 Homework</br>Read HRW, Chapter 4; Section 4.6 (relative motion in 1D)</br></br>Due Wednesday (8/31)</br>WileyPlus Chapter 4 Homework</br></br>Due Friday (9/2)</br>Tentative Kinematics Quiz',	
-]	
+]
+
+let day9 = formatDate(new Date(2022,7,29))	
+eventDates[day9] = [	
+'</br>DAY 9</br><u>In class:</u></br>Homework questions</br><a href="https://drive.google.com/file/d/1UUWWRWnXzVj4aaIzTjdpvqdQU8iGOYKP/view?usp=sharing" target="_blank" rel="noopener noreferrer">Wake Up 01</a></br>Banked curve</br>Integration practice</br>Work on HW</br></br><u>Homework:</u></br>Due Wednesday</br>WileyPlus Chapter 4 Homework</br></br>Read HRW, Chapter 5</br>Sections 5.1 - 5.3</br>(Newton\'s 1st and 2nd laws, some particular forces, applying newton\'s laws)</br></br>Due Friday (9/2)</br>Tentative Kinematics Quiz',	
+]
 
 
 // set maxDates

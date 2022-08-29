@@ -35,10 +35,32 @@ eventDates[day3b] = [
   '</br>DAY 3</br></br><u>In class:</u></br><a href="https://docs.google.com/document/d/1xXAXHqiu5hJWhrt9MT5BDr7b43GxG0A20hAhWi8lol4/edit?usp=sharing"  target="_blank" rel="noopener noreferrer">Waves and Sound Day 2 WU</a></br>Hanging Slinky Exploration and Discussion.  The questions are <a href="https://docs.google.com/document/d/1U0sQNeimCN0mkQwtNYOFg4YLLM6HN0RwZElM4ZabRck/edit"  target="_blank" rel="noopener noreferrer">HERE</a>.  The PHET simulation is linked <a href="https://phet.colorado.edu/sims/html/wave-on-a-string/latest/wave-on-a-string_en.html"  target="_blank" rel="noopener noreferrer">HERE</a></br>Wave Notes and Class Discussion</br>Introduction to Waves notes <a href="https://docs.google.com/presentation/d/1H_CtLTFaMLFhY0LYUTJHbLoM6TKHhN2G/edit?usp=sharing&ouid=109532004889344302086&rtpof=true&sd=true"  target="_blank" rel="noopener noreferrer">HERE</a></br>Interference notes <a href="https://docs.google.com/presentation/d/1pNb923oIpWu3l8juqcBdwGP0fV8DY1W4/edit?usp=sharing&ouid=109532004889344302086&rtpof=true&sd=true"  target="_blank" rel="noopener noreferrer">HERE</a></br>Begin Speed of Sound Lab if time permits</br></br><u>Homework:</u></br>Do AIP (The Activities in Physics Binder) pages 21-22.</br>An extra copy is linked <a href="https://drive.google.com/file/d/1rC0c1nB9DU8TkYQEVK3O6pKXct3fQiEQ/view?usp=sharing"  target="_blank" rel="noopener noreferrer">HERE</a> if you need it.',
 ]
 
-let day4a = formatDate(new Date(2022,7,25))
-eventDates[day4a] = [
-  '</br>DAY 3</br></br><u>In class:</u></br></br><u>Homework:</u></br>',
+let day4a = formatDate(new Date(2022,7,25))	
+eventDates[day4a] = [	
+'</br>DAY 4</br><u>In class:</u></br><a href="https://docs.google.com/document/d/18S5LHVfIA4oYiXemxILSCHgoGe-3rPAt/edit?usp=sharing&ouid=109532004889344302086&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Waves and Sound Day 3 WU</a></br>Go over homework</br>Finish wave notes and answer questions</br>Speed of Sound lab</br>Gather data</br>Discuss and analyze results</br>If time...discuss lab report</br></br><u>Homework:</u></br>Wave terms quiz next class</br>If you would like some extra wave term review, check this <a href="https://drive.google.com/file/d/0B07WtBZCowP0aUpmUE1nQVRiWHc/view?usp=sharing&resourcekey=0-D4HjSAoTOfGReKqfyrFEyA" target="_blank" rel="noopener noreferrer">video</a></br></br><a href="https://docs.google.com/document/d/1UqnG52ISAfEPCUwJSXZhDcgk92BH6s9JV20vUQdlIhU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Speed of Sound lab</a></br>(open and make a copy) due in 3 classes',	
 ]
+
+let day4b = formatDate(new Date(2022,7,26))	
+eventDates[day4b] = [	
+'</br>DAY 4</br><u>In class:</u></br><a href="https://docs.google.com/document/d/18S5LHVfIA4oYiXemxILSCHgoGe-3rPAt/edit?usp=sharing&ouid=109532004889344302086&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Waves and Sound Day 3 WU</a></br>Go over homework</br>Finish wave notes and answer questions</br>Speed of Sound lab</br>Gather data</br>Discuss and analyze results</br>If time...discuss lab report</br></br><u>Homework:</u></br>Wave terms quiz next class</br>If you would like some extra wave term review, check this <a href="https://drive.google.com/file/d/0B07WtBZCowP0aUpmUE1nQVRiWHc/view?usp=sharing&resourcekey=0-D4HjSAoTOfGReKqfyrFEyA" target="_blank" rel="noopener noreferrer">video</a></br></br><a href="https://docs.google.com/document/d/1UqnG52ISAfEPCUwJSXZhDcgk92BH6s9JV20vUQdlIhU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Speed of Sound lab</a></br>(open and make a copy) due in 3 classes',	
+]		
+
+let day5a = formatDate(new Date(2022,7,29))	
+eventDates[day5a] = [	
+'</br>DAY 5</br><u>In class:</u></br><a href="https://docs.google.com/document/d/1eYEMhEPpP7552osF02ES-0gz1t3U7HJG/edit?usp=sharing&ouid=109532004889344302086&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Waves and Sound Day 4 WU</a></br>Waves quiz</br>Finish Speed of Sound lab</br>Finish data collection</br>Discuss and analyze results</br><a href="https://docs.google.com/forms/d/e/1FAIpQLSeV7mkt2pp5j3SPcQCz5xHY4xPelyQZxXM06PIGQnT2jHouJQ/viewform" target="_blank" rel="noopener noreferrer">Submit average</a></br>Accuracy and Precision</br>Lab report expectations</br>Graphing help is located <a href="https://docs.google.com/document/d/1RECUez5ZNAz5jYsaUNJoWHSLXbdRgRGjh3vlqEdeU6E/edit?usp=sharing" target="_blank" rel="noopener noreferrer">HERE</a></br></br><u>Homework:</u></br><a href="https://docs.google.com/document/d/1UqnG52ISAfEPCUwJSXZhDcgk92BH6s9JV20vUQdlIhU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Speed of Sound lab</a></br>(open and make a copy) due in 2 classes',	
+]	
+
+let day5b = formatDate(new Date(2022,7,30))	
+eventDates[day5b] = [	
+'</br>DAY 5</br><u>In class:</u></br><a href="https://docs.google.com/document/d/1eYEMhEPpP7552osF02ES-0gz1t3U7HJG/edit?usp=sharing&ouid=109532004889344302086&rtpof=true&sd=true" target="_blank" rel="noopener noreferrer">Waves and Sound Day 4 WU</a></br>Waves quiz</br>Finish Speed of Sound lab</br>Finish data collection</br>Discuss and analyze results</br><a href="https://docs.google.com/forms/d/e/1FAIpQLSeV7mkt2pp5j3SPcQCz5xHY4xPelyQZxXM06PIGQnT2jHouJQ/viewform" target="_blank" rel="noopener noreferrer">Submit average</a></br>Accuracy and Precision</br>Lab report expectations</br>Graphing help is located <a href="https://docs.google.com/document/d/1RECUez5ZNAz5jYsaUNJoWHSLXbdRgRGjh3vlqEdeU6E/edit?usp=sharing" target="_blank" rel="noopener noreferrer">HERE</a></br></br><u>Homework:</u></br><a href="https://docs.google.com/document/d/1UqnG52ISAfEPCUwJSXZhDcgk92BH6s9JV20vUQdlIhU/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Speed of Sound lab</a></br>(open and make a copy) due in 2 classes',	
+]
+
+let day7c = formatDate(new Date(2022,8,5))	
+eventDates[day7c] = [	
+'No class - Labor Day</br>',	
+]	
+	
+
 
 // set maxDates
 var maxDate = {

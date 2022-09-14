@@ -1,8 +1,0 @@
-/src
-/node_modules
-/examples
-/tests
-webpack.config.js
-webpack.dev.js
-.gitignore
-.npmignore

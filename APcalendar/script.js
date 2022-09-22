@@ -98,6 +98,36 @@ eventDates[day19] = [
 '</br>DAY 19</br><u>In class:</u></br>Begin with lab pendulum activity</br>Work as integral</br>WU 04 frame 2</br>Time for homework</br></br><u>Homework:</u></br>Due Tuesday (9/13)</br>WileyPlus Chapter 6 Homework</br>Due Wednesday (9/14)</br>Read HRW, Chapter 7 and 8</br>Due Thursday (9/15)</br>WileyPlus Chapter 7 Homework</br>Due Monday (9/19)</br>WileyPlus Chapter 8 Homework</br></br>Will likely test on forces AND energy toward the end of the week of 9/19',	
 ]	
 
+let day20 = formatDate(new Date(2022,8,14))	
+eventDates[day20] = [	
+'</br>DAY 20</br><u>In class:</u></br>Finish with WU 04 frame 2</br></br><u>Homework:</u></br>Due Wednesday (9/14)</br>Read HRW, Chapter 7 and 8</br>Due Thursday (9/15)</br>WileyPlus Chapter 7 Homework</br>Due Monday (9/19)</br>WileyPlus Chapter 8 Homework</br>Will likely test on forces AND energy toward the end of the week of 9/19',	
+]	
+
+let day21 = formatDate(new Date(2022,8,15))	
+eventDates[day21] = [	
+'</br>DAY 21</br><u>In class:</u></br>Finish Work Integral</br>Worksheet 02 (handout)</br>Force example problem</br></br><u>Homework:</u></br>Due Friday (9/15)</br>WileyPlus Chapter 7</br></br>Due Monday (9/19)</br>WileyPlus Chapter 8 Homework</br></br>Will likely test on forces AND energy Friday 9/23',	
+]	
+
+let day22 = formatDate(new Date(2022,8,16))	
+eventDates[day22] = [	
+'</br>DAY 22</br><u>In class:</u></br>WileyPlus Chapter 7 HW questions</br>Worksheet 02 (handout)</br>Force example problem</br></br><u>Homework:</u></br>Due Friday (9/15)</br>WileyPlus Chapter 7</br></br>Due Monday (9/19)</br>WileyPlus Chapter 8 Homework</br></br>Will likely test on forces AND energy Friday 9/23',	
+]	
+
+let day23 = formatDate(new Date(2022,8,19))	
+eventDates[day23] = [	
+'</br>DAY 23</br><u>In class:</u></br>Go over homework</br>Worksheet 02 (handout)</br><a href="https://drive.google.com/file/d/17VxAIi2yGNHXsoKoP9bkQDyfkA_83Qm6/view?usp=sharing" target="_blank" rel="noopener noreferrer">Whiteboard: ap_wb_01(energy).pdf</a></br></br><u>Homework:</u></br>Due Tuesday (9/20)</br>WileyPlus Chapter 8 Homework</br></br>Will likely test on forces AND energy Friday 9/23',	
+]	
+
+let day24 = formatDate(new Date(2022,8,20))	
+eventDates[day24] = [	
+'</br>DAY 24</br><u>In class:</u></br>Whiteboard: <a href="https://drive.google.com/file/d/17VxAIi2yGNHXsoKoP9bkQDyfkA_83Qm6/view?usp=sharing" target="_blank" rel="noopener noreferrer">ap_wb_01(energy).pdf</a></br></br><u>Homework:</u></br>Due Tuesday (9/20)</br>WileyPlus Chapter 8 Homework</br></br>Will likely test on forces AND energy Friday 9/23',	
+]	
+
+let day25 = formatDate(new Date(2022,8,21))	
+eventDates[day25] = [	
+'</br>DAY 25</br><u>In class:</u></br>Whiteboard: <a href="https://drive.google.com/file/d/17VxAIi2yGNHXsoKoP9bkQDyfkA_83Qm6/view?usp=sharing" target="_blank" rel="noopener noreferrer">ap_wb_01(energy).pdf</a></br><a href="https://www.valsamisphysics.com/APcalendar/Documents/ap_wb_01_solutions.pdf" target="_blank" rel="noopener noreferrer">Whiteboard Solutions</a></br>Pendulum (Energy) Lab!</br><a href="https://drive.google.com/file/d/18D63OUrUMbmGovn4X-v9tow8_sRhLHTy/view?usp=sharing" target="_blank" rel="noopener noreferrer">Part 2 of Energy Lab Java Simulation.pdf</a></br></br><u>Homework:</u></br>Will likely test on forces AND energy Friday 9/23',	
+]	
+
 // set maxDates
 var maxDate = {
   1: new Date(new Date().setMonth(new Date().getMonth() + 11)),

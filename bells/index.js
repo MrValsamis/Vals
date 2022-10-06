@@ -5,7 +5,7 @@ let startMinutes = 440;
 let timeMode = 0;
 let date = new Date();
 let stopwatchStart;
-const MinutesInDay = 7 * 60 + 10 + 10;
+const MinutesInDay = 8 * 60 + 10;
 let scale = 200 / MinutesInDay * 2.5;
 let centerOnNow = true;
 
@@ -39,105 +39,77 @@ const schedule = {
   },
   regular: [{
       start: 0,
-      long: 7 * 60 + 30,
+      long: 8 * 60,
       name: "",
       showName: false,
       fill: color.passing
     },
     {
-      start: 7 * 60 + 30,
-      long: 60,
-      name: "P1",
-      showName: true,
-      fill: color.period
-    },
-    {
-      start: 8 * 60 + 30,
-      long: 3,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 8 * 60 + 33,
-      long: 60,
-      name: "P2",
+      start: 8 * 60,
+      long: 1 * 60 + 33,
+      name: "Block 1",
       showName: true,
       fill: color.period
     },
     {
       start: 9 * 60 + 33,
-      long: 15,
-      name: "snack",
-      showName: false,
-      fill: color.lunch
-    },
-    {
-      start: 9 * 60 + 48,
-      long: 3,
+      long: 9,
       name: "",
       showName: false,
       fill: color.passing
     },
     {
-      start: 9 * 60 + 51,
-      long: 60,
-      name: "P3",
+      start: 9 * 60 + 42,
+      long: 1 * 60 + 30,
+      name: "Block 2",
       showName: true,
       fill: color.period
     },
     {
-      start: 10 * 60 + 51,
-      long: 3,
+      start: 11*60 + 12,
+      long: 9,
       name: "",
       showName: false,
       fill: color.passing
     },
     {
-      start: 10 * 60 + 54,
-      long: 60,
-      name: "P4",
+      start: 11 * 60 + 21,
+      long: 45,
+      name: "L1",
       showName: true,
       fill: color.period
     },
     {
-      start: 11 * 60 + 54,
-      long: 30,
-      name: "lunch",
-      showName: false,
-      fill: color.lunch
+      start: 12 * 60 + 6,
+      long: 45,
+      name: "L2",
+      showName: true,
+      fill: color.period
     },
     {
-      start: 12 * 60 + 24,
-      long: 3,
+      start: 12 * 60 + 51,
+      long: 45,
+      name: "L3",
+      showName: true,
+      fill: color.period
+    },
+    {
+      start: 13 * 60 + 36,
+      long: 9,
       name: "",
       showName: false,
       fill: color.passing
     },
     {
-      start: 12 * 60 + 27,
-      long: 60,
-      name: "P5",
+      start: 13 * 60 + 45,
+      long: 1 * 60 + 30,
+      name: "Block 4",
       showName: true,
       fill: color.period
     },
     {
-      start: 13 * 60 + 27,
-      long: 3,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 13 * 60 + 30,
-      long: 60,
-      name: "P6",
-      showName: true,
-      fill: color.period
-    },
-    {
-      start: 14 * 60 + 30,
-      long: 9 * 60 + 30,
+      start: 15 * 60 + 15,
+      long: 8 * 60 + 45,
       name: "",
       showName: false,
       fill: color.passing

@@ -18,9 +18,9 @@ const schedule = {
   current: "regular",
   mouse: 0,
   setCurrentByDate: function () {
-    // if (schedule.current != "rally" || date.getHours() > 22) {
+    // if (schedule.current != "assembly" || date.getHours() > 22) {
     //   if (date.getDay() === 5) {
-    //     schedule.current = "advisory";
+    //     schedule.current = "late_arrival";
     //   } else {
     //     schedule.current = "regular";
     //   }
@@ -29,10 +29,10 @@ const schedule = {
   },
   cycleCurrent: function () {
     if (schedule.current === "regular") {
-      schedule.current = "advisory";
-    } else if (schedule.current === "advisory") {
-      schedule.current = "rally";
-    } else if (schedule.current === "rally") {
+      schedule.current = "late_arrival";
+    } else if (schedule.current === "late_arrival") {
+      schedule.current = "assembly";
+    } else if (schedule.current === "assembly") {
       schedule.current = "regular";
     }
     update(false);
@@ -115,234 +115,157 @@ const schedule = {
       fill: color.passing
     }
   ],
-  advisory: [{
+  late_arrival: [{
       start: 0,
-      long: 7 * 60 + 30,
+      long: 10 * 60,
       name: "",
       showName: false,
       fill: color.passing
     },
     {
-      start: 7 * 60 + 30,
-      long: 55,
-      name: "P1",
-      showName: true,
-      fill: color.period
-    },
-    {
-      start: 8 * 60 + 25,
-      long: 3,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 8 * 60 + 28,
-      long: 55,
-      name: "P2",
-      showName: true,
-      fill: color.period
-    },
-    {
-      start: 9 * 60 + 23,
-      long: 15,
-      name: "snack",
-      showName: false,
-      fill: color.lunch
-    },
-    {
-      start: 9 * 60 + 38,
-      long: 3,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 9 * 60 + 41,
-      long: 26,
-      name: "A",
-      showName: true,
-      fill: color.period
-    },
-    {
-      start: 10 * 60 + 07,
-      long: 3,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 10 * 60 + 10,
-      long: 55,
-      name: "P3",
+      start: 10 * 60,
+      long: 1 * 60 + 5,
+      name: "Block 1",
       showName: true,
       fill: color.period
     },
     {
       start: 11 * 60 + 5,
-      long: 3,
+      long: 5,
       name: "",
       showName: false,
       fill: color.passing
     },
     {
-      start: 11 * 60 + 8,
-      long: 55,
-      name: "P4",
+      start: 11 * 60 + 10,
+      long: 60,
+      name: "Block 2",
       showName: true,
       fill: color.period
     },
     {
-      start: 12 * 60 + 03,
-      long: 27,
-      name: "lunch",
-      showName: false,
-      fill: color.lunch
-    },
-    {
-      start: 12 * 60 + 30,
-      long: 3,
+      start: 12 * 60 + 10,
+      long: 5,
       name: "",
       showName: false,
       fill: color.passing
     },
     {
-      start: 12 * 60 + 33,
-      long: 58,
-      name: "P5",
+      start: 12 * 60 + 15,
+      long: 40,
+      name: "L1",
       showName: true,
       fill: color.period
     },
     {
-      start: 13 * 60 + 31,
-      long: 3,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 13 * 60 + 34,
-      long: 56,
-      name: "P6",
-      showName: true,
-      fill: color.period
-    },
-    {
-      start: 14 * 60 + 30,
-      long: 9 * 60 + 30,
-      name: "",
-      showName: false,
-      fill: color.passing
-    }
-  ],
-  rally: [{
-      start: 0,
-      long: 7 * 60 + 30,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 7 * 60 + 30,
-      long: 50,
-      name: "P1",
-      showName: true,
-      fill: color.period
-    },
-    {
-      start: 8 * 60 + 20,
-      long: 3,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 8 * 60 + 23,
-      long: 50,
-      name: "P2",
-      showName: true,
-      fill: color.period
-    },
-    {
-      start: 9 * 60 + 13,
-      long: 15,
-      name: "snack",
-      showName: false,
-      fill: color.lunch
-    },
-    {
-      start: 9 * 60 + 28,
-      long: 3,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 9 * 60 + 31,
-      long: 50,
-      name: "P3",
-      showName: true,
-      fill: color.period
-    },
-    {
-      start: 10 * 60 + 21,
-      long: 3,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 10 * 60 + 24,
-      long: 50,
-      name: "P4",
-      showName: true,
-      fill: color.period
-    },
-    {
-      start: 11 * 60 + 14,
-      long: 30,
-      name: "lunch",
-      showName: false,
-      fill: color.lunch
-    },
-    {
-      start: 11 * 60 + 44,
-      long: 3,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 11 * 60 + 47,
-      long: 50,
-      name: "P5",
-      showName: true,
-      fill: color.period
-    },
-    {
-      start: 12 * 60 + 37,
-      long: 3,
-      name: "",
-      showName: false,
-      fill: color.passing
-    },
-    {
-      start: 12 * 60 + 40,
-      long: 50,
-      name: "P6",
+      start: 12 * 60 + 50,
+      long: 40,
+      name: "L2",
       showName: true,
       fill: color.period
     },
     {
       start: 13 * 60 + 30,
-      long: 60,
-      name: "Rally",
+      long: 40,
+      name: "L3",
       showName: true,
       fill: color.period
     },
     {
-      start: 14 * 60 + 30,
-      long: 9 * 60 + 30,
+      start: 14 * 60 + 10,
+      long: 5,
+      name: "",
+      showName: false,
+      fill: color.passing
+    },
+    {
+      start: 14 * 60 + 15,
+      long: 60,
+      name: "Block 4",
+      showName: true,
+      fill: color.period
+    },
+    {
+      start: 15 * 60 + 15,
+      long: 8 * 60 + 45,
+      name: "",
+      showName: false,
+      fill: color.passing
+    }
+  ],
+  assembly: [{
+      start: 0,
+      long: 8 * 60,
+      name: "",
+      showName: false,
+      fill: color.passing
+    },
+    {
+      start: 8 * 60,
+      long: 1 * 60 + 33,
+      name: "Block 1",
+      showName: true,
+      fill: color.period
+    },
+    {
+      start: 9 * 60 + 33,
+      long: 9,
+      name: "",
+      showName: false,
+      fill: color.passing
+    },
+    {
+      start: 9 * 60 + 42,
+      long: 1 * 60 + 30,
+      name: "Block 2",
+      showName: true,
+      fill: color.period
+    },
+    {
+      start: 11*60 + 12,
+      long: 9,
+      name: "",
+      showName: false,
+      fill: color.passing
+    },
+    {
+      start: 11 * 60 + 21,
+      long: 45,
+      name: "L1",
+      showName: true,
+      fill: color.period
+    },
+    {
+      start: 12 * 60 + 6,
+      long: 45,
+      name: "L2",
+      showName: true,
+      fill: color.period
+    },
+    {
+      start: 12 * 60 + 51,
+      long: 45,
+      name: "L3",
+      showName: true,
+      fill: color.period
+    },
+    {
+      start: 13 * 60 + 36,
+      long: 9,
+      name: "",
+      showName: false,
+      fill: color.passing
+    },
+    {
+      start: 13 * 60 + 45,
+      long: 1 * 60 + 30,
+      name: "Block 4",
+      showName: true,
+      fill: color.period
+    },
+    {
+      start: 15 * 60 + 15,
+      long: 8 * 60 + 45,
       name: "",
       showName: false,
       fill: color.passing

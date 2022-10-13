@@ -16,8 +16,6 @@ let defaultPeriods = [
   ],
   [],
   [],
-  [],
-  [],
   []
 ];
 
@@ -51,8 +49,6 @@ let local = JSON.parse(localStorage.getItem("allPeriods"));
 if (!local) {
   console.log("No local period rosters found. Resetting to empty classes.");
   local = [
-    [],
-    [],
     [],
     [],
     [],
@@ -91,7 +87,7 @@ let p = new Vue({
     //   fr.onload = e => {
     //     var result = JSON.parse(JSON.parse(e.target.result));
     //     //convert from old system
-    //     let converted = [[], [], [], [], [], []];
+    //     let converted = [[], [], [], []];
     //     for (j = 0; j < result.length; ++j) {
     //       for (i = 0, len = result[j].length; i < len; ++i) {
     //         converted[j].push({

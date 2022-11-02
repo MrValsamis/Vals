@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <title>angular-momentum-examples-89fb6186-ef31-4e9e-9256-10c92d8a6d2e</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.mathpix.com/fonts/cmu.css"/>
+    <style>
+  html,body {
+    width: 100%;
+    height: 100%;
+  }
+  *, *::before,*::after {
+    box-sizing: border-box;
+  }
+  @-ms-viewport {
+    width: device-width;
+  }
+  body {
+    margin: 0;
+    color: #1E2029;
+    font-size: 14px;
+    line-height: normal;
+  }
+  hr {
+    box-sizing: content-box;
+    height: 0;
+    overflow: visible;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: rgba(0, 0, 0, 0.85);
+    font-weight: 500;
+  }
+  p {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  ol, ul, dl {
+    margin-top: 0;
+    margin-bottom: 1em;
+  }
+  ol ol, ul ul, ol ul, ul ol {
+    margin-bottom: 0;
+  }
+  dt {
+    font-weight: 500;
+  }
+  dd {
+    margin-bottom: 0.5em;
+    margin-left: 0;
+  }
+  blockquote {
+    margin: 0 0 1em;
+  }
+  dfn {
+    font-style: italic;
+  }
+  b, strong {
+    font-weight: bolder;
+  }
+  small {
+    font-size: 80%;
+  }
+  sub, sup {
+    position: relative;
+    font-size: 75%;
+    line-height: 0;
+    vertical-align: baseline;
+  }
+  sub {
+    bottom: -0.25em;
+  }
+  sup {
+    top: -0.5em;
+  }
+  a {
+    color: #0B93ff;
+    text-decoration: none;
+    background-color: transparent;
+    outline: none;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  a:hover {
+    color: #33aaff;
+  }
+  a:active {
+    color: #0070d9;
+  }
+  a:active, a:hover {
+    text-decoration: none;
+    outline: 0;
+  }
+  a[disabled] {
+    color: rgba(0, 0, 0, 0.25)
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+  pre, code, kbd, samp {
+    font-size: 1em;
+  }
+  pre {
+    margin-top: 0;
+    margin-bottom: 1em;
+    overflow: auto;
+  }
+  figure {
+    margin: 0 0 1em;
+  }
+  img {
+    vertical-align: middle;
+    border-style: none;
+  }
+  svg:not(:root) {
+    overflow: hidden;
+  }
+  table {
+    border-collapse: collapse;
+  }
+  caption {
+    padding-top: 0.75em;
+    padding-bottom: 0.3em;
+    color: rgba(0, 0, 0, 0.45)
+    text-align: left;
+    caption-side: bottom;
+  }
+  th {
+    text-align: inherit;
+  }
+
+mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"] > svg a {
+  fill: blue;
+  stroke: blue;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+    #setText > div {
+        justify-content: inherit;
+        margin-top: 0;
+        margin-bottom: 1em;
+        
+        
+    }
+    
+    
+    
+    #setText div:last-child {
+        margin-bottom: 0 !important;
+    }
+
+    #setText > br, #preview-content br {
+        line-height: 1.2;
+    }
+
+    #preview-content > div {
+        margin-top: 0;
+        margin-bottom: 1em;
+        
+    }
+
+    #preview-content table {
+      margin-bottom: 1em;
+    }
+
+    #setText table {
+      margin-bottom: 1em;
+    }
+
+    mjx-container {
+      text-indent: 0;
+      overflow-y: visible !important;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      
+      
+    }
+    
+    
+    
+    .math-inline mjx-container {
+        display: inline-block !important;
+        page-break-inside: avoid;
+    }
+    .math-block {
+        align-items: center;
+        min-width: min-content;
+        page-break-after: auto;
+        page-break-inside: avoid;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .math-block p {
+        flex-shrink: 1;
+    }
+    .math-block mjx-container {
+        margin: 0 !important;
+    }
+    .math-error {
+        background-color: yellow;
+        color: red;
+    }
+
+    #preview-content svg, #setText svg { min-width: initial !important;}
+
+    #preview-content img, #setText img {
+        max-width: 100%;
+    }
+    
+    #preview-content blockquote,  #setText blockquote {
+        page-break-inside: avoid;
+        color: #666;
+        margin: 0 0 1em 0;
+        padding-left: 3em;
+        border-left: .5em solid #eee;
+    }
+
+    #preview-content pre, #setText pre {
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+        padding: 0.5em;
+        background: #f8f8fa;
+    }
+    .empty {
+        text-align: center;
+        font-size: 18px;
+        padding: 50px 0 !important;
+    }
+
+    #setText table, #preview-content table {
+        display: block; 
+        overflow: auto;
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: avoid;
+    }
+      
+    #setText table th, #preview-content table th {
+        text-align: center;
+        font-weight: bold;
+    }
+    
+    #setText table td, #preview-content table td,
+    #setText table th, #preview-content table th {
+        border: 1px solid #dfe2e5;
+        padding: 6px 13px;
+    }
+      
+    #setText table tr, #preview-content table tr {
+        background-color: #fff;
+        border-top: 1px solid #c6cbd1;
+    }
+    
+    #setText table tr:nth-child(2n), #preview-content table tr:nth-child(2n) {
+        background-color: #f6f8fa;
+    }
+
+    
+    #setText .main-title, #setText .author, #preview-content .main-title, #preview-content .author  {
+        text-align: center;
+        margin: 0 auto;
+    }
+    
+    #preview-content .main-title, #setText .main-title {
+        line-height: 1.2;
+        margin-bottom: 1em;
+    }
+
+    #preview-content .author, #setText .author  {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #preview-content .author p, #setText .author p {
+        min-width: 30%;
+        max-width: 50%;
+        padding: 0 7px;
+    }
+
+    #preview-content .author > p > span, #setText .author > p > span {
+        display: block;
+        text-align: center;
+    }
+
+    #preview-content .section-title, #setText .section-title {
+        margin-top: 1.5em;
+    }
+
+    #preview-content .abstract, #setText .abstract {
+        text-align: justify;
+        margin-bottom: 1em;
+    }
+
+    #preview-content .abstract p, #setText .abstract p {
+        margin-bottom: 0;
+    }
+
+    @media print {
+
+      #preview {
+        font-size: 10pt!important;
+      }
+
+      svg {
+        shape-rendering: crispEdges;
+      }
+
+      .math-block svg, math-inline svg {
+        margin-top: 1px;
+      }
+
+      #preview-content img, #setText img {
+        display: block;
+      }
+      
+      #preview-content .figure_img img, #setText .figure_img img {
+        display: inline;
+      }
+
+      .preview-right {
+        word-break: break-word;
+      }
+
+      #preview-content h1, #setText h1 {
+        page-break-inside: avoid;
+        position: relative;
+        border: 2px solid transparent;
+      }
+  
+      #preview-content h1::after, #setText h1::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-bottom: -100px;
+        position: relative;
+      }
+  
+      #preview-content h2, #setText h2 {
+        page-break-inside: avoid;
+        position: relative;
+        border: 2px solid transparent;
+      }
+  
+      #preview-content h2::after, #setText h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-bottom: -100px;
+        position: relative;
+      }
+  
+      #preview-content h3, #setText h3 {
+        page-break-inside: avoid;
+        position: relative;
+        border: 2px solid transparent;
+      }
+  
+      #preview-content h3::after, #setText h3::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-bottom: -100px;
+        position: relative;
+      }
+  
+      #preview-content h4, #setText h4 {
+        page-break-inside: avoid;
+        position: relative;
+        border: 2px solid transparent;
+      }
+  
+      #preview-content h4::after, #setText h4::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-bottom: -100px;
+        position: relative;
+      }
+  
+      #preview-content h5, #setText h5 {
+        page-break-inside: avoid;
+        position: relative;
+        border: 2px solid transparent;
+      }
+  
+      #preview-content h5::after, #setText h5::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-bottom: -100px;
+        position: relative;
+      }
+  
+      #preview-content h6, #setText h6 {
+        page-break-inside: avoid;
+        position: relative;
+        border: 2px solid transparent;
+      }
+  
+      #preview-content h6::after, #setText h6::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-bottom: -100px;
+        position: relative;
+      }
+    }
+    #preview-content sup, #setText sup {
+      top: -.5em;
+      position: relative;
+      font-size: 75%;
+      line-height: 0;
+      vertical-align: baseline;
+    }
+    
+    #preview-content .text-url, #setText .text-url {
+      color: #0B93ff;
+      cursor: text;
+      pointer-events: none;
+    }
+    
+    #preview-content .text-url a:hover, #setText .text-url a:hover {
+      color: #0B93ff;
+    }
+
+    #preview-content code, #setText code {
+      font-family: Inconsolata;
+      font-size: inherit;
+      display: initial;
+      background: #f8f8fa;
+    }
+    #preview-content pre code, #setText pre code {
+      font-size: inherit;
+      display: block;
+      color: #333;
+      overflow-x: auto;
+      font-size: 15px;
+    }
+
+    .hljs-comment,
+    .hljs-quote {
+      color: #998;
+      font-style: italic;
+    }
+
+    .hljs-command {
+      color: #005cc5;
+    }
+
+    .hljs-keyword,
+    .hljs-selector-tag,
+    .hljs-subst {
+      color: #d73a49;
+      font-weight: bold;
+    }
+
+    .hljs-number,
+    .hljs-literal,
+    .hljs-variable,
+    .hljs-template-variable,
+    .hljs-tag .hljs-attr {
+      color: #005cc5;
+    }
+
+    .hljs-string,
+    .hljs-doctag {
+      color: #24292e;
+    }
+
+    .hljs-title,
+    .hljs-section,
+    .hljs-selector-id {
+      color: #6f42c1;
+      font-weight: bold;
+    }
+
+    .hljs-subst {
+      font-weight: normal;
+    }
+
+    .hljs-type,
+    .hljs-class .hljs-title {
+      color: #458;
+      font-weight: bold;
+    }
+
+    .hljs-tag,
+    .hljs-name,
+    .hljs-attribute {
+      color: #000080;
+      font-weight: normal;
+    }
+
+    .hljs-regexp,
+    .hljs-link {
+      color: #009926;
+    }
+
+    .hljs-symbol,
+    .hljs-bullet {
+      color: #990073;
+    }
+
+    .hljs-built_in,
+    .hljs-builtin-name {
+      color: #24292e;
+    }
+
+    .hljs-meta {
+      color: #999;
+      font-weight: bold;
+    }
+
+    .hljs-meta-keyword {
+      color: #d73a49;
+    }
+
+    .hljs-meta-string {
+      color: #032f62;
+    }
+
+    .hljs-deletion {
+      background: #fdd;
+    }
+
+    .hljs-addition {
+      background: #dfd;
+    }
+
+    .hljs-emphasis {
+      font-style: italic;
+    }
+
+    .hljs-strong {
+      font-weight: bold;
+    }
+
+    .table_tabular table th,  .table_tabular table th {
+        border: none !important;
+        padding: 6px 13px;
+    }
+      
+    #tabular tr, #tabular tr {
+        border-top: none !important;
+        border-bottom: none !important;
+    }
+    #tabular td, #tabular td {
+        border-style: none !important;
+        background-color: #fff;
+        border-color: #000 !important;
+        word-break: keep-all;
+        padding: 0.1em 0.5em !important;
+    }
+    #tabular {
+        display: inline !important;
+    }
+    #tabular td > p {
+        margin-bottom: 0;
+        margin-top: 0;
+    }
+    #tabular td._empty {
+      height: 1.3em;
+    }
+    #tabular td .f {
+      opacity: 0;
+    }
+    
+    html[data-theme="dark"] #tabular tr, html[data-theme="dark"] #tabular td {
+      background-color: #202226;
+      border-color: #fff !important;
+    }  
+    .table_tabular {
+        overflow-x: auto;
+        padding: 0 2px 0.5em 2px;
+    }
+    .figure_img {
+       margin-bottom: 0.5em;
+       overflow-x: auto;
+    }
+
+  ol.enumerate, ul.itemize {
+    padding-inline-start: 40px;
+  }
+/* It's commented because counter not supporting to change value 
+  ol.enumerate.lower-alpha {
+    counter-reset: item ;
+    list-style-type: none !important;
+  }
+  .enumerate.lower-alpha > li {
+    position: relative;
+  }
+  .enumerate.lower-alpha > li:before { 
+    content: "("counter(item, lower-alpha)")"; 
+    counter-increment: item; 
+    position: absolute;
+    left: -47px;
+    width: 47px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 7px;
+    flex-wrap: nowrap;
+    word-break: keep-all;
+  }
+  */
+  
+  .itemize > li {
+    position: relative;
+  }
+  .itemize > li > span.li_level { 
+    position: absolute;
+    left: -40px;
+    width: 40px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    box-sizing: border-box;
+  }
+
+  #preview {
+    font-family: 'CMU Serif', 'Georgia', Helvetica, Arial, sans-serif;
+    font-size: 17px;
+    visibility: visible;
+    word-break: break-word;
+    padding: 2.5em;
+    max-width: 800px;
+    margin: auto;
+    box-sizing: content-box;
+  }
+
+  #preview h1, #preview h2, #preview h3, #preview h4, #preview h5, #preview strong {
+    font-family: 'CMU Serif Bold', 'Georgia', Helvetica, Arial, sans-serif;
+  }
+
+  #preview  i, #preview  em {
+    font-family: 'CMU Serif Italic', 'Georgia', Helvetica, Arial, sans-serif;
+  }
+
+  .mmd-menu {
+    max-width: 320px;
+    position: absolute;
+    background-color: white;
+    color: black;
+    width: auto;
+    padding: 5px 0px;
+    border: 1px solid #E5E6EB;
+    margin: 0;
+    cursor: default;
+    font: menu;
+    text-align: left;
+    text-indent: 0;
+    text-transform: none;
+    line-height: normal;
+    letter-spacing: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    float: none;
+    z-index: 201;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -khtml-border-radius: 5px;
+    box-shadow: 0px 10px 20px #808080;
+    -webkit-box-shadow: 0px 10px 20px #808080;
+    -moz-box-shadow: 0px 10px 20px #808080;
+    -khtml-box-shadow: 0px 10px 20px #808080; 
+  }
+  
+  .mmd-menu:focus { outline: none; }
+  
+  .mmd-menu.mmd-menu-sm {
+    max-width: 100vw;
+    padding-bottom: 34px;
+    border-radius: 0;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -khtml-border-radius: 0;
+  }
+
+  .mmd-menu-item-icon {
+    color: #1e2029;
+    margin-left: auto;
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    display: none; 
+  }
+
+  .mmd-menu-item {
+    padding-bottom: 8px;
+    padding-top: 8px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    display: flex;
+    background: transparent; 
+    height: 52px;
+    max-height: 52px;
+  }
+  .mmd-menu-item:focus { outline: none; }
+
+  .mmd-menu-item.active {
+    background-color: #e1e0e5; 
+  }
+
+  .mmd-menu-item.active .mmd-menu-item-icon {
+    display: flex; 
+  }
+
+  .mmd-menu-item-container {
+    overflow: hidden; 
+  }
+
+  .mmd-menu-item-title {
+    color: #1e2029;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+    line-height: 20px; 
+  }
+
+  .mmd-menu-item-value {
+    color: #7d829c;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 16px; 
+  }
+  
+  html[data-theme="dark"] .mmd-menu-item-title {
+    color: #ebefe7;
+  } 
+  html[data-theme="dark"] .mmd-menu-item.active .mmd-menu-item-title {
+    color: #1e2029;
+  }
+  html[data-theme="dark"] .mmd-menu {
+    background-color: #33363a;
+  }
+  
+  .mmd-context-menu-overlay{
+    background: rgba(0, 0, 0, 0.56);
+  }
+  </style>
+</head>
+<body>
+  <div id="preview" class="preview scrollEditor">
+    <div id="container-ruller" />
+    <div id="preview-content">
+      <div id="container-ruller"></div><div id="preview-content" class="preview-content-note"><h1 count_line="1" data_line="0,1" data_line_end="0" data_line_start="0" class="preview-paragraph-0 preview-line 0" id="null">Angular Momentum Examples</h1>
+<h4 id="ex-1.-angular-momentum-about-the-origin" class="preview-paragraph-2 preview-line 2" data_line_start="2" data_line_end="2" data_line="2,3" count_line="1">Ex 1.  Angular Momentum About the Origin</h4>
+<div class="preview-paragraph-4 preview-line 4" data_line_start="4" data_line_end="4" data_line="4,5" count_line="1">Find the angular momentum about the origin for the following situations:</div>
+<div class="preview-paragraph-6 preview-line 6" data_line_start="6" data_line_end="6" data_line="6,7" count_line="1">(a) A car of mass <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1200</mn>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">k</mi>
+    <mi mathvariant="normal">g</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1200</mn>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">k</mi>
+    <mi mathvariant="normal">g</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">1200kg</asciimath><latex style="display: none">1200 \mathrm{~kg}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.466ex" xmlns="http://www.w3.org/2000/svg" width="7.416ex" height="2.036ex" role="img" focusable="false" viewBox="0 -694 3278 900" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(500, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1500, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2000, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="6B" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T97 124T98 167T98 217T98 272T98 329Q98 366 98 407T98 482T98 542T97 586T97 603Q94 622 83 628T38 637H20V660Q20 683 22 683L32 684Q42 685 61 686T98 688Q115 689 135 690T165 693T176 694H179V463L180 233L240 287Q300 341 304 347Q310 356 310 364Q310 383 289 385H284V431H293Q308 428 412 428Q475 428 484 431H489V385H476Q407 380 360 341Q286 278 286 274Q286 273 349 181T420 79Q434 60 451 53T500 46H511V0H505Q496 3 418 3Q322 3 307 0H299V46H306Q330 48 330 65Q330 72 326 79Q323 84 276 153T228 222L176 176V120V84Q176 65 178 59T189 49Q210 46 238 46H254V0H246Q231 3 137 3T28 0H20V46H36Z"></path></g><g data-mml-node="mi" transform="translate(778, 0)"><path data-c="67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1200</mn><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi></mrow></math></mjx-assistive-mml></mjx-container></span> moves in a counterclockwise circle in the <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mi>y</mi>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mi>y</mi>
+</math></mathmlword><asciimath style="display: none;">xy</asciimath><latex style="display: none">x y</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="2.403ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 1062 647" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mi" transform="translate(572, 0)"><path data-c="79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mi>y</mi></math></mjx-assistive-mml></mjx-container></span> plane of radius <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>20</mn>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>20</mn>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">20m</asciimath><latex style="display: none">20 \mathrm{~m}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.05ex" xmlns="http://www.w3.org/2000/svg" width="4.713ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 2083 688" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1000, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>20</mn><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">m</mi></mrow></math></mjx-assistive-mml></mjx-container></span> with a speed of <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>15</mn>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+  <mrow>
+    <mo>/</mo>
+  </mrow>
+  <mrow>
+    <mi mathvariant="normal">s</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>15</mn>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+  <mrow>
+    <mo>/</mo>
+  </mrow>
+  <mrow>
+    <mi mathvariant="normal">s</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">15m//s</asciimath><latex style="display: none">15 \mathrm{~m} / \mathrm{s}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="6.735ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 2977 1000" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(500, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1000, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2083, 0)"><g data-mml-node="mo"><path data-c="2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2583, 0)"><g data-mml-node="mi"><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>15</mn><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">m</mi></mrow><mrow><mo>/</mo></mrow><mrow><mi mathvariant="normal">s</mi></mrow></math></mjx-assistive-mml></mjx-container></span>;</div>
+<div class="preview-paragraph-9 preview-line 9" data_line_start="9" data_line_end="9" data_line="9,10" count_line="1"><div class="figure_img" style="text-align: center; "><img src="https://cdn.mathpix.com/snip/images/7FDSq1I-snF0hbv_JMyW-_NDDbX4e6nvOBDdPRfMSCg.original.fullsize.png" style="width: 187.5px; "></div></div>
+<div class="preview-paragraph-12 preview-line 12" data_line_start="12" data_line_end="12" data_line="12,13" count_line="1">(b) A uniform disk in the <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mi>y</mi>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>x</mi>
+  <mi>y</mi>
+</math></mathmlword><asciimath style="display: none;">xy</asciimath><latex style="display: none">x y</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.464ex" xmlns="http://www.w3.org/2000/svg" width="2.403ex" height="1.464ex" role="img" focusable="false" viewBox="0 -442 1062 647" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="78" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mi" transform="translate(572, 0)"><path data-c="79" d="M21 287Q21 301 36 335T84 406T158 442Q199 442 224 419T250 355Q248 336 247 334Q247 331 231 288T198 191T182 105Q182 62 196 45T238 27Q261 27 281 38T312 61T339 94Q339 95 344 114T358 173T377 247Q415 397 419 404Q432 431 462 431Q475 431 483 424T494 412T496 403Q496 390 447 193T391 -23Q363 -106 294 -155T156 -205Q111 -205 77 -183T43 -117Q43 -95 50 -80T69 -58T89 -48T106 -45Q150 -45 150 -87Q150 -107 138 -122T115 -142T102 -147L99 -148Q101 -153 118 -160T152 -167H160Q177 -167 186 -165Q219 -156 247 -127T290 -65T313 -9T321 21L315 17Q309 13 296 6T270 -6Q250 -11 231 -11Q185 -11 150 11T104 82Q103 89 103 113Q103 170 138 262T173 379Q173 380 173 381Q173 390 173 393T169 400T158 404H154Q131 404 112 385T82 344T65 302T57 280Q55 278 41 278H27Q21 284 21 287Z"></path></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>x</mi><mi>y</mi></math></mjx-assistive-mml></mjx-container></span> plane of radius <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>20</mn>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>20</mn>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">20m</asciimath><latex style="display: none">20 \mathrm{~m}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.05ex" xmlns="http://www.w3.org/2000/svg" width="4.713ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 2083 688" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1000, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>20</mn><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">m</mi></mrow></math></mjx-assistive-mml></mjx-container></span> and mass <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1200</mn>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">k</mi>
+    <mi mathvariant="normal">g</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>1200</mn>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">k</mi>
+    <mi mathvariant="normal">g</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">1200kg</asciimath><latex style="display: none">1200 \mathrm{~kg}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.466ex" xmlns="http://www.w3.org/2000/svg" width="7.416ex" height="2.036ex" role="img" focusable="false" viewBox="0 -694 3278 900" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(500, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1000, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1500, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2000, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="6B" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T97 124T98 167T98 217T98 272T98 329Q98 366 98 407T98 482T98 542T97 586T97 603Q94 622 83 628T38 637H20V660Q20 683 22 683L32 684Q42 685 61 686T98 688Q115 689 135 690T165 693T176 694H179V463L180 233L240 287Q300 341 304 347Q310 356 310 364Q310 383 289 385H284V431H293Q308 428 412 428Q475 428 484 431H489V385H476Q407 380 360 341Q286 278 286 274Q286 273 349 181T420 79Q434 60 451 53T500 46H511V0H505Q496 3 418 3Q322 3 307 0H299V46H306Q330 48 330 65Q330 72 326 79Q323 84 276 153T228 222L176 176V120V84Q176 65 178 59T189 49Q210 46 238 46H254V0H246Q231 3 137 3T28 0H20V46H36Z"></path></g><g data-mml-node="mi" transform="translate(778, 0)"><path data-c="67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>1200</mn><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi></mrow></math></mjx-assistive-mml></mjx-container></span> rotates at <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.75</mn>
+  <mrow>
+    <mi mathvariant="normal">r</mi>
+    <mi mathvariant="normal">a</mi>
+    <mi mathvariant="normal">d</mi>
+  </mrow>
+  <mrow>
+    <mo>/</mo>
+  </mrow>
+  <mrow>
+    <mi mathvariant="normal">s</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>0.75</mn>
+  <mrow>
+    <mi mathvariant="normal">r</mi>
+    <mi mathvariant="normal">a</mi>
+    <mi mathvariant="normal">d</mi>
+  </mrow>
+  <mrow>
+    <mo>/</mo>
+  </mrow>
+  <mrow>
+    <mi mathvariant="normal">s</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">0.75rad//s</asciimath><latex style="display: none">0.75 \mathrm{rad} / \mathrm{s}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="9.321ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 4120 1000" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500, 0)"></path><path data-c="37" d="M55 458Q56 460 72 567L88 674Q88 676 108 676H128V672Q128 662 143 655T195 646T364 644H485V605L417 512Q408 500 387 472T360 435T339 403T319 367T305 330T292 284T284 230T278 162T275 80Q275 66 275 52T274 28V19Q270 2 255 -10T221 -22Q210 -22 200 -19T179 0T168 40Q168 198 265 368Q285 400 349 489L395 552H302Q128 552 119 546Q113 543 108 522T98 479L95 458V455H55V458Z" transform="translate(778, 0)"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(1278, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1778, 0)"><g data-mml-node="mi"><path data-c="72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"></path></g><g data-mml-node="mi" transform="translate(392, 0)"><path data-c="61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"></path></g><g data-mml-node="mi" transform="translate(892, 0)"><path data-c="64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(3226, 0)"><g data-mml-node="mo"><path data-c="2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(3726, 0)"><g data-mml-node="mi"><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>0.75</mn><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow><mrow><mo>/</mo></mrow><mrow><mi mathvariant="normal">s</mi></mrow></math></mjx-assistive-mml></mjx-container></span> along its axis, which is the z axis.</div>
+<div class="preview-paragraph-15 preview-line 15" data_line_start="15" data_line_end="15" data_line="15,16" count_line="1"><div class="figure_img" style="text-align: center; "><img src="https://cdn.mathpix.com/snip/images/SvKD1wqWj_lrpko6yMJ3xvvQyiNgOjuOP9pFjPqbW0s.original.fullsize.png" style="width: 187.5px; "></div></div>
+<hr>
+<h4 id="ex-2-.-rotating-earth" class="preview-paragraph-18 preview-line 18" data_line_start="18" data_line_end="18" data_line="18,19" count_line="1">Ex 2 . Rotating Earth</h4>
+<div class="preview-paragraph-20 preview-line 20" data_line_start="20" data_line_end="20" data_line="20,21" count_line="1">What is the angular momentum of the Earth as it rotates on its axis? (Assume a uniform sphere.)</div>
+<div class="preview-paragraph-22 preview-line 22" data_line_start="22" data_line_end="22" data_line="22,23" count_line="1"><div class="figure_img" style="text-align: center; "><img src="https://cdn.mathpix.com/snip/images/F5DaSWopEVSvPUljZlMGm8zUBnCFdDQbEgMDZXuNXKM.original.fullsize.png" style="width: 125px; "></div></div>
+<hr>
+<h4 id="ex-3.-orbiting-earth" class="preview-paragraph-26 preview-line 26" data_line_start="26" data_line_end="26" data_line="26,27" count_line="1">Ex 3.  Orbiting Earth</h4>
+<div class="preview-paragraph-27 preview-line 27" data_line_start="27" data_line_end="27" data_line="27,28" count_line="1">What is the angular momentum of the Earth as it orbits the Sun? (only from orbit, not rotation)</div>
+<div class="preview-paragraph-31 preview-line 31" data_line_start="31" data_line_end="31" data_line="31,32" count_line="1"><div class="figure_img" style="text-align: center; "><img src="https://media1.giphy.com/media/VGbUTteIsJG4QwCUen/giphy.gif?cid=ecf05e47gsrp2wg0umxfvw0iwhp2u07u0bhxr5xmxnwrt0oe&amp;rid=giphy.gif&amp;ct=g" style="width: 312.5px; "></div></div>
+<hr>
+<h4 id="ex-4.-windmill" class="preview-paragraph-34 preview-line 34" data_line_start="34" data_line_end="34" data_line="34,35" count_line="1">Ex 4. Windmill</h4>
+<div class="preview-paragraph-36 preview-line 36" data_line_start="36" data_line_end="36" data_line="36,37" count_line="1">In a light wind, a windmill experiences a constant torque of <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>255</mn>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">N</mi>
+  </mrow>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>255</mn>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">N</mi>
+  </mrow>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">255Nm</asciimath><latex style="display: none">255 \mathrm{~N} \mathrm{~m}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.05ex" xmlns="http://www.w3.org/2000/svg" width="8.106ex" height="1.595ex" role="img" focusable="false" viewBox="0 -683 3583 705" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(500, 0)"></path><path data-c="35" d="M164 157Q164 133 148 117T109 101H102Q148 22 224 22Q294 22 326 82Q345 115 345 210Q345 313 318 349Q292 382 260 382H254Q176 382 136 314Q132 307 129 306T114 304Q97 304 95 310Q93 314 93 485V614Q93 664 98 664Q100 666 102 666Q103 666 123 658T178 642T253 634Q324 634 389 662Q397 666 402 666Q410 666 410 648V635Q328 538 205 538Q174 538 149 544L139 546V374Q158 388 169 396T205 412T256 420Q337 420 393 355T449 201Q449 109 385 44T229 -22Q148 -22 99 32T50 154Q50 178 61 192T84 210T107 214Q132 214 148 197T164 157Z" transform="translate(1000, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1500, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="4E" d="M42 46Q74 48 94 56T118 69T128 86V634H124Q114 637 52 637H25V683H232L235 680Q237 679 322 554T493 303L578 178V598Q572 608 568 613T544 627T492 637H475V683H483Q498 680 600 680Q706 680 715 683H724V637H707Q634 633 622 598L621 302V6L614 0H600Q585 0 582 3T481 150T282 443T171 605V345L172 86Q183 50 257 46H274V0H265Q250 3 150 3Q48 3 33 0H25V46H42Z"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2500, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>255</mn><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">N</mi></mrow><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">m</mi></mrow></math></mjx-assistive-mml></mjx-container></span>. <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle scriptlevel="0">
+    <mspace width="thickmathspace"></mspace>
+  </mstyle>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle scriptlevel="0">
+    <mspace width="thickmathspace"></mspace>
+  </mstyle>
+</math></mathmlword><latex style="display: none">\;</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="0.628ex" height="0" role="img" focusable="false" viewBox="0 0 277.8 0" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mstyle"><g data-mml-node="mspace"></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle scriptlevel="0"><mspace width="thickmathspace"></mspace></mstyle></math></mjx-assistive-mml></mjx-container></span><span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle scriptlevel="0">
+    <mspace width="thickmathspace"></mspace>
+  </mstyle>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mstyle scriptlevel="0">
+    <mspace width="thickmathspace"></mspace>
+  </mstyle>
+</math></mathmlword><latex style="display: none">\;</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="0.628ex" height="0" role="img" focusable="false" viewBox="0 0 277.8 0" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mstyle"><g data-mml-node="mspace"></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mstyle scriptlevel="0"><mspace width="thickmathspace"></mspace></mstyle></math></mjx-assistive-mml></mjx-container></span>If the windmill is initially at rest, what is its angular momentum after <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.00</mn>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">s</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.00</mn>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">s</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">2.00s</asciimath><latex style="display: none">2.00 \mathrm{~s}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.05ex" xmlns="http://www.w3.org/2000/svg" width="5.48ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 2422 688" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(778, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1278, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1778, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2.00</mn><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">s</mi></mrow></math></mjx-assistive-mml></mjx-container></span> ?</div>
+<hr>
+<h4 id="ex-5.-merry-go-round" class="preview-paragraph-39 preview-line 39" data_line_start="39" data_line_end="39" data_line="39,40" count_line="1">Ex 5. Merry-go-round</h4>
+<div class="preview-paragraph-40 preview-line 40" data_line_start="40" data_line_end="40" data_line="40,41" count_line="1">Running with a speed of <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4.10</mn>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+  <mrow>
+    <mo>/</mo>
+  </mrow>
+  <mrow>
+    <mi mathvariant="normal">s</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>4.10</mn>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+  <mrow>
+    <mo>/</mo>
+  </mrow>
+  <mrow>
+    <mi mathvariant="normal">s</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">4.10m//s</asciimath><latex style="display: none">4.10 \mathrm{~m} / \mathrm{s}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="8.495ex" height="2.262ex" role="img" focusable="false" viewBox="0 -750 3755 1000" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500, 0)"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(778, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1278, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1778, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(2861, 0)"><g data-mml-node="mo"><path data-c="2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(3361, 0)"><g data-mml-node="mi"><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>4.10</mn><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">m</mi></mrow><mrow><mo>/</mo></mrow><mrow><mi mathvariant="normal">s</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, a <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>21.2</mn>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">k</mi>
+    <mi mathvariant="normal">g</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>21.2</mn>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">k</mi>
+    <mi mathvariant="normal">g</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">21.2kg</asciimath><latex style="display: none">21.2 \mathrm{~kg}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.466ex" xmlns="http://www.w3.org/2000/svg" width="6.914ex" height="2.036ex" role="img" focusable="false" viewBox="0 -694 3056 900" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z" transform="translate(500, 0)"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(1000, 0)"></path><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z" transform="translate(1278, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1778, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="6B" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T97 124T98 167T98 217T98 272T98 329Q98 366 98 407T98 482T98 542T97 586T97 603Q94 622 83 628T38 637H20V660Q20 683 22 683L32 684Q42 685 61 686T98 688Q115 689 135 690T165 693T176 694H179V463L180 233L240 287Q300 341 304 347Q310 356 310 364Q310 383 289 385H284V431H293Q308 428 412 428Q475 428 484 431H489V385H476Q407 380 360 341Q286 278 286 274Q286 273 349 181T420 79Q434 60 451 53T500 46H511V0H505Q496 3 418 3Q322 3 307 0H299V46H306Q330 48 330 65Q330 72 326 79Q323 84 276 153T228 222L176 176V120V84Q176 65 178 59T189 49Q210 46 238 46H254V0H246Q231 3 137 3T28 0H20V46H36Z"></path></g><g data-mml-node="mi" transform="translate(778, 0)"><path data-c="67" d="M329 409Q373 453 429 453Q459 453 472 434T485 396Q485 382 476 371T449 360Q416 360 412 390Q410 404 415 411Q415 412 416 414V415Q388 412 363 393Q355 388 355 386Q355 385 359 381T368 369T379 351T388 325T392 292Q392 230 343 187T222 143Q172 143 123 171Q112 153 112 133Q112 98 138 81Q147 75 155 75T227 73Q311 72 335 67Q396 58 431 26Q470 -13 470 -72Q470 -139 392 -175Q332 -206 250 -206Q167 -206 107 -175Q29 -140 29 -75Q29 -39 50 -15T92 18L103 24Q67 55 67 108Q67 155 96 193Q52 237 52 292Q52 355 102 398T223 442Q274 442 318 416L329 409ZM299 343Q294 371 273 387T221 404Q192 404 171 388T145 343Q142 326 142 292Q142 248 149 227T179 192Q196 182 222 182Q244 182 260 189T283 207T294 227T299 242Q302 258 302 292T299 343ZM403 -75Q403 -50 389 -34T348 -11T299 -2T245 0H218Q151 0 138 -6Q118 -15 107 -34T95 -74Q95 -84 101 -97T122 -127T170 -155T250 -167Q319 -167 361 -139T403 -75Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>21.2</mn><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">k</mi><mi mathvariant="normal">g</mi></mrow></math></mjx-assistive-mml></mjx-container></span> child heads toward the rim of a merry-go-round of radius <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.00</mn>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>2.00</mn>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">2.00m</asciimath><latex style="display: none">2.00 \mathrm{~m}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.05ex" xmlns="http://www.w3.org/2000/svg" width="6.473ex" height="1.557ex" role="img" focusable="false" viewBox="0 -666 2861 688" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(778, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1278, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1778, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>2.00</mn><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">m</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, as shown.</div>
+<div class="preview-paragraph-42 preview-line 42" data_line_start="42" data_line_end="42" data_line="42,43" count_line="1"><div class="figure_img" style="text-align: center; "><img src="https://cdn.mathpix.com/snip/images/MdxpgIa3rrIpVjFnF4t_FMTq0kB7PqD-Nfgl8aIuTSQ.original.fullsize.png" style="width: 312.5px; "></div></div>
+<div class="preview-paragraph-44 preview-line 44" data_line_start="44" data_line_end="44" data_line="44,45" count_line="1">What is the child's angular momentum <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mi>L</mi>
+</math></mathmlword><asciimath style="display: none;">L</asciimath><latex style="display: none">L</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: 0" xmlns="http://www.w3.org/2000/svg" width="1.541ex" height="1.545ex" role="img" focusable="false" viewBox="0 -683 681 683" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="4C" d="M228 637Q194 637 192 641Q191 643 191 649Q191 673 202 682Q204 683 217 683Q271 680 344 680Q485 680 506 683H518Q524 677 524 674T522 656Q517 641 513 637H475Q406 636 394 628Q387 624 380 600T313 336Q297 271 279 198T252 88L243 52Q243 48 252 48T311 46H328Q360 46 379 47T428 54T478 72T522 106T564 161Q580 191 594 228T611 270Q616 273 628 273H641Q647 264 647 262T627 203T583 83T557 9Q555 4 553 3T537 0T494 -1Q483 -1 418 -1T294 0H116Q32 0 32 10Q32 17 34 24Q39 43 44 45Q48 46 59 46H65Q92 46 125 49Q139 52 144 61Q147 65 216 339T285 628Q285 635 228 637Z"></path></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mi>L</mi></math></mjx-assistive-mml></mjx-container></span> with respect to the center of the merry-go-round?</div>
+<hr>
+<h4 id="ex-6.-collapsing-star" class="preview-paragraph-47 preview-line 47" data_line_start="47" data_line_end="47" data_line="47,48" count_line="1">Ex 6.  Collapsing Star</h4>
+<div class="preview-paragraph-49 preview-line 49" data_line_start="49" data_line_end="49" data_line="49,50" count_line="1">A star of radius <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mi>i</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>2.3</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>8</mn>
+  </msup>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mi>i</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>2.3</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mn>8</mn>
+  </msup>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">R_(i)=2.3 xx10^(8)m</asciimath><latex style="display: none">R_i=2.3 \times 10^8 \mathrm{~m}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.357ex" xmlns="http://www.w3.org/2000/svg" width="16.682ex" height="2.312ex" role="img" focusable="false" viewBox="0 -864 7373.5 1021.8" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="52" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"></path></g><g data-mml-node="mi" transform="translate(759, -150) scale(0.707)"><path data-c="69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="mo" transform="translate(1330.7, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(2386.5, 0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500, 0)"></path><path data-c="33" d="M127 463Q100 463 85 480T69 524Q69 579 117 622T233 665Q268 665 277 664Q351 652 390 611T430 522Q430 470 396 421T302 350L299 348Q299 347 308 345T337 336T375 315Q457 262 457 175Q457 96 395 37T238 -22Q158 -22 100 21T42 130Q42 158 60 175T105 193Q133 193 151 175T169 130Q169 119 166 110T159 94T148 82T136 74T126 70T118 67L114 66Q165 21 238 21Q293 21 321 74Q338 107 338 175V195Q338 290 274 322Q259 328 213 329L171 330L168 332Q166 335 166 348Q166 366 174 366Q202 366 232 371Q266 376 294 413T322 525V533Q322 590 287 612Q265 626 240 626Q208 626 181 615T143 592T132 580H135Q138 579 143 578T153 573T165 566T175 555T183 540T186 520Q186 498 172 481T127 463Z" transform="translate(778, 0)"></path></g><g data-mml-node="mo" transform="translate(3886.7, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msup" transform="translate(4887, 0)"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path></g><g data-mml-node="mn" transform="translate(1000, 393.1) scale(0.707)"><path data-c="38" d="M70 417T70 494T124 618T248 666Q319 666 374 624T429 515Q429 485 418 459T392 417T361 389T335 371T324 363L338 354Q352 344 366 334T382 323Q457 264 457 174Q457 95 399 37T249 -22Q159 -22 101 29T43 155Q43 263 172 335L154 348Q133 361 127 368Q70 417 70 494ZM286 386L292 390Q298 394 301 396T311 403T323 413T334 425T345 438T355 454T364 471T369 491T371 513Q371 556 342 586T275 624Q268 625 242 625Q201 625 165 599T128 534Q128 511 141 492T167 463T217 431Q224 426 228 424L286 386ZM250 21Q308 21 350 55T392 137Q392 154 387 169T375 194T353 216T330 234T301 253T274 270Q260 279 244 289T218 306L210 311Q204 311 181 294T133 239T107 157Q107 98 150 60T250 21Z"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(6290.5, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>R</mi><mi>i</mi></msub><mo>=</mo><mn>2.3</mn><mo>×</mo><msup><mn>10</mn><mn>8</mn></msup><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">m</mi></mrow></math></mjx-assistive-mml></mjx-container></span> rotates initially with an angular speed of <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>i</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>2.4</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow>
+      <mo>−</mo>
+      <mn>6</mn>
+    </mrow>
+  </msup>
+  <mrow>
+    <mi mathvariant="normal">r</mi>
+    <mi mathvariant="normal">a</mi>
+    <mi mathvariant="normal">d</mi>
+  </mrow>
+  <mrow>
+    <mo>/</mo>
+  </mrow>
+  <mrow>
+    <mi mathvariant="normal">s</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>i</mi>
+  </msub>
+  <mo>=</mo>
+  <mn>2.4</mn>
+  <mo>×</mo>
+  <msup>
+    <mn>10</mn>
+    <mrow>
+      <mo>−</mo>
+      <mn>6</mn>
+    </mrow>
+  </msup>
+  <mrow>
+    <mi mathvariant="normal">r</mi>
+    <mi mathvariant="normal">a</mi>
+    <mi mathvariant="normal">d</mi>
+  </mrow>
+  <mrow>
+    <mo>/</mo>
+  </mrow>
+  <mrow>
+    <mi mathvariant="normal">s</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">omega _(i)=2.4 xx10^(-6)rad//s</asciimath><latex style="display: none">\omega_i=2.4 \times 10^{-6} \mathrm{rad} / \mathrm{s}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.566ex" xmlns="http://www.w3.org/2000/svg" width="20.465ex" height="2.52ex" role="img" focusable="false" viewBox="0 -864 9045.6 1114" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="3C9" d="M495 384Q495 406 514 424T555 443Q574 443 589 425T604 364Q604 334 592 278T555 155T483 38T377 -11Q297 -11 267 66Q266 68 260 61Q201 -11 125 -11Q15 -11 15 139Q15 230 56 325T123 434Q135 441 147 436Q160 429 160 418Q160 406 140 379T94 306T62 208Q61 202 61 187Q61 124 85 100T143 76Q201 76 245 129L253 137V156Q258 297 317 297Q348 297 348 261Q348 243 338 213T318 158L308 135Q309 133 310 129T318 115T334 97T358 83T393 76Q456 76 501 148T546 274Q546 305 533 325T508 357T495 384Z"></path></g><g data-mml-node="mi" transform="translate(622, -150) scale(0.707)"><path data-c="69" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g><g data-mml-node="mo" transform="translate(1193.7, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(2249.5, 0)"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(500, 0)"></path><path data-c="34" d="M462 0Q444 3 333 3Q217 3 199 0H190V46H221Q241 46 248 46T265 48T279 53T286 61Q287 63 287 115V165H28V211L179 442Q332 674 334 675Q336 677 355 677H373L379 671V211H471V165H379V114Q379 73 379 66T385 54Q393 47 442 46H471V0H462ZM293 211V545L74 212L183 211H293Z" transform="translate(778, 0)"></path></g><g data-mml-node="mo" transform="translate(3749.7, 0)"><path data-c="D7" d="M630 29Q630 9 609 9Q604 9 587 25T493 118L389 222L284 117Q178 13 175 11Q171 9 168 9Q160 9 154 15T147 29Q147 36 161 51T255 146L359 250L255 354Q174 435 161 449T147 471Q147 480 153 485T168 490Q173 490 175 489Q178 487 284 383L389 278L493 382Q570 459 587 475T609 491Q630 491 630 471Q630 464 620 453T522 355L418 250L522 145Q606 61 618 48T630 29Z"></path></g><g data-mml-node="msup" transform="translate(4750, 0)"><g data-mml-node="mn"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path></g><g data-mml-node="TeXAtom" transform="translate(1000, 393.1) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mo"><path data-c="2212" d="M84 237T84 250T98 270H679Q694 262 694 250T679 230H98Q84 237 84 250Z"></path></g><g data-mml-node="mn" transform="translate(778, 0)"><path data-c="36" d="M42 313Q42 476 123 571T303 666Q372 666 402 630T432 550Q432 525 418 510T379 495Q356 495 341 509T326 548Q326 592 373 601Q351 623 311 626Q240 626 194 566Q147 500 147 364L148 360Q153 366 156 373Q197 433 263 433H267Q313 433 348 414Q372 400 396 374T435 317Q456 268 456 210V192Q456 169 451 149Q440 90 387 34T253 -22Q225 -22 199 -14T143 16T92 75T56 172T42 313ZM257 397Q227 397 205 380T171 335T154 278T148 216Q148 133 160 97T198 39Q222 21 251 21Q302 21 329 59Q342 77 347 104T352 209Q352 289 347 316T329 361Q302 397 257 397Z"></path></g></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(6703.6, 0)"><g data-mml-node="mi"><path data-c="72" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T98 122T98 161T98 203Q98 234 98 269T98 328L97 351Q94 370 83 376T38 385H20V408Q20 431 22 431L32 432Q42 433 60 434T96 436Q112 437 131 438T160 441T171 442H174V373Q213 441 271 441H277Q322 441 343 419T364 373Q364 352 351 337T313 322Q288 322 276 338T263 372Q263 381 265 388T270 400T273 405Q271 407 250 401Q234 393 226 386Q179 341 179 207V154Q179 141 179 127T179 101T180 81T180 66V61Q181 59 183 57T188 54T193 51T200 49T207 48T216 47T225 47T235 46T245 46H276V0H267Q249 3 140 3Q37 3 28 0H20V46H36Z"></path></g><g data-mml-node="mi" transform="translate(392, 0)"><path data-c="61" d="M137 305T115 305T78 320T63 359Q63 394 97 421T218 448Q291 448 336 416T396 340Q401 326 401 309T402 194V124Q402 76 407 58T428 40Q443 40 448 56T453 109V145H493V106Q492 66 490 59Q481 29 455 12T400 -6T353 12T329 54V58L327 55Q325 52 322 49T314 40T302 29T287 17T269 6T247 -2T221 -8T190 -11Q130 -11 82 20T34 107Q34 128 41 147T68 188T116 225T194 253T304 268H318V290Q318 324 312 340Q290 411 215 411Q197 411 181 410T156 406T148 403Q170 388 170 359Q170 334 154 320ZM126 106Q126 75 150 51T209 26Q247 26 276 49T315 109Q317 116 318 175Q318 233 317 233Q309 233 296 232T251 223T193 203T147 166T126 106Z"></path></g><g data-mml-node="mi" transform="translate(892, 0)"><path data-c="64" d="M376 495Q376 511 376 535T377 568Q377 613 367 624T316 637H298V660Q298 683 300 683L310 684Q320 685 339 686T376 688Q393 689 413 690T443 693T454 694H457V390Q457 84 458 81Q461 61 472 55T517 46H535V0Q533 0 459 -5T380 -11H373V44L365 37Q307 -11 235 -11Q158 -11 96 50T34 215Q34 315 97 378T244 442Q319 442 376 393V495ZM373 342Q328 405 260 405Q211 405 173 369Q146 341 139 305T131 211Q131 155 138 120T173 59Q203 26 251 26Q322 26 373 103V342Z"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(8151.6, 0)"><g data-mml-node="mo"><path data-c="2F" d="M423 750Q432 750 438 744T444 730Q444 725 271 248T92 -240Q85 -250 75 -250Q68 -250 62 -245T56 -231Q56 -221 230 257T407 740Q411 750 423 750Z"></path></g></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(8651.6, 0)"><g data-mml-node="mi"><path data-c="73" d="M295 316Q295 356 268 385T190 414Q154 414 128 401Q98 382 98 349Q97 344 98 336T114 312T157 287Q175 282 201 278T245 269T277 256Q294 248 310 236T342 195T359 133Q359 71 321 31T198 -10H190Q138 -10 94 26L86 19L77 10Q71 4 65 -1L54 -11H46H42Q39 -11 33 -5V74V132Q33 153 35 157T45 162H54Q66 162 70 158T75 146T82 119T101 77Q136 26 198 26Q295 26 295 104Q295 133 277 151Q257 175 194 187T111 210Q75 227 54 256T33 318Q33 357 50 384T93 424T143 442T187 447H198Q238 447 268 432L283 424L292 431Q302 440 314 448H322H326Q329 448 335 442V310L329 304H301Q295 310 295 316Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>ω</mi><mi>i</mi></msub><mo>=</mo><mn>2.4</mn><mo>×</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>6</mn></mrow></msup><mrow><mi mathvariant="normal">r</mi><mi mathvariant="normal">a</mi><mi mathvariant="normal">d</mi></mrow><mrow><mo>/</mo></mrow><mrow><mi mathvariant="normal">s</mi></mrow></math></mjx-assistive-mml></mjx-container></span>.</div>
+<div class="preview-paragraph-51 preview-line 51" data_line_start="51" data_line_end="51" data_line="51,52" count_line="1">If the star collapses to a neutron star of radius <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mi>f</mi>
+  </msub>
+  <mo>=</mo>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>R</mi>
+    <mi>f</mi>
+  </msub>
+  <mo>=</mo>
+</math></mathmlword><asciimath style="display: none;">R_(f)=</asciimath><latex style="display: none">R_f=</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.667ex" xmlns="http://www.w3.org/2000/svg" width="5.099ex" height="2.213ex" role="img" focusable="false" viewBox="0 -683 2253.7 978" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="52" d="M230 637Q203 637 198 638T193 649Q193 676 204 682Q206 683 378 683Q550 682 564 680Q620 672 658 652T712 606T733 563T739 529Q739 484 710 445T643 385T576 351T538 338L545 333Q612 295 612 223Q612 212 607 162T602 80V71Q602 53 603 43T614 25T640 16Q668 16 686 38T712 85Q717 99 720 102T735 105Q755 105 755 93Q755 75 731 36Q693 -21 641 -21H632Q571 -21 531 4T487 82Q487 109 502 166T517 239Q517 290 474 313Q459 320 449 321T378 323H309L277 193Q244 61 244 59Q244 55 245 54T252 50T269 48T302 46H333Q339 38 339 37T336 19Q332 6 326 0H311Q275 2 180 2Q146 2 117 2T71 2T50 1Q33 1 33 10Q33 12 36 24Q41 43 46 45Q50 46 61 46H67Q94 46 127 49Q141 52 146 61Q149 65 218 339T287 628Q287 635 230 637ZM630 554Q630 586 609 608T523 636Q521 636 500 636T462 637H440Q393 637 386 627Q385 624 352 494T319 361Q319 360 388 360Q466 361 492 367Q556 377 592 426Q608 449 619 486T630 554Z"></path></g><g data-mml-node="mi" transform="translate(759, -150) scale(0.707)"><path data-c="66" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></g></g><g data-mml-node="mo" transform="translate(1475.7, 0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>R</mi><mi>f</mi></msub><mo>=</mo></math></mjx-assistive-mml></mjx-container></span> <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>20.0</mn>
+  <mrow>
+    <mtext> </mtext>
+    <mi mathvariant="normal">k</mi>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <mn>20.0</mn>
+  <mrow>
+    <mtext></mtext>
+    <mi mathvariant="normal">k</mi>
+    <mi mathvariant="normal">m</mi>
+  </mrow>
+</math></mathmlword><asciimath style="display: none;">20.0km</asciimath><latex style="display: none">20.0 \mathrm{~km}</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.05ex" xmlns="http://www.w3.org/2000/svg" width="7.667ex" height="1.62ex" role="img" focusable="false" viewBox="0 -694 3389 716" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="mn"><path data-c="32" d="M109 429Q82 429 66 447T50 491Q50 562 103 614T235 666Q326 666 387 610T449 465Q449 422 429 383T381 315T301 241Q265 210 201 149L142 93L218 92Q375 92 385 97Q392 99 409 186V189H449V186Q448 183 436 95T421 3V0H50V19V31Q50 38 56 46T86 81Q115 113 136 137Q145 147 170 174T204 211T233 244T261 278T284 308T305 340T320 369T333 401T340 431T343 464Q343 527 309 573T212 619Q179 619 154 602T119 569T109 550Q109 549 114 549Q132 549 151 535T170 489Q170 464 154 447T109 429Z"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(500, 0)"></path><path data-c="2E" d="M78 60Q78 84 95 102T138 120Q162 120 180 104T199 61Q199 36 182 18T139 0T96 17T78 60Z" transform="translate(1000, 0)"></path><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z" transform="translate(1278, 0)"></path></g><g data-mml-node="TeXAtom" data-mjx-texclass="ORD" transform="translate(1778, 0)"><g data-mml-node="mtext"><path data-c="A0" d=""></path></g><g data-mml-node="mi" transform="translate(250, 0)"><path data-c="6B" d="M36 46H50Q89 46 97 60V68Q97 77 97 91T97 124T98 167T98 217T98 272T98 329Q98 366 98 407T98 482T98 542T97 586T97 603Q94 622 83 628T38 637H20V660Q20 683 22 683L32 684Q42 685 61 686T98 688Q115 689 135 690T165 693T176 694H179V463L180 233L240 287Q300 341 304 347Q310 356 310 364Q310 383 289 385H284V431H293Q308 428 412 428Q475 428 484 431H489V385H476Q407 380 360 341Q286 278 286 274Q286 273 349 181T420 79Q434 60 451 53T500 46H511V0H505Q496 3 418 3Q322 3 307 0H299V46H306Q330 48 330 65Q330 72 326 79Q323 84 276 153T228 222L176 176V120V84Q176 65 178 59T189 49Q210 46 238 46H254V0H246Q231 3 137 3T28 0H20V46H36Z"></path></g><g data-mml-node="mi" transform="translate(778, 0)"><path data-c="6D" d="M41 46H55Q94 46 102 60V68Q102 77 102 91T102 122T103 161T103 203Q103 234 103 269T102 328V351Q99 370 88 376T43 385H25V408Q25 431 27 431L37 432Q47 433 65 434T102 436Q119 437 138 438T167 441T178 442H181V402Q181 364 182 364T187 369T199 384T218 402T247 421T285 437Q305 442 336 442Q351 442 364 440T387 434T406 426T421 417T432 406T441 395T448 384T452 374T455 366L457 361L460 365Q463 369 466 373T475 384T488 397T503 410T523 422T546 432T572 439T603 442Q729 442 740 329Q741 322 741 190V104Q741 66 743 59T754 49Q775 46 803 46H819V0H811L788 1Q764 2 737 2T699 3Q596 3 587 0H579V46H595Q656 46 656 62Q657 64 657 200Q656 335 655 343Q649 371 635 385T611 402T585 404Q540 404 506 370Q479 343 472 315T464 232V168V108Q464 78 465 68T468 55T477 49Q498 46 526 46H542V0H534L510 1Q487 2 460 2T422 3Q319 3 310 0H302V46H318Q379 46 379 62Q380 64 380 200Q379 335 378 343Q372 371 358 385T334 402T308 404Q263 404 229 370Q202 343 195 315T187 232V168V108Q187 78 188 68T191 55T200 49Q221 46 249 46H265V0H257L234 1Q210 2 183 2T145 3Q42 3 33 0H25V46H41Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><mn>20.0</mn><mrow><mtext>&nbsp;</mtext><mi mathvariant="normal">k</mi><mi mathvariant="normal">m</mi></mrow></math></mjx-assistive-mml></mjx-container></span>, what will be its final angular speed <span class="math-inline "><mathml style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>f</mi>
+  </msub>
+</math></mathml><mathmlword style="display: none"><math xmlns="http://www.w3.org/1998/Math/MathML">
+  <msub>
+    <mi>ω</mi>
+    <mi>f</mi>
+  </msub>
+</math></mathmlword><asciimath style="display: none;">omega _(f)</asciimath><latex style="display: none">\omega_f</latex><mjx-container class="MathJax" jax="SVG" role="presentation" style="position: relative"><svg style="vertical-align: -0.667ex" xmlns="http://www.w3.org/2000/svg" width="2.4ex" height="1.67ex" role="img" focusable="false" viewBox="0 -443 1060.9 738" aria-hidden="true"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="matrix(1 0 0 -1 0 0)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="3C9" d="M495 384Q495 406 514 424T555 443Q574 443 589 425T604 364Q604 334 592 278T555 155T483 38T377 -11Q297 -11 267 66Q266 68 260 61Q201 -11 125 -11Q15 -11 15 139Q15 230 56 325T123 434Q135 441 147 436Q160 429 160 418Q160 406 140 379T94 306T62 208Q61 202 61 187Q61 124 85 100T143 76Q201 76 245 129L253 137V156Q258 297 317 297Q348 297 348 261Q348 243 338 213T318 158L308 135Q309 133 310 129T318 115T334 97T358 83T393 76Q456 76 501 148T546 274Q546 305 533 325T508 357T495 384Z"></path></g><g data-mml-node="mi" transform="translate(622, -150) scale(0.707)"><path data-c="66" d="M118 -162Q120 -162 124 -164T135 -167T147 -168Q160 -168 171 -155T187 -126Q197 -99 221 27T267 267T289 382V385H242Q195 385 192 387Q188 390 188 397L195 425Q197 430 203 430T250 431Q298 431 298 432Q298 434 307 482T319 540Q356 705 465 705Q502 703 526 683T550 630Q550 594 529 578T487 561Q443 561 443 603Q443 622 454 636T478 657L487 662Q471 668 457 668Q445 668 434 658T419 630Q412 601 403 552T387 469T380 433Q380 431 435 431Q480 431 487 430T498 424Q499 420 496 407T491 391Q489 386 482 386T428 385H372L349 263Q301 15 282 -47Q255 -132 212 -173Q175 -205 139 -205Q107 -205 81 -186T55 -132Q55 -95 76 -78T118 -61Q162 -61 162 -103Q162 -122 151 -136T127 -157L118 -162Z"></path></g></g></g></g></svg><mjx-assistive-mml role="presentation" unselectable="on" display="inline"><math xmlns="http://www.w3.org/1998/Math/MathML"><msub><mi>ω</mi><mi>f</mi></msub></math></mjx-assistive-mml></mjx-container></span> ?</div>
+</div>
+    </div>
+  </div>
+</body>
+</html>

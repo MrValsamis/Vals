@@ -1,10 +1,13 @@
 let players = [];
 let draggedPlayer = null;
+let originPlayers = [];
 let fieldLengthSlider;
 let fieldWidthSlider;
 let trashBin;
 let pixelPerYard = 4; // 1 yard is represented by 4 pixels
 let refreshButton;
+let linesToggle;
+let fieldTopLeft = { x: 0, y: 100 };
 
 
 function setup() {
@@ -30,12 +33,16 @@ function setup() {
     height: 50
   };
 
+  linesToggle = createCheckbox('Show Lines', false);
+  linesToggle.position(20, 100);
+
   // Initialize players off the field
-  for (let i = 0; i < 150; i++) {
-    let team = i < 50 ? "T" : i < 100 ? "X" : "O";
+  const teams = ['T', 'X', 'O'];
+  for (let i = 0; i < 3; i++) {
+    let team = teams[i];
     let x = windowWidth - 200;
     let y = team === "T" ? 40 : team === "X" ? 60 : 80;
-    players.push({ team, x, y });
+    originPlayers.push({ id: i, team, x, y }); // Add an id to each player
   }
 }
 
@@ -56,13 +63,12 @@ function windowResized() {
     height: 50
   };
 
-  for (let i = 0; i < 150; i++) {
-    let team = i < 50 ? "T" : i < 100 ? "X" : "O";
-    let x = windowWidth - 200;
-    let y = team === "T" ? 40 : team === "X" ? 60 : 80;
-    players[i] = { team, x, y };
+  // Update the x position of the original players based on the new window width
+  for (let i = 0; i < originPlayers.length; i++) {
+    originPlayers[i].x = windowWidth - 200;
   }
 }
+
 
 function draw() {
   background(200); // Gray background
@@ -70,17 +76,18 @@ function draw() {
   let fieldLength = fieldLengthSlider.value() * pixelPerYard;
   let fieldWidth = fieldWidthSlider.value() * pixelPerYard;
 
-  // Calculate the left margin for the field
-  let marginLeft = (width - fieldLength) / 2;
+// Calculate the left margin for the field
+  fieldTopLeft.x = (width - fieldLength) / 2;
 
-  // Draw the field with the current dimensions
+ // Draw the field with the current dimensions
   push();
-  translate(marginLeft, 100); // Use the margin in the translate function
+  translate(fieldTopLeft.x, fieldTopLeft.y); // Use the field's top-left corner in the translate function
   drawField(fieldLength, fieldWidth);
   pop();
 
   drawTeams(); // Draw the teams after ending the field's transformation
   
+  drawOriginPlayers();
   drawSliders();
   drawTrashBin();
   drawRefreshButton();
@@ -95,33 +102,83 @@ function drawRefreshButton() {
 }
 
 
+function drawOriginPlayers() {
+  for (let player of originPlayers) {
+    // You can draw the original players similar to how you draw the cloned players
+    textSize(16);
+    if (player.team === 'T') {
+      stroke(128, 0, 128);
+      strokeWeight(2);
+      noFill();
+      rect(player.x, player.y - 13, 12, 12);
+    } else {
+      fill(player.team === 'X' ? [255, 0, 0] : [0, 0, 255]);
+      noStroke();
+      text(player.team, player.x, player.y);
+    }
+  }
+}
 
 function drawField(fieldLength, fieldWidth) {
   push();
-  fill(150,210,149); // Green background for the field
+  fill(150, 210, 149); // Green background for the field
   rect(0, 0, fieldLength, fieldWidth);
-  pop();
+
+  if (linesToggle.checked()) {
+    noFill();
+    stroke(255);
+    strokeWeight(2);
+
+    // Halfway line
+    line(fieldLength / 2, 0, fieldLength / 2, fieldWidth);
+
+    // Center circle
+    ellipse(fieldLength / 2, fieldWidth / 2, 20 * pixelPerYard, 20 * pixelPerYard);
+
+    // Penalty areas
+    rect(0, (fieldWidth - 44 * pixelPerYard) / 2, 18 * pixelPerYard, 44 * pixelPerYard);
+    rect(fieldLength - 18 * pixelPerYard, (fieldWidth - 44 * pixelPerYard) / 2, 18 * pixelPerYard, 44 * pixelPerYard);
+
+    // Goal areas
+    rect(0, (fieldWidth - 20 * pixelPerYard) / 2, 6 * pixelPerYard, 20 * pixelPerYard);
+    rect(fieldLength - 6 * pixelPerYard, (fieldWidth - 20 * pixelPerYard) / 2, 6 * pixelPerYard, 20 * pixelPerYard);
+
+    // Corner arcs
+arc(0, 0, 2 * pixelPerYard, 2 * pixelPerYard, 0, HALF_PI);
+arc(0, fieldWidth, 2 * pixelPerYard, 2 * pixelPerYard, -HALF_PI, 0);
+arc(fieldLength, 0, 2 * pixelPerYard, 2 * pixelPerYard, HALF_PI, PI);
+arc(fieldLength, fieldWidth, 2 * pixelPerYard, 2 * pixelPerYard, PI, -HALF_PI);
+
+
+// Penalty Kick spots
+    point(12 * pixelPerYard, fieldWidth / 2);
+    point(fieldLength - (12 * pixelPerYard), fieldWidth / 2);
+}
+    pop();
 }
 
-// Draw the teams
+
+
 function drawTeams() {
   textSize(16); // Make the players half as large
 
   for (let player of players) {
+    // Calculate the player's absolute position
+    player.x = player.relativeX + fieldTopLeft.x;
+    player.y = player.relativeY + fieldTopLeft.y;
+
     if (player.team === 'T') {
       stroke(128, 0, 128); // Purple border
       strokeWeight(2); // Thicker border
       noFill(); // Transparent center
-      rect(player.x, player.y -13, 12, 12); // Draw a square centered on the player's position
+      rect(player.x, player.y - 13, 12, 12); // Draw a square centered on the player's position
     } else {
       fill(player.team === 'X' ? [255, 0, 0] : [0, 0, 255]); // Red for X, Blue for O
       noStroke(); // No border for X and O teams
       text(player.team, player.x, player.y);
     }
   }
-  pop();
 }
-
 
 
 
@@ -142,43 +199,50 @@ function drawTrashBin() {
 }
 
 function mousePressed() {
-  for (let player of players) {
+  for (let player of originPlayers) {
     let d = dist(mouseX, mouseY, player.x, player.y);
-    if (d < 12) { // Adjust the detection radius to 12
-      draggedPlayer = player;
+    if (d < 12) {
+      let clonedPlayer = { ...player };
+      // Store the player's position relative to the field
+      clonedPlayer.relativeX = mouseX - fieldTopLeft.x;
+      clonedPlayer.relativeY = mouseY - fieldTopLeft.y;
+      draggedPlayer = clonedPlayer;
+      players.push(clonedPlayer);
       break;
     }
-// Check if the refresh button is clicked
+  }
+
+  // Check if the refresh button is clicked
   if (mouseX > refreshButton.x && mouseX < refreshButton.x + refreshButton.width && mouseY > refreshButton.y && mouseY < refreshButton.y + refreshButton.height) {
-    // Reinitialize the players array
+    // Clear the players array
     players = [];
-    for (let i = 0; i < 150; i++) {
-  let team = i < 50 ? 'T' : i < 100 ? 'X' : 'O';
-  let x = width - 200; // x position 200 pixels from the right edge of the canvas
-  let y = team === 'T' ? 40 : team === 'X' ? 60 : 80; // 'T' players at 40, 'X' players at 60, 'O'       players at 80
-  players.push({ team, x, y });
-}
-  }
   }
 }
 
 
-// Move the player with the mouse
+
 function mouseDragged() {
   if (draggedPlayer) {
-    draggedPlayer.x = mouseX;
-    draggedPlayer.y = mouseY;
+    // Adjust the player's relative position
+    draggedPlayer.relativeX = mouseX - fieldTopLeft.x;
+    draggedPlayer.relativeY = mouseY - fieldTopLeft.y;
   }
 }
 
 
 function mouseReleased() {
   if (draggedPlayer) {
+    // Calculate the player's absolute position
+    draggedPlayer.x = draggedPlayer.relativeX + fieldTopLeft.x;
+    draggedPlayer.y = draggedPlayer.relativeY + fieldTopLeft.y;
+
     // Check if the dragged player is inside the trash bin
-    if (mouseX > trashBin.x && mouseX < trashBin.x + trashBin.width && mouseY > trashBin.y && mouseY < trashBin.y + trashBin.height) {
+    if (draggedPlayer.x > trashBin.x && draggedPlayer.x < trashBin.x + trashBin.width && 
+        draggedPlayer.y > trashBin.y && draggedPlayer.y < trashBin.y + trashBin.height) {
       // Remove the player from the players array
       players = players.filter(player => player !== draggedPlayer);
     }
+
     draggedPlayer = null;
   }
 }

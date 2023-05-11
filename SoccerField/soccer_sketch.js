@@ -39,7 +39,30 @@ function setup() {
   }
 }
 
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  
+  trashBin = {
+    x: windowWidth / 2,
+    y: 20,
+    width: 50,
+    height: 50
+  };
 
+  refreshButton = {
+    x: windowWidth / 2 + 60,
+    y: 20,
+    width: 80,
+    height: 50
+  };
+
+  for (let i = 0; i < 150; i++) {
+    let team = i < 50 ? "T" : i < 100 ? "X" : "O";
+    let x = windowWidth - 200;
+    let y = team === "T" ? 40 : team === "X" ? 60 : 80;
+    players[i] = { team, x, y };
+  }
+}
 
 function draw() {
   background(200); // Gray background

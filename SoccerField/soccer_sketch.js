@@ -8,7 +8,7 @@ let refreshButton;
 
 
 function setup() {
-  createCanvas(800, 500);
+  createCanvas(windowWidth, windowHeight);
 
   fieldLengthSlider = createSlider(50, 120, 120);
   fieldLengthSlider.position(20, 20);
@@ -17,27 +17,28 @@ function setup() {
   fieldWidthSlider.position(20, 60);
 
   trashBin = {
-    x: 400,
+    x: windowWidth / 2,
     y: 20,
     width: 50,
     height: 50
-  }
+  };
 
-refreshButton = {
-    x: 460, // 10 pixels to the right of the trash bin
+  refreshButton = {
+    x: windowWidth / 2 + 60,
     y: 20,
     width: 80,
     height: 50
   };
 
   // Initialize players off the field
-for (let i = 0; i < 150; i++) {
-  let team = i < 50 ? 'T' : i < 100 ? 'X' : 'O';
-  let x = width - 200; // x position 200 pixels from the right edge of the canvas
-  let y = team === 'T' ? 40 : team === 'X' ? 60 : 80; // 'T' players at 40, 'X' players at 60, 'O'       players at 80
-  players.push({ team, x, y });
+  for (let i = 0; i < 150; i++) {
+    let team = i < 50 ? "T" : i < 100 ? "X" : "O";
+    let x = windowWidth - 200;
+    let y = team === "T" ? 40 : team === "X" ? 60 : 80;
+    players.push({ team, x, y });
+  }
 }
-}
+
 
 
 function draw() {

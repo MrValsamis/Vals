@@ -1,161 +1,193 @@
 let players = [];
-let lines = [];
-let draggedObject = null;
-let dragPoint = null;
+let draggedPlayer = null;
+let originPlayers = [];
 let fieldLengthSlider;
 let fieldWidthSlider;
 let trashBin;
 let pixelPerYard = 4; // 1 yard is represented by 4 pixels
+let refreshButton;
+let linesToggle;
+let fieldTopLeft = { x: 0, y: 100 };
+let pixelPerYardLength; 
+let pixelPerYardWidth; 
+let autoFormationDropdown;
+let hasBeenAdded = {
+  'Auto-Formation Team X (4-4-2)': false,
+  'Auto-Formation Team X (4-3-3)': false,
+  'Auto-Formation Team O (4-4-2)': false,
+  'Auto-Formation Team O (4-3-3)': false
+};
+
 
 function setup() {
-  createCanvas(800, 600);
+  createCanvas(windowWidth, windowHeight);
+  pixelPerYardLength = (0.7 * windowWidth) / 120; // So that 120 yards corresponds to 80% of the window width
+  pixelPerYardWidth = (0.6 * windowHeight) / 90; // So that 90 yards corresponds to 60% of the window height
 
-  fieldLengthSlider = createSlider(50, 120, 120);
+
+  fieldLengthSlider = createSlider(80, 120, 120);
   fieldLengthSlider.position(20, 20);
 
-  fieldWidthSlider = createSlider(25, 90, 90);
+  fieldWidthSlider = createSlider(50, 80, 90); // Create the fieldWidthSlider
   fieldWidthSlider.position(20, 60);
 
+
   trashBin = {
-    x: 700,
+    x: windowWidth / 2,
     y: 20,
     width: 50,
     height: 50
   };
 
+  refreshButton = {
+    x: windowWidth / 2 + 60,
+    y: 20,
+    width: 80,
+    height: 50
+  };
+
+  linesToggle = createCheckbox('Show Lines', false);
+  linesToggle.position(20, 90);
+
+autoFormationDropdown = createSelect();
+  autoFormationDropdown.position(20, 115);
+  autoFormationDropdown.option('No Auto-Formation');
+  autoFormationDropdown.option('Auto-Formation Team X (4-4-2)');
+  autoFormationDropdown.option('Auto-Formation Team X (4-3-3)');
+  autoFormationDropdown.option('Auto-Formation Team O (4-4-2)');
+  autoFormationDropdown.option('Auto-Formation Team O (4-3-3)');
+
+
   // Initialize players off the field
-  for (let i = 0; i < 10; i++) {
-    let team = i < 5 ? 'X' : 'O';
-    let x = team === 'X' ? 20 : 50;
-    let y = 100 + i * 10;
-    players.push({ team, x, y });
+  const teams = ['T', 'X', 'O'];
+  for (let i = 0; i < 3; i++) {
+    let team = teams[i];
+    let x = windowWidth - 200;
+    let y = team === "T" ? 40 : team === "X" ? 60 : 80;
+    originPlayers.push({ id: i, team, x, y }); // Add an id to each player
+  }
+}
+
+
+function windowResized() {
+  resizeCanvas(windowWidth, windowHeight);
+  pixelPerYardLength = (0.8 * windowWidth) / 120; // Update the scale when the window is resized
+  pixelPerYardWidth = (0.6 * windowHeight) / 90;
+
+  
+  trashBin = {
+    x: windowWidth / 2,
+    y: 20,
+    width: 50,
+    height: 50
+  };
+
+  refreshButton = {
+    x: windowWidth / 2 + 60,
+    y: 20,
+    width: 80,
+    height: 50
+  };
+
+ 
+  for (let player of players) {
+    player.x = (player.x - fieldTopLeft.x) / pixelPerYardLength * pixelPerYard;
+    player.y = (player.y - fieldTopLeft.y) / pixelPerYardWidth * pixelPerYard;
   }
 
-  // Initialize lines off the field
-  for (let i = 0; i < 5; i++) {
-    let x1 = 80;
-    let y1 = 100 + i * 10;
-    let x2 = x1 + 50;
-    let y2 = y1;
-    lines.push({ x1, y1, x2, y2 });
+  for (let player of originPlayers) {
+    player.x = windowWidth - 200;
+    player.y = player.team === "T" ? 40 : player.team === "X" ? 60 : 80;
   }
 }
 
 function draw() {
-  background(200); // Gray background
-
-  let fieldLength = fieldLengthSlider.value() * pixelPerYard;
-  let fieldWidth = fieldWidthSlider.value() * pixelPerYard;
-
-  // Draw the field with the current dimensions
-  push();
-  translate(0, 100);
-  drawField(fieldLength, fieldWidth);
-  drawTeams();
-  drawLines();
-  pop();
-
-  drawSliders();
+  background(255);
+  drawField();
   drawTrashBin();
-}
+  drawRefreshButton();
 
-function drawField(fieldLength, fieldWidth) {
-  push();
-  fill(0, 150, 0); // Green background for the field
-  rect(0, 0, fieldLength, fieldWidth);
-  pop();
-}
-
-function drawTeams() {
-  textSize(16); // Make the players half as large
-
+  // Draw all the players
   for (let player of players) {
-    fill(player.team === 'X' ? [255, 0, 0] : [0, 0, 255]); // Red for X, Blue for O
-    text(player.team, player.x, player.y);
+    drawPlayer(player);
   }
+
+  // Draw the origin players
+  for (let player of originPlayers) {
+    drawPlayer(player);
+  }
+
+  // If a player is being dragged
+  if (draggedPlayer) {
+    drawPlayer(draggedPlayer);
+  }
+}
+
+function drawField() {
+  fill(34, 139, 34);
+  stroke(255);
+  let fieldLength = fieldLengthSlider.value() * pixelPerYardLength;
+  let fieldWidth = fieldWidthSlider.value() * pixelPerYardWidth;
+  fieldTopLeft = { x: (windowWidth - fieldLength) / 2, y: (windowHeight - fieldWidth) / 2 };
+  rect(fieldTopLeft.x, fieldTopLeft.y, fieldLength, fieldWidth);
+  drawLines();
 }
 
 function drawLines() {
-  stroke(255); // White lines
-  for (let line of lines) {
-    line(line.x1, line.y1, line.x2, line.y2);
+  // If the linesToggle checkbox is checked, draw lines
+  if (linesToggle.checked()) {
+    stroke(255);
+    let fieldLength = fieldLengthSlider.value() * pixelPerYardLength;
+    let fieldWidth = fieldWidthSlider.value() * pixelPerYardWidth;
+    // Draw the half-way line
+    line(fieldTopLeft.x + fieldLength / 2, fieldTopLeft.y, fieldTopLeft.x + fieldLength / 2, fieldTopLeft.y + fieldWidth);
   }
 }
-
-function drawSliders() {
-  textSize(16);
-
-  fill(0);
-  text(`Length: ${fieldLengthSlider.value()} yards`, 180, 35);
-  text(`Width: ${fieldWidthSlider.value()} yards`, 180, 75);
+function drawPlayer(player) {
+  stroke(0);
+  fill(player.team === "T" ? 255, 0, 0 : player.team === "X" ? 0, 0, 255 : 0);
+  ellipse(player.x, player.y, 20, 20);
+  fill(255);
+  text(player.name, player.x - textWidth(player.name) / 2, player.y + 5);
 }
 
 function drawTrashBin() {
-  fill(128);
-  rect(trashBin.x, trashBin.y, trashBin.width, trashBin.height);
-  fill(0);
-  textSize(24);
-  text('🗑️', trashBin.x + 8, trashBin.y + 34);
+  // If the trashBinToggle checkbox is checked, draw the trash bin
+  if (trashBinToggle.checked()) {
+    fill(128, 128, 128);
+    rect(windowWidth - 200, windowHeight - 60, 40, 40);
+  }
+}
+
+function drawRefreshButton() {
+  // If the refreshButtonToggle checkbox is checked, draw the refresh button
+  if (refreshButtonToggle.checked()) {
+    fill(0, 255, 0);
+    rect(windowWidth - 150, windowHeight - 60, 40, 40);
+  }
 }
 
 function mousePressed() {
-  // Check if a player is clicked
+  // If mouse is pressed on a player, start dragging
   for (let player of players) {
-        let d = dist(mouseX, mouseY - 100, player.x, player.y);
-    if (d < 12) {
-      draggedObject = player;
-      break;
-    }
-  }
-
-  // Check if a line point is clicked
-  if (!draggedObject) {
-    for (let line of lines) {
-      let d1 = dist(mouseX, mouseY - 100, line.x1, line.y1);
-      let d2 = dist(mouseX, mouseY - 100, line.x2, line.y2);
-      if (d1 < 12 || d2 < 12) {
-        draggedObject = line;
-        dragPoint = d1 < d2 ? 'start' : 'end';
-        break;
-      }
-    }
-  }
-}
-
-function mouseDragged() {
-  if (draggedObject) {
-    if (draggedObject.team) {
-      // It's a player
-      draggedObject.x = mouseX;
-      draggedObject.y = mouseY - 100;
-    } else {
-      // It's a line
-      if (dragPoint === 'start') {
-        draggedObject.x1 = mouseX;
-        draggedObject.y1 = mouseY - 100;
-      } else {
-        draggedObject.x2 = mouseX;
-        draggedObject.y2 = mouseY - 100;
-      }
+    let d = dist(mouseX, mouseY, player.x, player.y);
+    if (d < 20) {
+      draggedPlayer = player;
+      draggedOffset = { x: mouseX - player.x, y: mouseY - player.y };
+      return;
     }
   }
 }
 
 function mouseReleased() {
-  if (draggedObject) {
-    // Check if the dragged player or line is inside the trash bin
-    if (mouseX > trashBin.x && mouseX < trashBin.x + trashBin.width && mouseY > trashBin.y && mouseY < trashBin.y + trashBin.height) {
-      if (draggedObject.team) {
-        // It's a player
-        players = players.filter(player => player !== draggedObject);
-      } else {
-        // It's a line
-        lines = lines.filter(line => line !== draggedObject);
-      }
-    }
-  }
-
-  draggedObject = null;
-  dragPoint = null;
+  // If mouse is released, stop dragging
+  draggedPlayer = null;
 }
 
+function mouseDragged() {
+  // If a player is being dragged, move the player with the mouse
+  if (draggedPlayer) {
+    draggedPlayer.x = mouseX - draggedOffset.x;
+    draggedPlayer.y = mouseY - draggedOffset.y;
+  }
+}

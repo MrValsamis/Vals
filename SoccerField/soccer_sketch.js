@@ -8,16 +8,29 @@ let pixelPerYard = 4; // 1 yard is represented by 4 pixels
 let refreshButton;
 let linesToggle;
 let fieldTopLeft = { x: 0, y: 100 };
+let pixelPerYardLength; 
+let pixelPerYardWidth; 
+let autoFormationDropdown;
+let hasBeenAdded = {
+  'Auto-Formation Team X (4-4-2)': false,
+  'Auto-Formation Team X (4-3-3)': false,
+  'Auto-Formation Team O (4-4-2)': false,
+  'Auto-Formation Team O (4-3-3)': false
+};
 
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  pixelPerYardLength = (0.7 * windowWidth) / 120; // So that 120 yards corresponds to 80% of the window width
+  pixelPerYardWidth = (0.6 * windowHeight) / 90; // So that 90 yards corresponds to 60% of the window height
 
-  fieldLengthSlider = createSlider(50, 120, 120);
+
+  fieldLengthSlider = createSlider(80, 120, 120);
   fieldLengthSlider.position(20, 20);
 
-  fieldWidthSlider = createSlider(25, 90, 90);
+  fieldWidthSlider = createSlider(50, 80, 90); // Create the fieldWidthSlider
   fieldWidthSlider.position(20, 60);
+
 
   trashBin = {
     x: windowWidth / 2,
@@ -34,7 +47,16 @@ function setup() {
   };
 
   linesToggle = createCheckbox('Show Lines', false);
-  linesToggle.position(20, 100);
+  linesToggle.position(20, 90);
+
+autoFormationDropdown = createSelect();
+  autoFormationDropdown.position(20, 115);
+  autoFormationDropdown.option('No Auto-Formation');
+  autoFormationDropdown.option('Auto-Formation Team X (4-4-2)');
+  autoFormationDropdown.option('Auto-Formation Team X (4-3-3)');
+  autoFormationDropdown.option('Auto-Formation Team O (4-4-2)');
+  autoFormationDropdown.option('Auto-Formation Team O (4-3-3)');
+
 
   // Initialize players off the field
   const teams = ['T', 'X', 'O'];
@@ -46,8 +68,12 @@ function setup() {
   }
 }
 
+
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  pixelPerYardLength = (0.8 * windowWidth) / 120; // Update the scale when the window is resized
+  pixelPerYardWidth = (0.6 * windowHeight) / 90;
+
   
   trashBin = {
     x: windowWidth / 2,
@@ -73,13 +99,14 @@ function windowResized() {
 function draw() {
   background(200); // Gray background
 
-  let fieldLength = fieldLengthSlider.value() * pixelPerYard;
-  let fieldWidth = fieldWidthSlider.value() * pixelPerYard;
+  let fieldLength = fieldLengthSlider.value() * pixelPerYardLength; // Use pixelPerYardLength for length
+  let fieldWidth = fieldWidthSlider.value() * pixelPerYardWidth; // Use pixelPerYardWidth for width
 
-// Calculate the left margin for the field
-  fieldTopLeft.x = (width - fieldLength) / 2;
+  // Calculate the left margin for the field
+  fieldTopLeft.x = (windowWidth - fieldLength) / 2;
+  fieldTopLeft.y = (windowHeight - fieldWidth) / 2; // Calculate the top margin for the field
 
- // Draw the field with the current dimensions
+  // Draw the field with the current dimensions
   push();
   translate(fieldTopLeft.x, fieldTopLeft.y); // Use the field's top-left corner in the translate function
   drawField(fieldLength, fieldWidth);
@@ -88,17 +115,194 @@ function draw() {
   drawTeams(); // Draw the teams after ending the field's transformation
   
   drawOriginPlayers();
-  drawSliders();
   drawTrashBin();
   drawRefreshButton();
+
+
+  drawSliders(); // Call the drawSliders function to display the labels
+
+
+ let autoFormationOption = autoFormationDropdown.value();  // add this line
+
+  if (autoFormationOption === 'Auto-Formation Team X (4-4-2)' && !hasBeenAdded[autoFormationOption]) {
+    populateTeam442('X');
+    hasBeenAdded[autoFormationOption] = true;
+  } else if (autoFormationOption === 'Auto-Formation Team O (4-4-2)' && !hasBeenAdded[autoFormationOption]) {
+    populateTeam442('O');
+    hasBeenAdded[autoFormationOption] = true;
+  } else if (autoFormationOption === 'Auto-Formation Team X (4-3-3)' && !hasBeenAdded[autoFormationOption]) {
+    populateTeam433('X');
+    hasBeenAdded[autoFormationOption] = true;
+  } else if (autoFormationOption === 'Auto-Formation Team O (4-3-3)' && !hasBeenAdded[autoFormationOption]) {
+    populateTeam433('O');
+    hasBeenAdded[autoFormationOption] = true;
+  }
+
+  if (autoFormationOption === 'No Auto-Formation') {
+  for (let formation in hasBeenAdded) {
+    hasBeenAdded[formation] = false;
+  }
+  players = []; // remove all players from the field
 }
 
+
+
+}
+
+
+function populateTeam442(team) {
+  let fieldLengthYards = fieldLengthSlider.value();
+  let fieldWidthYards = fieldWidthSlider.value();
+
+  // Position Goalkeepers
+  let gkYPos = fieldWidthYards / 2;
+  let gkXPos = team === 'X' ? fieldLengthYards * 0.01 : fieldLengthYards * 0.95;
+  players.push({
+    team: team,
+    x: gkXPos * pixelPerYardLength + fieldTopLeft.x,
+    y: gkYPos * pixelPerYardWidth + fieldTopLeft.y,
+    relativeX: gkXPos * pixelPerYardLength,
+    relativeY: gkYPos * pixelPerYardWidth
+  });
+
+  // Position Defenders
+  let defXPos = team === 'X' ? fieldLengthYards * 0.15 : fieldLengthYards * 0.8;
+  for (let i = 0; i < 4; i++) {
+    let defYPos = fieldWidthYards * (0.2 + i * 0.2);
+    players.push({
+      team: team,
+      x: defXPos * pixelPerYardLength + fieldTopLeft.x,
+      y: defYPos * pixelPerYardWidth + fieldTopLeft.y,
+      relativeX: defXPos * pixelPerYardLength,
+      relativeY: defYPos * pixelPerYardWidth
+    });
+  }
+
+  // Position Midfielders
+  let midXPos = team === 'X' ? fieldLengthYards * 0.3 : fieldLengthYards * 0.65;
+  for (let i = 0; i < 4; i++) {
+    let midYPos = fieldWidthYards * (0.15 + i * 0.2);
+    players.push({
+      team: team,
+      x: midXPos * pixelPerYardLength + fieldTopLeft.x,
+      y: midYPos * pixelPerYardWidth + fieldTopLeft.y,
+      relativeX: midXPos * pixelPerYardLength,
+      relativeY: midYPos * pixelPerYardWidth
+    });
+  }
+
+  // Position Forwards
+  let fwdXPos = team === 'X' ? fieldLengthYards * 0.45 : fieldLengthYards * 0.5;
+  for (let i = 0; i < 2; i++) {
+    let fwdYPos = fieldWidthYards * (0.3 + i * 0.4);
+    players.push({
+      team: team,
+      x: fwdXPos * pixelPerYardLength + fieldTopLeft.x,
+      y: fwdYPos * pixelPerYardWidth + fieldTopLeft.y,
+      relativeX: fwdXPos * pixelPerYardLength,
+      relativeY: fwdYPos * pixelPerYardWidth
+    });
+  }
+}
+
+function populateTeam433(team) {
+  let fieldLengthYards = fieldLengthSlider.value();
+  let fieldWidthYards = fieldWidthSlider.value();
+
+  // Position Goalkeepers
+  let gkYPos = fieldWidthYards / 2;
+  let gkXPos = team === 'X' ? fieldLengthYards * 0.01 : fieldLengthYards * 0.95;
+  players.push({
+    team: team,
+    x: gkXPos * pixelPerYardLength + fieldTopLeft.x,
+    y: gkYPos * pixelPerYardWidth + fieldTopLeft.y,
+    relativeX: gkXPos * pixelPerYardLength,
+    relativeY: gkYPos * pixelPerYardWidth
+  });
+
+  // Position Defenders
+  let defXPos = team === 'X' ? fieldLengthYards * 0.15 : fieldLengthYards * 0.8;
+  for (let i = 0; i < 4; i++) {
+    let defYPos = fieldWidthYards * (0.2 + i * 0.2);
+    players.push({
+      team: team,
+      x: defXPos * pixelPerYardLength + fieldTopLeft.x,
+      y: defYPos * pixelPerYardWidth + fieldTopLeft.y,
+      relativeX: defXPos * pixelPerYardLength,
+      relativeY: defYPos * pixelPerYardWidth
+    });
+  }
+
+  // Position Midfielders
+  let midXPos = team === 'X' ? fieldLengthYards * 0.3 : fieldLengthYards * 0.65;
+  for (let i = 0; i < 3; i++) {
+    let midYPos = fieldWidthYards * (0.25 + i * 0.25);
+    players.push({
+      team: team,
+      x: midXPos * pixelPerYardLength + fieldTopLeft.x,
+      y: midYPos * pixelPerYardWidth + fieldTopLeft.y,
+      relativeX: midXPos * pixelPerYardLength,
+      relativeY: midYPos * pixelPerYardWidth
+    });
+  }
+
+  // Position Forwards
+  let fwdXPos = team === 'X' ? fieldLengthYards * 0.45 : fieldLengthYards * 0.5;
+  for (let i = 0; i < 3; i++) {
+    let fwdYPos = fieldWidthYards * (0.25 + i * 0.25);
+    players.push({
+      team: team,
+      x: fwdXPos * pixelPerYardLength + fieldTopLeft.x,
+      y: fwdYPos * pixelPerYardWidth + fieldTopLeft.y,
+      relativeX: fwdXPos * pixelPerYardLength,
+      relativeY: fwdYPos * pixelPerYardWidth
+    });
+  }
+}
+
+
 function drawRefreshButton() {
-  fill(128);
-  rect(refreshButton.x, refreshButton.y, refreshButton.width, refreshButton.height);
-  fill(0);
+  let buttonColor = color(128);
+  
+  // Change the color when the button is clicked
+  if (mouseIsPressed && mouseX > refreshButton.x && mouseX < refreshButton.x + refreshButton.width && mouseY > refreshButton.y && mouseY < refreshButton.y + refreshButton.height) {
+    buttonColor = color(100); // Darker shade when pressed
+  }
+  
+  fill(buttonColor);
+  stroke(0); // Black border
+  strokeWeight(1); // Border thickness
+  
+  // Draw the button with rounded corners
+  rect(refreshButton.x, refreshButton.y, refreshButton.width, refreshButton.height, 10); // The last parameter is the radius for the rounded corners
+  
+  // Draw the button text
+  fill(0); // Black text
   textSize(18);
   text('Reset', refreshButton.x + 15, refreshButton.y + 34);
+  textStyle(NORMAL); // Reset the text style to normal
+}
+
+function drawTrashBin() {
+  let buttonColor = color(128);
+  
+  // Change the color when the button is clicked
+  if (mouseIsPressed && mouseX > trashBin.x && mouseX < trashBin.x + trashBin.width && mouseY > trashBin.y && mouseY < trashBin.y + trashBin.height) {
+    buttonColor = color(100); // Darker shade when pressed
+  }
+  
+  fill(buttonColor);
+  stroke(0); // Black border
+  strokeWeight(1); // Border thickness
+  
+  // Draw the button with rounded corners
+  rect(trashBin.x, trashBin.y, trashBin.width, trashBin.height, 10); // The last parameter is the radius for the rounded corners
+  
+  // Draw the button text
+  fill(0); // Black text
+  textSize(18);
+  text('🗑️', trashBin.x + 15, trashBin.y + 34);
+  textStyle(NORMAL); // Reset the text style to normal
 }
 
 
@@ -144,10 +348,10 @@ function drawField(fieldLength, fieldWidth) {
     rect(fieldLength - 6 * pixelPerYard, (fieldWidth - 20 * pixelPerYard) / 2, 6 * pixelPerYard, 20 * pixelPerYard);
 
     // Corner arcs
-arc(0, 0, 2 * pixelPerYard, 2 * pixelPerYard, 0, HALF_PI);
-arc(0, fieldWidth, 2 * pixelPerYard, 2 * pixelPerYard, -HALF_PI, 0);
-arc(fieldLength, 0, 2 * pixelPerYard, 2 * pixelPerYard, HALF_PI, PI);
-arc(fieldLength, fieldWidth, 2 * pixelPerYard, 2 * pixelPerYard, PI, -HALF_PI);
+arc(0, 0, 4 * pixelPerYard, 4 * pixelPerYard, 0, HALF_PI);
+arc(0, fieldWidth, 4 * pixelPerYard, 4 * pixelPerYard, -HALF_PI, 0);
+arc(fieldLength, 0, 4 * pixelPerYard, 4 * pixelPerYard, HALF_PI, PI);
+arc(fieldLength, fieldWidth, 4 * pixelPerYard, 4 * pixelPerYard, PI, -HALF_PI);
 
 
 // Penalty Kick spots
@@ -164,21 +368,22 @@ function drawTeams() {
 
   for (let player of players) {
     // Calculate the player's absolute position
-    player.x = player.relativeX + fieldTopLeft.x;
-    player.y = player.relativeY + fieldTopLeft.y;
+    let playerX = player.relativeX + fieldTopLeft.x;
+    let playerY = player.relativeY + fieldTopLeft.y;
 
     if (player.team === 'T') {
       stroke(128, 0, 128); // Purple border
       strokeWeight(2); // Thicker border
       noFill(); // Transparent center
-      rect(player.x, player.y - 13, 12, 12); // Draw a square centered on the player's position
+      rect(playerX, playerY - 13, 12, 12); // Draw a square centered on the player's position
     } else {
       fill(player.team === 'X' ? [255, 0, 0] : [0, 0, 255]); // Red for X, Blue for O
       noStroke(); // No border for X and O teams
-      text(player.team, player.x, player.y);
+      text(player.team, playerX, playerY);
     }
   }
 }
+
 
 
 
@@ -190,15 +395,26 @@ function drawSliders() {
   text(`Width: ${fieldWidthSlider.value()} yards`, 180, 75);
 }
 
-function drawTrashBin() {
-  fill(128);
-  rect(trashBin.x, trashBin.y, trashBin.width, trashBin.height);
-  fill(0);
-  textSize(24);
-  text('🗑️', trashBin.x + 12, trashBin.y + 34);
-}
 
 function mousePressed() {
+  // Check if any of the players on the field are being dragged
+  for (let player of players) {
+    let d = dist(mouseX, mouseY, player.x, player.y);
+    if (d < 12) {
+      draggedPlayer = player;
+      return; // Exit the function as soon as we find a player being dragged
+    }
+  }
+
+  // If the refresh button is clicked
+  if (mouseX > refreshButton.x && mouseX < refreshButton.x + refreshButton.width && mouseY > refreshButton.y && mouseY < refreshButton.y + refreshButton.height) {
+    // Clear the players array
+    players = [];
+    // Set the selected option of the dropdown menu to 'No Auto-Formation'
+    autoFormationDropdown.selected('No Auto-Formation');
+  }
+
+  // If no existing players are being dragged, check if any of the original players are being dragged
   for (let player of originPlayers) {
     let d = dist(mouseX, mouseY, player.x, player.y);
     if (d < 12) {
@@ -208,7 +424,7 @@ function mousePressed() {
       clonedPlayer.relativeY = mouseY - fieldTopLeft.y;
       draggedPlayer = clonedPlayer;
       players.push(clonedPlayer);
-      break;
+      return; // Exit the function as soon as we find a player being dragged
     }
   }
 

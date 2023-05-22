@@ -19,6 +19,7 @@ let hasBeenAdded = {
 };
 
 
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   pixelPerYardLength = (0.7 * windowWidth) / 120; // So that 120 yards corresponds to 80% of the window width

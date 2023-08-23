@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic Calendars</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+  <!-- Styling -->
+  <style>
+    .calendar-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .calendar {
+      position: relative;
+      width: 320px;
+      background-color: #f8f8f8;
+      border-radius: 8px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .calendar .extra-space {
+      background-color: white;
+    }
+
+    .calendar h2 {
+      margin: 0;
+      padding: 15px;
+      background-color: #333333;
+      color: #ffffff;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .weekdays {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      padding: 10px;
+      background-color: #f1f1f1;
+    }
+
+    .weekday {
+      text-align: center;
+      font-size: 14px;
+      color: #555555;
+    }
+
+    .days {
+      flex-grow: 1;
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      gap: 2px;
+      padding: 10px;
+      background-color: #ffffff;
+      min-height: 0; /* Reset min-height */
+    }
+
+    .day {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 30px;
+      font-size: 14px;
+      color: #555555;
+    }
+
+    .green {
+      background-color: #b0eacd;
+      color: #333333;
+    }
+
+    .gold {
+      background-color: #f2d49f;
+      color: #333333;
+    }
+
+    .weekend {
+      background-color: #f8f8f8;
+      color: #999999;
+    }
+
+    .controls {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .controls button:hover {
+      background-color: #555555;
+    }
+
+    .selected-day {
+      background-color: #3399ff;
+      color: white;
+    }
+
+    .appointment-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      margin-top: 20px;
+    }
+
+    .appointment-form {
+      position: absolute;
+      width: 320px;
+      display: none;
+      background-color: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .show-form {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="calendar-container">
+    <div id="calendar1" class="calendar"></div>
+    <div id="calendar2" class="calendar"></div>
+  </div>
+
+  <!-- The form -->
+  <div class="appointment-container">
+    <div id="appointmentForm" class="appointment-form">
+      <form>
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name"><br>
+        <label for="studentid">Student ID:</label><br>
+        <input type="text" id="studentid" name="studentid"><br>
+        <label for="time">Time:</label><br>
+        <input type="text" id="time" name="time"><br>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="prevBtn">Previous Months</button>
+    <button id="nextBtn">Next Months</button>
+  </div>
+
+ <!-- Calendar Script -->
+<script>
+  // Get required elements
+  const calendarDiv1 = document.getElementById("calendar1");
+  const calendarDiv2 = document.getElementById("calendar2");
+  const prevBtn = document.getElementById("prevBtn");
+  const nextBtn = document.getElementById("nextBtn");
+  let currentMonth = moment("2023-08-01"); // start from August 2023
+  let isGreenDay = true;
+  const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  // Helper function to generate the calendar for a given month
+  function generateCalendar(month, calendarDiv, isMainCalendar) {
+    const monthDiv = document.createElement("div");
+    monthDiv.className = "calendar";
+
+    const monthTitle = document.createElement("h2");
+    monthTitle.innerText = month.format("MMMM YYYY");
+    monthDiv.appendChild(monthTitle);
+
+    const weekdaysGrid = document.createElement("div");
+    weekdaysGrid.className = "weekdays";
+    weekdays.forEach((weekday) => {
+      const weekdayDiv = document.createElement("div");
+      weekdayDiv.className = "weekday";
+      weekdayDiv.innerText = weekday;
+      weekdaysGrid.appendChild(weekdayDiv);
+    });
+    monthDiv.appendChild(weekdaysGrid);
+
+    const daysGrid = document.createElement("div");
+    daysGrid.className = "days";
+
+    // Adding empty days for the beginning of the month
+    for (let i = 0; i < moment(month).startOf("month").day(); i++) {
+      const emptyDayDiv = document.createElement("div");
+      emptyDayDiv.className = "day empty";
+      daysGrid.appendChild(emptyDayDiv);
+    }
+
+    for (let d = 0; d < month.daysInMonth(); d++) {
+      const day = moment(month).date(d + 1);
+
+      const dayDiv = document.createElement("div");
+      dayDiv.className = "day";
+      if (day.isoWeekday() < 6) {
+        dayDiv.className += isGreenDay ? " green" : " gold";
+        isGreenDay = !isGreenDay;
+      } else {
+        dayDiv.className += " weekend";
+      }
+      dayDiv.innerText = day.date();
+      daysGrid.appendChild(dayDiv);
+    }
+
+    monthDiv.appendChild(daysGrid);
+    calendarDiv.appendChild(monthDiv);
+
+    // Add click event to each day
+    document.querySelectorAll('.day').forEach(day => {
+      day.addEventListener('click', event => {
+        event.stopPropagation();
+
+        // Highlight the selected day
+        document.querySelectorAll('.selected-day').forEach(d => {
+          d.classList.remove('selected-day');
+        });
+        event.target.classList.add('selected-day');
+
+        // Show the form in the non-selected month
+        if (isMainCalendar) {
+          const nonSelectedFormContainer = document.getElementById('calendar2');
+          nonSelectedFormContainer.innerHTML = '';
+          const formClone = document.getElementById('appointmentForm').cloneNode(true);
+          formClone.style.display = 'block';
+          nonSelectedFormContainer.appendChild(formClone);
+        }
+      });
+    });
+  }
+
+  // Helper function to clear the current calendars
+  function clearCalendar() {
+    calendarDiv1.innerHTML = "";
+    calendarDiv2.innerHTML = "";
+  }
+
+  // Show the previous two months
+  function showPreviousMonths() {
+    clearCalendar();
+    currentMonth.subtract(2, "months");
+    generateCalendar(currentMonth.clone().subtract(1, "month"), calendarDiv1, true);
+    generateCalendar(currentMonth, calendarDiv2, false);
+  }
+
+  // Show the next two months
+  function showNextMonths() {
+    clearCalendar();
+    generateCalendar(currentMonth, calendarDiv1, false);
+    generateCalendar(currentMonth.clone().add(1, "month"), calendarDiv2, true);
+    currentMonth.add(2, "months");
+  }
+
+  // Initialize the calendars
+  generateCalendar(currentMonth.clone().subtract(1, "month"), calendarDiv1, true);
+  generateCalendar(currentMonth, calendarDiv2, false);
+
+  // Attach the event handlers for the buttons
+  prevBtn.addEventListener("click", showPreviousMonths);
+  nextBtn.addEventListener("click", showNextMonths);
+</script>
+
+</body>
+
+</html>

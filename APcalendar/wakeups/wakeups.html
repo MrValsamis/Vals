@@ -1,0 +1,297 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Viewer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        #topDiv {
+            height: 5vh;
+            width: 100%;
+            background-color: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #pdfContainer {
+            flex-grow: 1;
+            width: 100%;
+            overflow: hidden;
+        }
+        #pdfFrame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        #bottomDiv {
+            height: 5vh;
+            width: 100%;
+            background-color: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #leftArrow, #rightArrow {
+            font-size: 24px;
+            cursor: pointer;
+            margin: 0 15px;
+        }
+        .disabled {
+            color: lightgray;
+            cursor: not-allowed;
+        }
+        #slideNumber {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="topDiv">
+        <label for="pdfSelector"></label>
+        <select id="pdfSelector">
+            <!-- Options will be dynamically populated -->
+        </select>
+    </div>
+    <div id="pdfContainer">
+        <iframe id="pdfFrame" src="wakeups/AP_wakeup_01_1.pdf#toolbar=1&view=Fit"></iframe>
+    </div>
+    <div id="bottomDiv">
+        <span id="leftArrow" class="disabled">&#9664;</span>
+        <span id="slideNumber">1</span>
+        <span id="rightArrow">&#9654;</span>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pdfContainer = document.getElementById("pdfContainer");
+            const pdfSelector = document.getElementById("pdfSelector");
+            const leftArrow = document.getElementById("leftArrow");
+            const rightArrow = document.getElementById("rightArrow");
+            const slideNumberSpan = document.getElementById("slideNumber");
+
+	    let toolbarVisible = true;
+            let slideNumber = 1;
+            let maxSlideNumber = 6;
+            let selectedPDFBase = "AP_wakeup_01";
+
+            // Sample document structure for demo (replace this with actual server data)
+            const docStructure = ["AP_wakeup_01_1",
+"AP_wakeup_01_2",
+"AP_wakeup_01_3",
+"AP_wakeup_01_4",
+"AP_wakeup_01_5",
+"AP_wakeup_01_6",
+"AP_wakeup_01a_1",
+"AP_wakeup_02_1",
+"AP_wakeup_03_1",
+"AP_wakeup_03_2",
+"AP_wakeup_03_3",
+"AP_wakeup_03_4",
+"AP_wakeup_03_5",
+"AP_wakeup_03_6",
+"AP_wakeup_04_1",
+"AP_wakeup_04_2",
+"AP_wakeup_04_3",
+"AP_wakeup_04_4",
+"AP_wakeup_05_1",
+"AP_wakeup_05_2",
+"AP_wakeup_06_1",
+"AP_wakeup_06_2",
+"AP_wakeup_06_3",
+"AP_wakeup_07_1",
+"AP_wakeup_07_2",
+"AP_wakeup_07_3",
+"AP_wakeup_07_4",
+"AP_wakeup_07_5",
+"AP_wakeup_07_6",
+"AP_wakeup_07_7",
+"AP_wakeup_08_1",
+"AP_wakeup_08_2",
+"AP_wakeup_08_3",
+"AP_wakeup_08_4",
+"AP_wakeup_08a_1",
+"AP_wakeup_08a_2",
+"AP_wakeup_08a_3",
+"AP_wakeup_09_1",
+"AP_wakeup_09_2",
+"AP_wakeup_09_3",
+"AP_wakeup_09_4",
+"AP_wakeup_10_1",
+"AP_wakeup_10_2",
+"AP_wakeup_10_3",
+"AP_wakeup_10_4",
+"AP_wakeup_10_5",
+"AP_wakeup_10a_1",
+"AP_wakeup_10a_2",
+"AP_wakeup_10a_3",
+"AP_wakeup_10a_4",
+"AP_wakeup_10a_5",
+"AP_wakeup_10a_6",
+"AP_wakeup_10a_7",
+"AP_wakeup_11_1",
+"AP_wakeup_11_2",
+"AP_wakeup_11a_1",
+"AP_wakeup_11a_2",
+"AP_wakeup_11a_3",
+"AP_wakeup_11a_4",
+"AP_wakeup_11b_1",
+"AP_wakeup_11b_2",
+"AP_wakeup_11b_3",
+"AP_wakeup_11b_4",
+"AP_wakeup_11b_5",
+"AP_wakeup_11b_6",
+"AP_wakeup_11b_7",
+"AP_wakeup_11b_8",
+"AP_wakeup_11b_9",
+"AP_wakeup_11b_10",
+"AP_wakeup_12_1",
+"AP_wakeup_12_2",
+"AP_wakeup_12_3",
+"AP_wakeup_12_4",
+"AP_wakeup_12_5",
+"AP_wakeup_12_6",
+"AP_wakeup_12_7",
+"AP_wakeup_12_8",
+"AP_wakeup_12_9",
+"AP_wakeup_12_10",
+"AP_wakeup_12_11",
+"AP_wakeup_12_12",
+"AP_wakeup_12a",
+"AP_wakeup_13_1",
+"AP_wakeup_13_2",
+"AP_wakeup_13_3",
+"AP_wakeup_13_4",
+"AP_wakeup_14_1",
+"AP_wakeup_14_2",
+"AP_wakeup_14_3",
+"AP_wakeup_14_4",
+"AP_wakeup_14_5",
+"AP_wakeup_14_6",
+"AP_wakeup_14_7",
+"AP_wakeup_14_8",
+"AP_wakeup_14_9",
+"AP_wakeup_14_10",
+"AP_wakeup_15_1",
+"AP_wakeup_15_2",
+"AP_wakeup_15_3",
+            ];
+
+            // Generate unique document bases for the selector
+            const uniqueDocBases = [...new Set(docStructure.map(doc => doc.split("_").slice(0, 3).join("_")))];
+
+            // Sort the unique document bases
+            uniqueDocBases.sort();
+            // Populate the PDF selector
+            uniqueDocBases.forEach(base => {
+                const option = document.createElement("option");
+                option.value = base;
+                option.textContent = base.replace(/_/g, " ");
+                pdfSelector.appendChild(option);
+            });
+
+            const updateArrows = () => {
+                if (slideNumber <= 1) {
+                    leftArrow.classList.add("disabled");
+                } else {
+                    leftArrow.classList.remove("disabled");
+                }
+
+                if (slideNumber >= maxSlideNumber) {
+                    rightArrow.classList.add("disabled");
+                } else {
+                    rightArrow.classList.remove("disabled");
+                }
+            };
+
+            const updatePDF = () => {
+                slideNumberSpan.textContent = slideNumber;
+                updateArrows();
+
+                const selectedPDF = selectedPDFBase + "_" + slideNumber + ".pdf";
+                const newSrc = "wakeups/" + selectedPDF + "#toolbar=" + "&view=Fit";
+                document.getElementById("pdfFrame").src = newSrc;
+            };
+
+            // Update max slide number and PDF when a new document is selected
+            pdfSelector.addEventListener("change", function() {
+                selectedPDFBase = pdfSelector.value;
+                // Set maxSlideNumber based on the selected PDF base
+                if (selectedPDFBase === "AP_wakeup_01") {
+                    maxSlideNumber = 6;
+                } else if (selectedPDFBase === "AP_wakeup_01a") {
+                    maxSlideNumber = 1;
+                } else if (selectedPDFBase === "AP_wakeup_02") {
+                    maxSlideNumber = 1;
+		} else if (selectedPDFBase === "AP_wakeup_03") {
+                    maxSlideNumber = 6;
+                } else if (selectedPDFBase === "AP_wakeup_04") {
+                    maxSlideNumber = 4;
+		} else if (selectedPDFBase === "AP_wakeup_05") {
+                    maxSlideNumber = 2;
+		} else if (selectedPDFBase === "AP_wakeup_06") {
+                    maxSlideNumber = 3;
+		} else if (selectedPDFBase === "AP_wakeup_07") {
+                    maxSlideNumber = 7;
+		} else if (selectedPDFBase === "AP_wakeup_08") {
+                    maxSlideNumber = 4;
+		} else if (selectedPDFBase === "AP_wakeup_08a") {
+                    maxSlideNumber = 3;
+		} else if (selectedPDFBase === "AP_wakeup_09") {
+                    maxSlideNumber = 4;
+		} else if (selectedPDFBase === "AP_wakeup_10") {
+                    maxSlideNumber = 5;
+		} else if (selectedPDFBase === "AP_wakeup_10a") {
+                    maxSlideNumber = 7;
+		} else if (selectedPDFBase === "AP_wakeup_11") {
+                    maxSlideNumber = 2;
+		} else if (selectedPDFBase === "AP_wakeup_11a") {
+                    maxSlideNumber = 4;
+		} else if (selectedPDFBase === "AP_wakeup_11b") {
+                    maxSlideNumber = 10;
+		} else if (selectedPDFBase === "AP_wakeup_12") {
+                    maxSlideNumber = 12;
+		} else if (selectedPDFBase === "AP_wakeup_12a") {
+                    maxSlideNumber = 1;
+		} else if (selectedPDFBase === "AP_wakeup_13") {
+                    maxSlideNumber = 4;
+		} else if (selectedPDFBase === "AP_wakeup_14") {
+                    maxSlideNumber = 10;
+		} else if (selectedPDFBase === "AP_wakeup_15") {
+                    maxSlideNumber = 3;
+                } else {
+                    maxSlideNumber = docStructure.filter(doc => doc.startsWith(selectedPDFBase)).length;
+                }
+                slideNumber = 1;  // Reset to first slide
+                updatePDF();
+            });
+
+            leftArrow.addEventListener("click", function() {
+                if (slideNumber > 1) {
+                    slideNumber--;
+                    updatePDF();
+                }
+            });
+
+            rightArrow.addEventListener("click", function() {
+                if (slideNumber < maxSlideNumber) {
+                    slideNumber++;
+                    updatePDF();
+                }
+            });
+
+            toolbarToggle.addEventListener("click", function() {
+                toolbarVisible = !toolbarVisible;
+                updatePDF();
+            });
+
+            // Initial setup
+            updatePDF();
+        });
+    </script>
+</body>
+</html>

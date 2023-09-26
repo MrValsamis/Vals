@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PDF Viewer</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+        }
+        #topDiv {
+            height: 5vh;
+            width: 100%;
+            background-color: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #pdfContainer {
+            flex-grow: 1;
+            width: 100%;
+            overflow: hidden;
+        }
+        #pdfFrame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        #bottomDiv {
+            height: 5vh;
+            width: 100%;
+            background-color: #f2f2f2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #leftArrow, #rightArrow {
+            font-size: 24px;
+            cursor: pointer;
+            margin: 0 15px;
+        }
+        .disabled {
+            color: lightgray;
+            cursor: not-allowed;
+        }
+        #slideNumber {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div id="topDiv">
+        <label for="pdfSelector"></label>
+        <select id="pdfSelector">
+            <!-- Options will be dynamically populated -->
+        </select>
+    </div>
+    <div id="pdfContainer">
+        <iframe id="pdfFrame" src="worksheets/AP_worksheet_01_1.pdf#toolbar=1&view=Fit"></iframe>
+    </div>
+    <div id="bottomDiv">
+        <span id="leftArrow" class="disabled">&#9664;</span>
+        <span id="slideNumber">1</span>
+        <span id="rightArrow">&#9654;</span>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const pdfContainer = document.getElementById("pdfContainer");
+            const pdfSelector = document.getElementById("pdfSelector");
+            const leftArrow = document.getElementById("leftArrow");
+            const rightArrow = document.getElementById("rightArrow");
+            const slideNumberSpan = document.getElementById("slideNumber");
+
+            let slideNumber = 1;
+            let maxSlideNumber = 4;
+            let selectedPDFBase = "AP_worksheet_01";
+
+            // Sample document structure for demo (replace this with actual server data)
+            const docStructure = ["AP_worksheet_01_1",
+"AP_worksheet_01_2",
+"AP_worksheet_01_3",
+"AP_worksheet_01_4",
+"AP_worksheet_01a_1",
+"AP_worksheet_02_1",
+            ];
+
+            // Generate unique document bases for the selector
+            const uniqueDocBases = [...new Set(docStructure.map(doc => doc.split("_").slice(0, 3).join("_")))];
+
+            // Sort the unique document bases
+            uniqueDocBases.sort();
+            // Populate the PDF selector
+            uniqueDocBases.forEach(base => {
+                const option = document.createElement("option");
+                option.value = base;
+                option.textContent = base.replace(/_/g, " ");
+                pdfSelector.appendChild(option);
+            });
+
+            const updateArrows = () => {
+                if (slideNumber <= 1) {
+                    leftArrow.classList.add("disabled");
+                } else {
+                    leftArrow.classList.remove("disabled");
+                }
+
+                if (slideNumber >= maxSlideNumber) {
+                    rightArrow.classList.add("disabled");
+                } else {
+                    rightArrow.classList.remove("disabled");
+                }
+            };
+
+            const updatePDF = () => {
+                slideNumberSpan.textContent = slideNumber;
+                updateArrows();
+
+                const selectedPDF = selectedPDFBase + "_" + slideNumber + ".pdf";
+                const newSrc = "worksheets/" + selectedPDF + "#toolbar=" + "&view=Fit";
+                document.getElementById("pdfFrame").src = newSrc;
+            };
+
+            // Update max slide number and PDF when a new document is selected
+            pdfSelector.addEventListener("change", function() {
+                selectedPDFBase = pdfSelector.value;
+                // Set maxSlideNumber based on the selected PDF base
+                if (selectedPDFBase === "AP_worksheet_01") {
+                    maxSlideNumber = 4;
+                } else if (selectedPDFBase === "AP_worksheet_01a") {
+                    maxSlideNumber = 1;
+                } else if (selectedPDFBase === "AP_worksheet_02") {
+                    maxSlideNumber = 1;
+                } else {
+                    maxSlideNumber = docStructure.filter(doc => doc.startsWith(selectedPDFBase)).length;
+                }
+                slideNumber = 1;  // Reset to first slide
+                updatePDF();
+            });
+
+            leftArrow.addEventListener("click", function() {
+                if (slideNumber > 1) {
+                    slideNumber--;
+                    updatePDF();
+                }
+            });
+
+            rightArrow.addEventListener("click", function() {
+                if (slideNumber < maxSlideNumber) {
+                    slideNumber++;
+                    updatePDF();
+                }
+            });
+
+            toolbarToggle.addEventListener("click", function() {
+                toolbarVisible = !toolbarVisible;
+                updatePDF();
+            });
+
+            // Initial setup
+            updatePDF();
+        });
+    </script>
+</body>
+</html>

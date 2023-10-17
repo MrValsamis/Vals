@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#333" />
+	<meta name="description" content="Interactive notes for algebra based physics.">
+	<meta name="author" content="Tony Valsamis">
+	<meta property="og:description" content="Interactive notes for algebra based physics.">
+	<meta property="og:title" content="Physics Notes">
+	<meta name="twitter:title" content="Physics Notes">
+	<meta name="twitter:description" content="Interactive notes for algebra based physics.">
+
+	<title>Derivatives</title>
+	<link rel='shortcut icon' href='../../../media/favicon.ico' type='image/x-icon' />
+	<link rel="stylesheet" type="text/css" href="../../../lib/katex/katex.min.css">
+	<link rel="stylesheet" href="../../../style.css">
+	<script defer src="motionSVG.js"></script>
+	<script defer src='../../../lib/matter.min.js'></script>
+	<script defer src="mattersim.js"></script>
+	<script src='../../../lib/function-graph-SVG2.js'></script>
+	<script src='../../../lib/function-graph-SVG3.js'></script>
+	<script src='../../../lib/function-graph-SVG4.js'></script>
+	<script src='../../../lib/function-graph-SVG5.js'></script>
+</head>
+
+<body>
+	<header>
+		<h1>
+			<a href="../../../">Derivatives</a>
+		</h1>
+	</header>
+	<article>
+<p>
+This lesson is a brief explanation of how calculus (the derivative) is used in physics. It is not meant to replace the rigorous investigation you will be undertaking in your mathematics classes. It is just something we can put in place so we can get started looking at natural phenomena in ways that more closely represent real situations.</p>
+
+<h1 class='underlined' id="introduction">Introduction</h1>
+<p>The notion of calculus being used in physics goes back to the days of Isaac Newton and Gottfried Leibnitz, the inventors of the calculus. Newton is given the credit, although both he and Leibnitz came up with the fundamental ideas about the same time.</p>
+
+<p>
+So why calculus? We’ve already seen how we can solve position, velocity, and acceleration problems with conventional algebra. Why do we need to create more difficulty for ourselves? If you recall, the problems we dealt with in the past all assumed that something was constant – constant v, constant a, constant whatever. What if things aren’t constant? What if, for example, a force acting on an object depends on the velocity of that object? This happens when we consider air resistance, a factor we conveniently swept under the rug in our previous classes.</p>
+
+
+
+
+<h1 class='underlined' id="differentiation">Differentiation</h1>
+<p>If we consider the motion of a particle as represented by the graph below, we understand that the particle is constantly moving farther and farther from the origin. Because the graph is linear, we can infer that the speed at which the particle is moving is constant. We know from our previous classes that the slope of the x vs t graph is the velocity of the particle. If we take the slope of this graph, we find that it is a constant, supporting our earlier inference.</p>
+
+
+			<svg class='center' id="SVG-graph-0" viewBox="0 0 600 290" title="title"> </svg>
+			<script defer>
+				funGraphSVG("SVG-graph-0", x => 1/2*x , {
+					x0: 15,
+					y0: 270,
+					stroke: "rgba(20, 200, 255, 1)",
+					fill: "rgba(20, 200, 255, 0.15)",
+					positiveOnly: true,
+					step: 10,
+					scale: 50,
+					gridSize: 50,
+					strokeWidth: 3,
+					xLabel: "time (s)",
+					yLabel: "position (m)",
+					showMouseCoords: true,
+				});
+			</script>
+ <p>In the case above, the speed of the particle is the same anywhere in time. The instantaneous speed is about 0.50 m/s and is the same for any value of t. We know that because the change in position (the y-axis) divided by the change in time (the x-axis) is the same anywhere we look.</p>
+
+<p>When considering the equation for a straight line, the familiar formula is</p>
+
+<div class='definition'>
+$$y = mx + b$$
+</div>
+where m is the slope of the line, or
+<div class='definition'>
+$$m = \frac{Δy}{Δx} = \frac{y_2 − y_1}{x_2 − x_1}$$
+</div>
+
+<p>Notice that it doesn’t matter where we choose to pick \(x_1, x_2, y_1, \text{or } y_2\) simply because the
+line has the same slope everywhere.</p>
+
+
+
+<p>Now, what if we have a particle with a graph that looks more like the curve in the illustration below? Clearly, the slope of that line is not constant. For any points (\(x_1\), \(y_1\)) and (\(x_2\), \(y_2\)), the slope of the line, which is just the tangent to the line at that point, will be different. If this is a displacement/time graph where the slope of the line represents the speed of the particle, the instantaneous speed of this particle will not be constant.</p>
+
+<svg class='center' id="SVG-graph-1" viewBox="0 0 600 290" title="title"> </svg>
+			<script defer>
+				funGraphSVG3("SVG-graph-1", x => (1/20)*x*x , {
+					x0: 15,
+					y0: 270,
+					stroke: "rgba(20, 200, 255, 1)",
+					fill: "rgba(20, 200, 255, 0.15)",
+					positiveOnly: true,
+					step: 10,
+					scale: 50,
+					gridSize: 50,
+					strokeWidth: 3,
+					xLabel: "time (s)",
+					yLabel: "position (m)",
+					showMouseCoords: true,
+				});
+			</script>
+
+
+<p>So, what is the instantaneous slope at some point (x,y)?</p>
+
+<p>Visualize this: pick a point (\(x\),\(y\)) and a neighboring point close by at <br> (\(x+∆x\), \(y+∆y\)), and compute the slope of the line through those points, as illustrated below.</p>
+
+<svg class='center' id="SVG-graph-2" viewBox="0 0 600 290" title="title"> </svg>
+			<script defer>
+				funGraphSVG4("SVG-graph-2", x => (1/20)*x*x , {
+					x0: 15,
+					y0: 270,
+					stroke: "rgba(20, 200, 255, 1)",
+					fill: "rgba(20, 200, 255, 0.15)",
+					positiveOnly: true,
+					step: 10,
+					scale: 50,
+					gridSize: 50,
+					strokeWidth: 3,
+					xLabel: "time (s)",
+					yLabel: "position (m)",
+					showMouseCoords: true,
+				});
+			</script>
+
+<p>The slope is given by:</p>
+
+<div class='definition'>
+$$m = \frac {(y+Δy)-y}{(x+Δx)-x} = \frac{Δy}{Δx}$$
+</div>
+
+<p>Now, let's let \(Δx\) get smaller.  So small, in fact, that it approaches zero.  This is called taking the limit of \(Δx\) and is designated mathematically as</p>
+
+<div class='definition'>
+$$\lim_{Δx \to 0}Δx= dx$$
+</div>
+
+<p>where \(dx\) represents the limit operation as applied to variable \(x\).</p>
+
+<p>Because \(y\) is a function of \(x\), that is, \(y=f(x)\), \(y\) at some point \(x+∆x\) is just \(y=f(x+∆x)\). The slope of the tangent of the line at point (\(x\),\(y\)) is</p>
+
+<div class='definition'>
+$$\text{slope of the tangent }= \lim_{Δx \to 0}\frac{f(x+Δx)-f(x)}{Δx}$$
+</div>
+
+<svg class='center' id="SVG-graph-4" viewBox="0 0 600 290" title="title"> </svg>
+			<script defer>
+				funGraphSVG5("SVG-graph-4", x => (1/20)*x*x , {
+					x0: 15,
+					y0: 270,
+					stroke: "rgba(20, 200, 255, 1)",
+					fill: "rgba(20, 200, 255, 0.15)",
+					positiveOnly: true,
+					step: 10,
+					scale: 50,
+					gridSize: 50,
+					strokeWidth: 3,
+					xLabel: "time (s)",
+					yLabel: "position (m)",
+					showMouseCoords: true,
+				});
+			</script>
+
+<p>This can be rewritten symbolically as</p>
+
+<div class='definition'>
+$$\frac{dy}{dx} = \lim_{Δx \to 0}\frac{f(x+Δx)-f(x)}{Δx}$$
+</div>
+
+
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\
+		<p>Calculus is a branch of mathematics that deals with the rate of change, <strong>derivatives</strong> and the accumulation of quantities, <strong>integrals</strong>. In this lesson, we focus on the concept of the derivative, which is a fundamental tool in calculus and has numerous applications in various fields like physics, engineering, economics, and more!</p>
+
+<p><h4>Definition and Significance</h4></p>
+<p>The derivative of a function <script>f</script> at a point <script>x</script> is given by the limit:</p>
+
+
+
+<div class='definition'>
+			<h1>$$ \text{derivative of }f(x) = \frac{df}{dx} = f'$$</h1>
+			<p>\(\Delta x\) = change in position, displacement [m, meters] <em>vector</em>
+			</p>
+			<p>\(x_0\) = initial position [m, meters] <em>vector</em>
+			</p>
+			<p>\(x_f\) = final position [m, meters] <em>vector</em>
+			</p>
+		</div>
+
+
+
+
+
+
+<h1 class='underlined' id="introduction-to-derivatives">Introduction to Derivatives</h1>
+	<p>Derivatives represent the rate at which a function is changing at any given point, essentially indicating the slope of the tangent line at that point.</p>
+<strong><h4>Definition and Significance</h4></strong>
+<p>The derivative of a function \( f \) at a point \( x \) is given by the limit:</p>
+	<div class='definition'>
+		<h1>$$ f' (x) = \lim_{h \rightarrow 0} \frac{f(x+h) - f(x)}{h} $$</h1>	
+<p>This formula shows how a small change in \( x \) affects \( f(x) \).</p>
+	</div>
+
+		<h4>Real-world Applications</h4>
+		<p>Derivatives have vast applications across various fields:</p>
+		<p>Physics: Understanding motion, forces, and other dynamic principles.</p>
+		<p>Economics: Finding profit maximization points and analyzing cost functions.</p>
+		<p>Engineering: Optimizing designs and understanding system behaviors.</p>
+
+
+		
+<h1 class='underlined' id="basic-concepts">Basic Concepts</h1>
+	<p>Before diving into derivatives, let's grasp some foundational concepts.</p>
+		<p>The idea of a <strong>limit</strong> is central to calculus. It helps us understand the behavior of functions as they approach specific points.</p>
+		<p>The <strong>difference quotient</strong> is a formula that helps us find the slope of a line between two points on a function. It's a stepping stone to understanding derivatives.</p>
+
+
+<div class='section' id='rules-of-differentiation'>
+    <h2 class='underlined'>Rules of Differentiation</h2>
+    <p>Differentiation rules are crucial shortcuts that enable us to find the derivatives of functions effortlessly. These are some of the basic rules that are commonly used:</p>
+    <div class='definition'>
+        <p><strong>Power Rule:</strong> If \( f(x) = x^n \), then \( f'(x) = nx^{(n-1)} \).</p>
+        <p><strong>Product Rule:</strong> For two functions, the derivative of their product is \( (fg)'(x) = f'(x)g(x) + f(x)g'(x) \).</p>
+        <p><strong>Quotient Rule:</strong> For a quotient of two functions, the rule is \( (f/g)'(x) = (f'(x)g(x) - f(x)g'(x))/g^2(x) \).</p>
+        <p><strong>Chain Rule:</strong> This rule is used when we have a composition of functions, \( (f(g(x)))' = f'(g(x))g'(x) \).</p>
+</div>
+</div>
+
+<div class='section' id='derivative-operations'>
+    <h2 class='underlined'>Derivative Operations</h2>
+    <p>Finding derivatives and understanding higher order derivatives is key to analyzing how functions behave. Here's how you can find derivatives and what higher order derivatives signify:</p>
+    <ul>
+        <li><strong>Finding Derivatives:</strong> Utilize rules of differentiation to find the derivative of a function.</li>
+        <li><strong>Higher Order Derivatives:</strong> These are the derivatives of a derivative. They provide insights into the curvature and other behaviors of functions.</li>
+    </ul>
+</div>
+
+
+<div class='section' id='applications'>
+    <h2 class='underlined'>Applications</h2>
+    <p>Derivatives are not just theoretical concepts; they have practical applications in various fields. Let's explore some of these applications:</p>
+    <ul>
+        <li><strong>Motion:</strong> Understand how objects move and change speed over time.</li>
+        <li><strong>Economics:</strong> Maximize profit, minimize cost, and analyze economic models.</li>
+        <li><strong>Optimization Problems:</strong> Solve real-world problems by finding optimal solutions.</li>
+    </ul>
+</div>
+
+
+<div class='section' id='special-types-of-derivatives'>
+    <h2 class='underlined'>Special Types of Derivatives</h2>
+    <p>Beyond the basic derivative, there are other types of derivatives that come into play depending on the function and variables involved:</p>
+    <ul>
+        <li><strong>Partial Derivatives:</strong> Involve functions with multiple variables.</li>
+        <li><strong>Directional Derivatives:</strong> Extend the idea of derivatives to multidimensional functions.</li>
+    </ul>
+</div>
+
+
+<div class='section' id='derivative-theorems'>
+    <h2 class='underlined'>Derivative Theorems</h2>
+    <p>Several theorems provide insight into the behavior of derivatives and their underlying functions:</p>
+    <ul>
+        <li><strong>Rolle's Theorem:</strong> Establishes conditions under which a function has a horizontal tangent.</li>
+        <li><strong>Mean Value Theorem:</strong> Relates the derivative to the average rate of change of a function.</li>
+        <li><strong>Intermediate Value Theorem:</strong> Explains how a continuous function behaves between two points.</li>
+    </ul>
+</div>
+
+
+<div class='section' id='practice-problems'>
+    <h2 class='underlined'>Practice Problems</h2>
+    <p>Engage with a variety of problems to solidify your understanding of derivatives:</p>
+    <ul>
+        <li><strong>Problem 1:</strong> Find the derivative of \(f(x) = 3x^2 + 2x + 1\).</li>
+        <li><strong>Problem 2:</strong> Apply the chain rule to find the derivative of \(g(x) = (2x + 1)^3\).</li>
+        <li><strong>Problem 3:</strong> Solve for the critical points of \(h(x) = x^3 - 3x^2 + 2\).</li>
+        <!-- More problems as needed -->
+    </ul>
+    <div class='example'>
+        <strong>Example Solutions:</strong>
+        <details>
+            <summary>Solution for Problem 1</summary>
+            <!-- Solution content -->
+        </details>
+        <details>
+            <summary>Solution for Problem 2</summary>
+            <!-- Solution content -->
+        </details>
+        <details>
+            <summary>Solution for Problem 3</summary>
+            <!-- Solution content -->
+        </details>
+    </div>
+</div>
+
+
+<div class='section' id='interactive-elements'>
+    <h2 class='underlined'>Interactive Elements (optional)</h2>
+    <p>Explore derivatives through interactive quizzes, graphs, and videos:</p>
+    <ul>
+        <li><a href='#'>Interactive Quiz on Basic Derivatives</a></li>
+        <li><a href='#'>Graphical Representation of Derivative Operations</a></li>
+        <li><a href='#'>Video Tutorial on Chain Rule</a></li>
+        <!-- More interactive resources as needed -->
+    </ul>
+</div>
+
+
+
+	</article>
+	<footer>
+		<a href="../../../">Back</a>
+	</footer>	
+		
+	<script src="../../../lib/katex/katex.min.js"></script>
+	<script src="../../../lib/katex/contrib/auto-render.min.js"></script>
+	<script>
+		renderMathInElement(document.body);
+		graphEquations("0.5");
+	</script>
+</body>
+
+</html>

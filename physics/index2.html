@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-113454647-1"></script> -->
+	<script>
+		window.dataLayer = window.dataLayer || [];
+
+		function gtag() {
+			dataLayer.push(arguments);
+		}
+		gtag('js', new Date());
+		gtag('config', 'UA-113454647-1');
+	</script>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="theme-color" content="#333" />
+	<meta name="author" content="Tony Valsamis">
+	<title>Physics Notes</title>
+	<!-- <title>Explorable Physics</title> -->
+	<meta name="description" content="Interactive notes for algebra based physics with explorable explanations">
+	<link rel="canonical" href="www.valsamisphysics.com/physics/">
+	<meta property="og:title" content="Explorable AP C Physics">
+	<meta property="og:description" content="Interactive notes for calculus-based physics with explorable explanations.">
+	<meta property="og:image" content="media/social_media_preview.png">
+	<meta property="og:url" content="www.valsamisphysics.com/physics/" />
+	<meta name="twitter:title" content="Explorable AP C Physics">
+	<meta name="twitter:description" content="Interactive notes for calculus-based physics with explorable explanations.">
+	<meta name="twitter:card" content="summary_large_image">
+
+	<link rel='shortcut icon' href='media/favicon.ico' type='image/x-icon' />
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+	<header>
+		<h1>
+			<a href="../">Explorable AP C Physics</a>
+		</h1>
+	</header>
+	<style>
+		:root {
+			--svg-color: #333;
+			--svg-bg-color: #fff;
+		}
+
+		.SVG-title {
+			/* border: #000 solid 1px; */
+			margin: auto;
+		}
+
+		.table-of-contents {
+			line-height: 1.6;
+			list-style: none;
+			display: grid;
+			grid-template: "a a a a""b b b b";
+			max-width: 1700px;
+			margin: auto;
+			grid-gap: 4px;
+			/* border: var(--svg-color) solid 4px; */
+			border-bottom: var(--svg-color) solid 4px;
+			border-left: var(--svg-color) solid 4px;
+			border-right: var(--svg-color) solid 4px;
+			background-color: var(--svg-color);
+		}
+
+		.table-of-contents a {
+			color: var(--svg-color);
+		}
+
+		.table-of-contents a:hover {
+			color: var(--link-color);
+			text-decoration: none;
+		}
+
+		.table-of-contents li {
+			background-color: var(--svg-bg-color);
+			padding: 0px 0px 20px 0px;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.table-of-contents li p {
+			margin: auto;
+		}
+
+		@media screen and (max-width: 850px) {
+			.table-of-contents {
+				grid-template: "a a""b b""c c""d d";
+				border-left: var(--svg-color) solid 0px;
+				border-right: var(--svg-color) solid 0px;
+			}
+		}
+
+		@media screen and (max-width: 365px) {
+			.table-of-contents {
+				font-size: 100%;
+				grid-template: "a""b""c""d""e""f""g""h""i";
+			}
+		}
+	</style>
+	<ul class="table-of-contents">
+		<li>
+			<svg class="SVG-title" width="160" height="120">
+    <g fill="var(--svg-color)" stroke="var(--svg-color)" stroke-width="1" transform="translate(40,26)" stroke-linecap="round">
+        <!-- Axes -->
+        <g fill="none">
+            <path d="M5.5 1.5 v57 m3 3 h57"></path>
+        </g>
+        
+        <!-- Curve -->
+        <g fill="none">
+            <path d="M12 24 C20 -10, 45 70, 58 52"></path>
+        </g>
+        
+        <!-- Area under the curve -->
+        <path d="M12 24 C20 -10, 45 70, 58 52 L58 58 L12 58 Z" fill="lightgray"></path>
+        
+        <!-- Points -->
+        <g stroke="var(--svg-bg-color)" stroke-width="3">
+            <circle cx="12" cy="24" r="3" />
+            <circle cx="58" cy="55" r="3" />
+        </g>
+
+	<!-- Tick marks for x1 and x2 -->
+        <line x1="12" y1="58" x2="12" y2="63" stroke="black" />
+        <line x1="58" y1="58" x2="58" y2="63" stroke="black" />
+
+	<!-- Text labels for x1 and x2 -->
+        <text x="12" y="70" font-family="Verdana" font-size="6" fill="black">
+            x<tspan dy="5" font-size="6">1</tspan>
+        </text>
+        <text x="58" y="70" font-family="Verdana" font-size="6" fill="black">
+            x<tspan dy="5" font-size="6">2</tspan>
+        </text>
+    </g>
+</svg>
+
+
+			<p>
+				<br><a href="notes/review/units/">Derivatives</a>
+				<br> <a href="notes/review/vectors/">Integrals</a>
+				<br> <a href="notes/review/vectors/">Differential Eqs.</a>
+				<br>
+			</p>
+		</li>
+<li>
+			<svg class="SVG-title" width="160" height="120">
+				<g fill="var(--svg-color)" stroke="var(--svg-color)" stroke-width="1" transform="translate(40,26)" stroke-linecap="round">
+					<g fill="none">
+						<path d="M5.5 1.5 v57 m3 3 h57"></path>
+						<path d="M12 24 Q41 0, 58 52"></path>
+					</g>
+					<g stroke="var(--svg-bg-color)" stroke-width="3">
+						<circle cx="12" cy="24" r="3" />
+						<circle cx="58" cy="52" r="3" />
+					</g>
+				</g>
+			</svg>
+			<p>
+				<a href="notes/motion/motion/">Motion</a>
+				<br> <a href="notes/motion/kinematics/">Kinematics</a>
+				<br>
+				<br>
+			</p>
+		</li>
+		<li>
+			<svg class="SVG-title" width="160" height="120">
+				<g fill="var(--svg-color)" stroke="var(--svg-color)" stroke-width="1" transform="translate(42,31)" stroke-linecap="round">
+					<g fill="none">
+						<path d="M20.5 2.5 h30 m4 4 v30 m-4 4 h-30 m-4 -4 v-30
+								 M35.5 43 v 20"></path>
+					</g>
+					<g stroke="none">
+						<path d="M35.5 65 h2.5 l-2.5 5 l-2.5 -5"></path>
+						<circle cx="16.5" cy="2.5" r="1.5" />
+						<circle cx="54.5" cy="2.5" r="1.5" />
+						<circle cx="54.5" cy="40.5" r="1.5" />
+						<circle cx="16.5" cy="40.5" r="1.5" />
+					</g>
+				</g>
+			</svg>
+			<p>
+				<a href="notes/force/laws/">Newton's Laws</a>
+				<br> <a href="notes/force/forces/">Forces</a>
+				<br> <a href="notes/force/friction/">Friction</a>
+			</p>
+		</li>
+<li>
+			<svg class="SVG-title" width="160" height="120">
+				<g fill="var(--svg-color)" stroke="var(--svg-color)" stroke-width="1" transform="translate(35,43)" stroke-linecap="round">
+					<g fill="none">
+						<path d="M-7.5 4 V50
+								 M2.5 4 V50
+								 M12.5 4 V50
+								 M22.5 10 V50
+								 M32.5 34 V50
+								 M42.5 42 V50
+								 M52.5 43 V50
+								 M62.5 37 V50
+								 M72.5 29 V50
+								 M82.5 28 V50
+								 M92.5 28 V50
+								 "></path>
+						<path d="M-10 0 h20 c15 0, 16 10, 20 20
+									  c4 15, 10 20, 20 20
+									  c5 0, 7 0, 15 -10
+									  c3 -5, 15 -5, 15 -5
+									  h15"></path>
+						<circle cx="10" cy="-4.5" r="4" />
+					</g>
+					<g stroke="none">
+					</g>
+				</g>
+			</svg>
+			<p>
+				<br> <a href="notes/energy/energy/">Energy</a>
+				<br> <a href="notes/energy/energy/">Work</a>
+				<br> <a href="notes/energy/energy/">Power</a>
+				<br> <a href="notes/energy/conservation/">Conservation</a>
+			</p>
+		</li>
+		<li>
+			<svg class="SVG-title" width="160" height="120">
+				<g fill="var(--svg-color)" stroke="var(--svg-color)" stroke-width="1" transform="translate(65,48)" stroke-linecap="round">
+					<g fill="none">
+						<path d="M20.5 2.5 h20 m4 4 v20 m-4 4 h-20 m-4 -4 v-20
+								 M12 5.5 h-25
+								 M12 12.5 h-50
+								 M12 20.5 h-37
+								 M12 27.5 h-19
+								 "></path>
+					</g>
+					<g stroke="none">
+						<circle cx="16.5" cy="2.5" r="1.5" />
+						<circle cx="44.5" cy="2.5" r="1.5" />
+						<circle cx="44.5" cy="30.5" r="1.5" />
+						<circle cx="16.5" cy="30.5" r="1.5" />
+					</g>
+				</g>
+			</svg>
+			<p>
+				<a href="notes/momentum/momentum/">Moment of Inertia</a>
+				<br> <a href="notes/momentum/momentum/">Momentum</a>
+				<br> <a href="notes/momentum/impulse/">Impulse</a>
+				<br>
+			</p>
+		</li>
+		
+		
+		<li><br>	
+<center><svg sodipodi:docname="angular-and-tangetial-speed.svg" inkscape:version="1.2 (dc2aedaf03, 2022-05-15)" xml:space="preserve" id="svg5" version="1.1" viewBox="0 0 35 35" height="25mm" width="25mm" inkscape:export-filename="proof-of-earth-rotation-1-2.png" inkscape:export-xdpi="165.86406" inkscape:export-ydpi="165.86406" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><sodipodi:namedview id="namedview7" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:showpageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:deskcolor="#333" inkscape:document-units="mm" showgrid="false" inkscape:zoom="3.42329" inkscape:cx="65.288071" inkscape:cy="215.28997" inkscape:window-width="3731" inkscape:window-height="2120" inkscape:window-x="97" inkscape:window-y="-12" inkscape:window-maximized="1" inkscape:current-layer="layer1" />
+<defs id="defs2">
+<path id="MJX-18-TEX-I-72" d="m 21,287 q 1,3 2,8 1,5 5,22 4,17 10,31 6,14 15,33 9,19 20,30 11,11 26,22 15,11 33,9 29,0 51,-12 22,-12 31,-22 9,-10 11,-20 2,-6 3,-6 1,0 8,7 48,52 111,52 h 3 q 48,0 72,-41 8,-19 8,-37 0,-30 -13,-48 -13,-18 -26,-23 -13,-5 -25,-4 -20,0 -32,11 -12,11 -12,29 0,48 56,64 -22,13 -36,13 -56,0 -103,-74 Q 229,315 224,298 219,281 190,165 156,25 151,16 138,-11 108,-11 95,-11 87,-5 79,1 76,7 q -3,6 -2,10 0,13 40,172 40,159 40,177 0,39 -26,39 -21,0 -36,-28 Q 77,349 68,316 59,283 57,280 55,278 41,278 H 27 q -6,6 -6,9 z" />
+<path id="MJX-18-TEX-I-3C9-1" d="m 495,384 q 0,22 19,40 19,18 41,19 19,0 34,-18 15,-18 15,-61 0,-30 -12,-86 Q 580,222 555,155 530,88 483,38 436,-12 377,-11 q -80,0 -110,77 -1,2 -7,-5 -59,-72 -135,-72 -110,0 -110,150 0,91 41,186 41,95 67,109 12,7 24,2 13,-7 13,-18 0,-12 -20,-39 -20,-27 -46,-73 -26,-46 -32,-98 -1,-6 -1,-21 0,-63 24,-87 24,-24 58,-24 58,0 102,53 l 8,8 v 19 q 5,141 64,141 31,0 31,-36 0,-18 -10,-48 -10,-30 -20,-55 l -10,-23 q 1,-2 2,-6 1,-4 8,-14 7,-10 16,-18 9,-8 24,-14 15,-6 35,-7 63,0 108,72 45,72 45,126 0,31 -13,51 -13,20 -25,32 -12,12 -13,27 z" />
+<path id="MJX-18-TEX-I-76-2" d="m 173,380 q 0,25 -19,25 -24,0 -50,-29 -26,-29 -43,-89 -1,-1 -2,-3 -1,-2 -1,-3 0,-1 -2,-2 -2,-1 -3,-1 -1,0 -4,0 -3,0 -8,0 H 27 q -6,6 -6,9 0,7 8,29 8,22 24,52 16,30 44,51 28,21 63,22 42,0 65,-24 23,-24 24,-56 0,-17 -3,-26 0,-6 -15,-44 -15,-38 -31,-89 -16,-51 -18,-89 0,-27 5,-44 13,-43 63,-43 37,0 69,34 32,34 50,79 18,45 29,83 11,38 11,55 0,23 -8,40 -8,17 -18,26 -10,9 -18,18 -8,9 -8,22 0,22 19,41 19,19 41,19 19,0 34,-18 15,-18 16,-58 0,-27 -12,-83 Q 443,228 418,159 393,90 347,40 301,-10 241,-11 q -64,0 -102,33 -37,32 -37,95 0,31 8,64 8,33 41,117 22,64 22,82 z" />
+<clipPath clipPathUnits="userSpaceOnUse" id="clipPath2150"><rect style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:34.0841;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" id="rect2152" width="14378.842" height="14376" x="-7451.5825" y="-5515.416" transform="scale(1,-1)" /></clipPath>
+<clipPath clipPathUnits="userSpaceOnUse" id="clipPath2154"><rect style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:34.0382;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" id="rect2156" width="14340.176" height="14375.951" x="-8121.1753" y="-12711.832" transform="scale(1,-1)" /></clipPath>
+<clipPath clipPathUnits="userSpaceOnUse" id="clipPath2158"><rect style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.56001;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" id="rect2160" width="658.0451" height="658.0451" x="-64.091522" y="60.437553" /></clipPath><marker style="overflow:visible" id="marker6622-6" refX="0" refY="0" orient="auto-start-reverse" inkscape:stockid="TriangleStart" markerWidth="4" markerHeight="2.5" viewBox="0 0 5.3244081 6.1553851" inkscape:isstock="true" inkscape:collect="always" preserveAspectRatio="none">
+<path transform="scale(0.5)" style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt" d="M 5.77,0 -2.88,5 V -5 Z" id="path6620-1" /></marker></defs>
+<g inkscape:label="Ebene 1" inkscape:groupmode="layer" id="layer1" transform="translate(-22.409698,-25.429679)">
+<path id="rect18845" style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.0525612;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1" d="m 57.409698,60.429679 v -35 h -35 v 35 c 11.666667,0 23.333333,0 35,0 z" sodipodi:nodetypes="ccccc" />
+<g data-mml-node="mstyle" transform="matrix(0.00478806,0,0,-0.00478806,38.544041,35.410196)" id="g2040-7" style="fill:#333;stroke:#333;stroke-width:20.8853;stroke-dasharray:none">
+<g data-mml-node="mspace" id="g2038-4" style="stroke-width:20.8853;stroke-dasharray:none" /></g>
+<g data-mml-node="mstyle" transform="matrix(0.00478806,0,0,-0.00478806,50.44237,35.410196)" id="g2048-4" style="fill:#333;stroke:#333;stroke-width:20.8853;stroke-dasharray:none">
+<g data-mml-node="mspace" id="g2046-7" style="stroke-width:20.8853;stroke-dasharray:none" /></g>
+<g id="g3292" transform="translate(-57.886568,-21.166667)">
+<g id="g3014" transform="translate(154.05853,-132.14409)" clip-path="none" style="fill:#ffffff"><ellipse style="fill:#ffffff;stroke:#333;stroke-width:0.144122;stroke-dasharray:none" id="ellipse3012" transform="rotate(-90)" cx="-197.92776" cy="-56.262264" rx="13.037088" ry="13.037089" /></g>
+<g id="g13921-8" transform="translate(154.05853,-132.76797)" clip-path="none" style="fill:#333"><ellipse style="fill:#ffffff;stroke:#333;stroke-width:0.144122;stroke-dasharray:none" id="path13624-9" transform="rotate(-90)" cx="-197.92776" cy="-56.262264" rx="13.037088" ry="13.037089" /></g>
+<g id="g2277" transform="matrix(0.39912517,-0.91689645,-0.91689645,-0.39912517,94.868182,156.29292)">
+<g transform="matrix(0,0.79444166,0.79444166,0,58.409105,-50.41187)" id="g9122" style="stroke:#333">
+<g transform="matrix(0.13953596,0,0,0.13953596,50.33872,-29.263884)" id="g9116" stroke="#333" stroke-opacity="1" fill="none" stroke-linecap="round" stroke-width="4.5" stroke-linejoin="round" style="stroke:#333;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0">
+<path style="stroke:#333;stroke-width:4.50145;stroke-dasharray:none" sodipodi:nodetypes="cc" id="path9114" d="M 397.66,446.56773 V 546.63" /></g>
+<g transform="matrix(0.13953596,0,0,0.13953596,50.33872,-29.263884)" id="g9120" fill=“#ffffff” stroke="none" fill-rule="nonzero;" fill-opacity="1" style="fill:#333;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0">
+<path style="fill:#333;fill-opacity:1;stroke:none" id="path9118" d="m 397.66,567.63 -5.25,-21 h 10.5 z" /></g></g>
+<g transform="matrix(0.79444166,0,0,0.79444166,13.723207,3.3597365)" id="g1134" style="stroke:#333">
+<g transform="matrix(0.13953596,0,0,0.13953596,50.33872,-29.263884)" id="g1227" stroke="#333" stroke-opacity="1" fill="none" stroke-linecap="round" stroke-width="4.5" stroke-linejoin="round" style="stroke:#333;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0">
+<path style="stroke:#333" sodipodi:nodetypes="cc" id="path1225" d="M 397.66,482.42308 V 546.63" /></g>
+<g transform="matrix(0.13953596,0,0,0.13953596,50.33872,-29.263884)" id="g1231" fill="#333" stroke="none" fill-rule="nonzero;" fill-opacity="1" style="fill:#333;stroke:none;stroke-width:1;stroke-linecap:square;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0">
+<path style="fill:#333;fill-opacity:1;stroke:none" id="path1229" d="m 397.66,567.63 -5.25,-21 h 10.5 z" /></g></g>
+<g style="fill:#ffffff;stroke-width:2.55842;stroke-miterlimit:10;stroke-dasharray:none;stroke-dashoffset:0" stroke-linejoin="round" stroke-linecap="round" fill="none" stroke-opacity="1" stroke="#333" id="g1160" transform="matrix(0.06410208,0,0,0.06410208,80.813629,23.085645)" clip-path="url(#clipPath2158)">
+<path d="m 270,165 c 0,2.76 -2.24,5 -5,5 -2.76,0 -5,-2.24 -5,-5 0,-2.76 2.24,-5 5,-5 2.76,0 5,2.24 5,5 z" id="path1158" style="fill:#ffffff;stroke-width:2.55842;stroke-dasharray:none" /></g></g>
+<g data-mml-node="mi" transform="matrix(0.00293362,0,0,-0.0029342,98.954073,50.535589)" id="g2044" style="fill:#333;fill-opacity:1;stroke:#333;stroke-width:25.904;stroke-dasharray:none;stroke-opacity:1" clip-path="url(#clipPath2150)"><use xlink:href="#MJX-18-TEX-I-76-2" id="use2042" style="fill:#333;fill-opacity:1;stroke:#333;stroke-width:25.904;stroke-dasharray:none;stroke-opacity:1" /></g>
+<g id="g11280-6" style="display:inline;fill:#333" transform="matrix(0.15031955,-0.2603611,0.2603611,0.15031955,69.423189,78.20708)">
+<path sodipodi:nodetypes="zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz" d="m 84.684387,56.037924 c -0.35192,1e-5 -0.706525,0.04686 -1.046448,0.137975 -0.339923,0.09111 -0.670822,0.228105 -0.975651,0.404108 -0.304829,0.176004 -0.588793,0.393973 -0.837676,0.642856 -0.248884,0.248883 -0.466853,0.532847 -0.642855,0.837676 -0.176005,0.304829 -0.312984,0.635643 -0.40411,0.975651 -0.09112,0.340008 -0.137974,0.69496 -0.137974,1.046964 0,0.352004 0.04684,0.707041 0.137974,1.046964 0.09114,0.339924 0.228129,0.670306 0.40411,0.975135 0.175979,0.304829 0.393962,0.589222 0.642855,0.83819 0.248894,0.248967 0.532837,0.466936 0.837676,0.642855 0.30484,0.175919 0.635739,0.312563 0.975651,0.403593 0.339912,0.09103 0.694529,0.137967 1.046448,0.137977 0.351919,1.1e-5 0.706966,-0.04694 1.046965,-0.137977 0.339996,-0.09104 0.670811,-0.227674 0.975651,-0.403593 0.304839,-0.175919 0.58878,-0.393888 0.837672,-0.642855 0.248895,-0.248968 0.466876,-0.533361 0.642856,-0.83819 0.175979,-0.304829 0.31297,-0.635211 0.404108,-0.975135 0.09114,-0.339923 0.137978,-0.694957 0.137978,-1.046964 0,-0.352007 -0.04685,-0.706956 -0.137978,-1.046964 -0.09112,-0.340008 -0.228105,-0.670822 -0.404108,-0.975651 -0.176004,-0.304829 -0.393972,-0.588793 -0.642856,-0.837676 -0.248882,-0.248883 -0.532844,-0.466852 -0.837672,-0.642856 -0.304829,-0.176003 -0.635644,-0.312983 -0.975651,-0.404108 -0.340008,-0.09113 -0.695046,-0.137986 -1.046965,-0.137975 z m 0,0.465603 c 0.31143,-1.1e-5 0.62564,0.04134 0.926558,0.121957 0.300918,0.08061 0.593693,0.201842 0.863512,0.3576 0.269819,0.155758 0.521349,0.348726 0.741557,0.568957 0.220207,0.220232 0.412757,0.471316 0.568441,0.74104 0.155683,0.269724 0.276987,0.562594 0.3576,0.863513 0.08061,0.300918 0.121968,0.61513 0.121957,0.92656 -10e-6,0.31143 -0.04135,0.625208 -0.121957,0.926042 -0.0806,0.300834 -0.201927,0.593703 -0.3576,0.863512 -0.155673,0.269809 -0.348221,0.52124 -0.568441,0.741556 -0.220221,0.220316 -0.471738,0.4132 -0.741557,0.568957 -0.269819,0.155758 -0.562594,0.27699 -0.863512,0.357603 -0.300918,0.08061 -0.615128,0.121965 -0.926558,0.121955 -0.311431,-1.1e-5 -0.625208,-0.04135 -0.926041,-0.121955 -0.300834,-0.0806 -0.593693,-0.201845 -0.863516,-0.357603 -0.269822,-0.155757 -0.521334,-0.348641 -0.741556,-0.568957 -0.220221,-0.220316 -0.412769,-0.471747 -0.56844,-0.741556 -0.155673,-0.269809 -0.276999,-0.562678 -0.357602,-0.863512 -0.0806,-0.300834 -0.121945,-0.614612 -0.121956,-0.926042 -1e-5,-0.31143 0.04134,-0.625642 0.121956,-0.92656 0.08061,-0.300919 0.201917,-0.593789 0.357602,-0.863513 0.155682,-0.269724 0.348234,-0.520808 0.568441,-0.74104 0.220207,-0.220231 0.471734,-0.413199 0.741556,-0.568957 0.269822,-0.155758 0.562681,-0.276998 0.863515,-0.3576 0.300834,-0.0806 0.614611,-0.121947 0.926041,-0.121957 z" style="fill:#333;fill-opacity:1;fill-rule:nonzero;stroke:#333;stroke-width:0.264583;stroke-linejoin:round;stroke-miterlimit:8.08;stroke-dasharray:none;stroke-opacity:1" id="path570-4" />
+<path sodipodi:nodetypes="zzzzzzzzzzzzzzzzzzzzzzzzz" d="m 84.684387,59.642353 c -0.03831,1e-5 -0.07668,0.0051 -0.113689,0.01498 -0.03701,0.0099 -0.07317,0.02474 -0.106455,0.04393 -0.03328,0.01921 -0.06438,0.04316 -0.09147,0.07028 -0.02709,0.02711 -0.05064,0.05777 -0.06976,0.09095 -0.01913,0.03318 -0.03394,0.06937 -0.04393,0.106456 -0.01,0.03708 -0.01551,0.07587 -0.01551,0.114204 1.1e-5,0.03833 0.0055,0.07669 0.01551,0.113687 0.01,0.03699 0.02482,0.07319 0.04393,0.106455 0.0191,0.03327 0.04265,0.06435 0.06976,0.09147 0.02711,0.02711 0.05821,0.05057 0.09147,0.06976 0.03326,0.01921 0.06944,0.03447 0.106455,0.04444 0.03702,0.01 0.07538,0.01498 0.113689,0.01498 0.03831,1.1e-5 0.0771,-0.005 0.114204,-0.01498 0.0371,-0.01 0.0732,-0.02524 0.106453,-0.04444 0.03326,-0.01921 0.06435,-0.04265 0.09147,-0.06976 0.02711,-0.02711 0.05065,-0.0582 0.06976,-0.09147 0.0191,-0.03327 0.03404,-0.06945 0.04393,-0.106455 0.0099,-0.03701 0.01498,-0.07538 0.01498,-0.113687 1.1e-5,-0.03831 -0.0051,-0.07711 -0.01498,-0.114204 -0.0099,-0.03709 -0.02471,-0.07326 -0.04393,-0.106456 -0.01921,-0.03319 -0.04319,-0.06386 -0.07028,-0.09095 -0.02709,-0.02709 -0.05776,-0.05107 -0.09095,-0.07028 -0.03319,-0.01921 -0.06936,-0.03402 -0.106453,-0.04393 -0.03709,-0.0099 -0.0759,-0.01498 -0.114204,-0.01498 z" style="fill:#333;fill-opacity:1;fill-rule:nonzero;stroke:#333;stroke-width:0.264583;stroke-linejoin:round;stroke-miterlimit:8.08;stroke-dasharray:none;stroke-opacity:1" id="path2347-1" /></g>
+<g data-mml-node="mi" id="g2036-8" transform="matrix(0.00294153,0,0,-0.00293421,95.184138,68.278514)" style="fill:#333;stroke:#333;stroke-width:26.0331;stroke-dasharray:none" clip-path="url(#clipPath2154)"><use xlink:href="#MJX-18-TEX-I-3C9-1" id="use2034-3" style="stroke-width:26.0331;stroke-dasharray:none" /></g>
+<g data-mml-node="msub" transform="matrix(0.00303467,0,0,-0.00303015,97.928945,59.473141)" id="g12554" style="fill:#333;fill-opacity:1;stroke:#333;stroke-width:25.0626;stroke-dasharray:none;stroke-opacity:1">
+<g data-mml-node="mi" id="g12548" style="fill:#ffffff;fill-opacity:1;stroke:#333;stroke-width:25.0625;stroke-dasharray:none;stroke-opacity:1"><use xlink:href="#MJX-18-TEX-I-72" id="use12546" style="fill:#333;fill-opacity:1;stroke:#333;stroke-width:25.0625;stroke-dasharray:none;stroke-opacity:1" /></g></g>
+<path style="fill:none;stroke:#333;stroke-width:0.5;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker6622-6)" id="path5988" transform="rotate(76.71862)" sodipodi:type="arc" sodipodi:cx="85.393456" sodipodi:cy="-80.086624" sodipodi:rx="3" sodipodi:ry="3" sodipodi:start="5.1277773" sodipodi:end="0" sodipodi:arc-type="arc" d="m 86.604091,-82.831503 a 3,3 0 0 1 1.789365,2.744879" sodipodi:open="true" /></g></g></svg></center>
+
+			<p>
+				<a href=" notes/electromagnetism/charge/">Rotation</a>
+				<br>
+				<br>
+			</p>
+		</li>
+
+		<li>
+<center><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="150" height="150">
+  <path fill="none" stroke="#000" d="M0 75h10c1.334-6.594 1.155-13.459 1.672-20.174.571-9.447.727-18.937 1.728-28.349.772.295.534 3.524.766 4.917 1.451 27.418 1.383 54.902 3.1 82.306-.024 2.718.931 2.392.904-.12C19.82 89.982 19.66 66.29 21.4 42.7c.002-2.77 1.034-2.044.977.265 1.603 19.788 1.445 39.688 3.223 59.463.328 3.208 1.135-.344 1.073-1.683 1.45-16.31 1.352-32.736 3.127-49.015.477-2.577 1.094 1.098 1.082 2.019C32.294 67.377 32.186 81.143 34 94.726c.795 1.977 1.056-2.187 1.183-2.97 1.283-11.115 1.205-22.385 3.009-33.432.905-1.453 1.013 2.311 1.208 2.988 1.2 9.154 1.218 18.46 2.9 27.545.947 1.685 1.163-2.23 1.35-2.94 1.142-7.525 1.145-15.234 2.85-22.66 1.076-1.15 1.13 2.34 1.4 3.087 1.08 6.172 1.09 12.561 2.8 18.6 1.096.743 1.098-2.12 1.4-2.863 1.082-5.126 1.036-10.544 2.8-15.494 1.173-.392 1.12 2.136 1.472 2.972 1.008 4.149.978 8.637 2.728 12.553 1.269.085 1.191-2.265 1.6-3.238.901-3.267.912-6.912 2.6-9.882 1.39.198 1.315 2.525 1.8 3.67.813 2.446.772 5.473 2.5 7.443 1.71-1.156 1.636-3.87 2.4-5.721.549-1.087.56-3.63 2.1-3.595 1.979 2.173 1.55 5.891 3.8 7.814 1.903-.86 1.906-3.684 3-5.321.259-1.197 1.777-1.866 2.3-.452 1.168 1.422 1.29 4.273 3.3 4.7 1.964-.92 1.895-4.362 4.2-4.648 1.875.698 2.102 4.177 4.4 3.82 1.605-.734 2.357-3.993 4.5-2.964 1.352 1.094 3.06 3.765 4.9 1.81 1.129-1.418 3.2-2.305 4.6-.692 1.43 1.637 3.556.965 5-.23 2.44-1.494 4.618 2.224 7.1.629 1.746-1.154 3.815-.798 5.6.029 2.462.686 4.836-1.494 7.3-.33 2.876 1.109 5.798-.962 8.7.082 2.895.6 5.8-.76 8.7.035.133.015.267.028.4.04"/>
+</svg></center>
+			<p>
+				<a href="notes/circuits/electricity/">Oscillations</a>
+				<br>
+				<br>
+				<br>
+			</p>
+		</li>
+		<li>
+			<svg class="SVG-title" width="160" height="120">
+				<g fill="var(--svg-color)" stroke="var(--svg-color)" stroke-width="1" transform="translate(31,63)" stroke-linecap="round">
+					<g fill="none">
+						<circle cx="0.5" cy="0.5" r="10" />
+						<circle cx="90.5" cy="0.5" r="25" />
+					</g>
+					<g stroke="var(--svg-bg-color)" stroke-width="6">
+						<path d="M5 0.5 h25   M86 0.5 h-25"></path>
+					</g>
+					<g fill="none">
+						<path d="M5 0.5 h25  M86 0.5 h-25"></path>
+					</g>
+					<g stroke="none">
+						<path d="M32.5 0.5 v2.5 l5 -2.5  l-5 -2.5"></path>
+						<path d="M58.5 0.5 v2.5 l-5 -2.5  l5 -2.5"></path>
+						<circle cx="0.5" cy="0.5" r="1.5" />
+						<circle cx="90.5" cy="0.5" r="1.5" />
+					</g>
+				</g>
+			</svg>
+			<p>
+				<a href="notes/gravity/gravitation/">Gravity</a>
+				<br> <a href="notes/gravity/circular/">Orbits</a>
+				<br>
+				<br>
+			</p>
+		</li>
+	</ul>
+	<article>
+		<div>
+			<h2 class='underlined'>About</h2>
+			<p>
+				This site contains course notes for algebra based physics with <a href="https://explorabl.es/">explorable</a> <a href="http://worrydream.com/ExplorableExplanations/">explanations</a>.
+				I'm still adding content for 2022-2023. Let me know if you have any ideas or if you found one of the numerous mistakes.
+			</p>
+			<p>
+				avalsamis@glenbrook225.org
+			</p>
+			<p>
+				<!--The code is open source and hosted on <a href="https://github.com/landgreen/physics">github</a>.-->
+				<!--<br class="hide-on-mobile">It's free to use under the <a href="https://github.com/landgreen/physics/blob/master/LICENSE">GNU General Public License v3.0</a>.-->
+				<br class="hide-on-mobile">The diagrams are SVG written in a text editor.
+				<br class="hide-on-mobile">The math is rendered with the typesetting library <a href="https://katex.org/">KaTeX</a>.
+				<br class="hide-on-mobile">The simulations are JavaScript outputting to canvas or SVG.
+				<br class="hide-on-mobile">Collision simulations use the <a href="http://brm.io/matter-js/">Matter.js</a> 2-D physics engine.
+			</p>
+		</div>
+		<h2 class='underlined'>Links</h2>
+		<br>
+		<ul class="listing">
+			<li>
+				<strong>Shared</strong>
+				<!-- <a href="https://drive.google.com/open?id=1uhqsIn5Ryggmndnt40ReF8v-x0t65vJi">Student Files</a>
+				<a style="padding-bottom: 22px;" href="https://goo.gl/photos/E7jTHpgHRFgT6C7p6">Classroom Photos</a>-->
+				Student Files </br>
+				Classroom Photos </br></br>
+
+
+				<strong>Highlighted Explorables</strong>
+				<a href="notes/waves/waveproperties/#standing-wave-sim">Standing Waves</a>
+				<a href="notes/energy/thermo/#entropy">Entropy</a>
+				<!-- <a href="notes/electromagnetism/electrostatics/#charge0-example">Coulomb's Law</a> -->
+				<a href="notes/waves/waveproperties/#harmony">Harmony</a>
+				<a href="notes/circuits/electricity/#current">Conductivity</a>
+				<a href="notes/motion/motion/">Particles</a>
+				<a href="notes/momentum/momentum/#conservation">Momentum</a>
+				<a href="notes/force/friction/">Sliding Friction</a>
+				<a href="notes/energy/conservation/#spring-mass-gravity">Spring and Mass</a>
+				<a href="notes/motion/kinematics/#tank-sim">Ballistics</a>
+				<a href="notes/gravity/gravitation/#gravity-potential-sim">Gravitational Energy</a>
+			</li>
+			<li>
+				<strong>Learn Physics</strong>
+				<a href="https://phet.colorado.edu/en/simulations/category/html">PhET simulations</a>
+				<a href="https://www.exploratorium.edu/snacks">Science Snacks</a>
+				<a href="http://www.falstad.com/mathphysics.html">Falstad Simulations</a>
+				<!-- <a href="https://www.khanacademy.org/science/physics/">Khan Academy</a> -->
+				<!-- <a style="padding-bottom: 22px;" href="https://openstax.org/details/books/college-physics">Physics Textbook</a> -->
+				Physics Textbook </br></br>
+
+				<strong>YouTube</strong>
+				<a href="https://www.youtube.com/playlist?list=PLGO_AWB1C4GQz6JF3-0yZHpoKfqZb7O5z">Physics Girl</a>
+				<a href="https://www.youtube.com/user/flippingphysics/playlists">Flipping Physics</a>
+				<a href="https://www.youtube.com/playlist?list=PL8dPuuaLjXtN0ge7yDk_UA0ldZJdhwkoV">Crash Course</a>
+				<a href="https://www.youtube.com/channel/UCUHW94eEFW7hkUMVaZz4eDg">Minute Physics</a>
+				<a href="https://www.youtube.com/user/msadaghd/">ElectroBOOM</a>
+				<a href="https://www.youtube.com/channel/UCBbnbBWJtwsf0jLGUwX5Q3g">Journey to the Microcosmos</a>
+				<a href="https://www.youtube.com/channel/UC7_gcs09iThXybpVgjHZ_7g">PBS Space Time</a>
+				<a href="https://www.youtube.com/c/CaptainDisillusion/videos">Captain Disillusion</a>
+
+
+
+			</li>
+		</ul>
+	</article>
+
+	<footer>
+		<a href="../">Back</a>
+	</footer>
+</body>
+
+</html>
